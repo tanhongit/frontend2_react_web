@@ -1,1 +1,0 @@
-# frontend2_react_web
