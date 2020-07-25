@@ -1,0 +1,22 @@
+{
+  "name": "frontend2_react_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanHongIT/frontend2_react_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TanHongIT/frontend2_react_web/issues"
+  },
+  "homepage": "https://github.com/TanHongIT/frontend2_react_web#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
