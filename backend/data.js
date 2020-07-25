@@ -69,5 +69,15 @@ export default {
       rating: 4.2,
       numReviews: 5
     },
+    {
+      _id: '8',
+      product_name: 'Fit Shirt',
+      category_id: '2',
+      image: '/images/d1.jpg',
+      product_price: 50,
+      product_description: ' Nike',
+      rating: 4.2,
+      numReviews: 5
+    },
   ]
 }
