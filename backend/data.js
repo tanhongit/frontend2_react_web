@@ -8,7 +8,8 @@ export default {
       product_price: 60,
       product_description: ' Nike',
       rating: 4.5,
-      numReviews: 10
+      numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: '2',
@@ -18,7 +19,8 @@ export default {
       product_price: 50,
       product_description: ' Nike',
       rating: 4.2,
-      numReviews: 5
+      numReviews: 5,
+      countInStock: 6,
     },
     {
       _id: '3',
@@ -28,7 +30,8 @@ export default {
       product_price: 70,
       product_description: ' Nike',
       rating: 4.5,
-      numReviews: 8
+      numReviews: 8,
+      countInStock: 16,
     }, {
       _id: '4',
       product_name: 'Best Pants',
@@ -37,7 +40,8 @@ export default {
       product_price: 70,
       product_description: ' Nike',
       rating: 4.5,
-      numReviews: 8
+      numReviews: 8,
+      countInStock: 6,
     },
     {
       _id: '5',
@@ -47,7 +51,8 @@ export default {
       product_price: 60,
       product_description: ' Nike',
       rating: 4.5,
-      numReviews: 10
+      numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: '6',
@@ -57,7 +62,8 @@ export default {
       product_price: 50,
       product_description: ' Nike',
       rating: 4.2,
-      numReviews: 5
+      numReviews: 5,
+      countInStock: 6,
     },
     {
       _id: '7',
@@ -67,7 +73,8 @@ export default {
       product_price: 50,
       product_description: ' Nike',
       rating: 4.2,
-      numReviews: 5
+      numReviews: 5,
+      countInStock: 6,
     },
     {
       _id: '8',
@@ -77,7 +84,8 @@ export default {
       product_price: 50,
       product_description: ' Nike',
       rating: 4.2,
-      numReviews: 5
+      numReviews: 5,
+      countInStock: 6,
     },
   ]
 }

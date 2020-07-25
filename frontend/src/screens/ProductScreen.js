@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 // import data from '../data';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,17 +7,23 @@ import { detailsProduct } from '../actions/productActions';
 function ProductScreen(props) {
     // console.log(props.match.params.id);
     // const product = data.products.find(x => x._id === props.match.params.id);
+    const [qty, setQty] = useState(1);
     const productDetails = useSelector((state) => state.productDetails);
     const { product, loading, error } = productDetails;
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(detailsProduct(props.match.params.id));
 
         return () => {
 
         };
-    }, [])
+    }, []);
+
+    const handleAddToCart = () => {
+        props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
+    }
+
     return (
         <div>
             <div className="back-to-result">
@@ -85,13 +91,20 @@ function ProductScreen(props) {
                                 Fusce in hendrerit purus. </p>
 
                                                 <form enctype="multipart/form-data" method="post" class="cart">
+                                                    <div>Status: {product.countInStock>0? "In stock" : ""}</div>
                                                     <div class="quantity">
-                                                        <input type="button" class="minus" value="-" />
+                                                        {/* <input type="button" class="minus" value="-" />
                                                         <input type="text" class="input-text qty text" title="Qty" value="1"
                                                             name="quantity" min="1" step="1" />
-                                                        <input type="button" class="plus" value="+" />
+                                                        <input type="button" class="plus" value="+" /> */}
+                                                        <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                                                            {[...Array(product.countInStock).keys()].map(x =>
+                                                                <option key={x + 1} value={x + 1}>{x + 1}</option>
+                                                            )}
+                                                        </select>
                                                     </div>
-                                                    <button href="#" class="btn btn-primary btn-icon">Add to cart</button>
+                                                    {product.countInStock>0 && <button onClick={handleAddToCart} href="#" class="btn btn-primary btn-icon">Add to cart</button>}
+                                                    
                                                 </form>
 
                                                 <div class="product_meta">
