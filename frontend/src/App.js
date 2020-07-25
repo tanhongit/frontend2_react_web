@@ -3,9 +3,13 @@ import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
   return (
     <BrowserRouter>
       <header id="header">
@@ -31,7 +35,7 @@ function App() {
                 <Link to='/about'><i className="fa fa-angle-right"></i>About Us</Link>
               </li>
               <li>
-              <Link to='/contact'><i className="fa fa-angle-right"></i>Contact Us</Link>
+                <Link to='/contact'><i className="fa fa-angle-right"></i>Contact Us</Link>
               </li>
               <li className="phone">
                 <span><i className="fa fa-phone"></i>(123) 456-7890</span>
@@ -82,7 +86,8 @@ function App() {
 										<i className="fa fa-angle-down"></i>
                   </a>
                   <ul className="dropdown-menu">
-                    <li><a href="about-us.html">About Us</a></li>
+                    
+  <li>{userInfo ? <Link to='/profile'>{userInfo.name}</Link> : <Link to='/signin'>Signin</Link>}</li>
                     <li><a href="about-us-basic.html">About Us - Basic</a></li>
                     <li><a href="about-me.html">About Me</a></li>
                   </ul>
@@ -264,6 +269,7 @@ function App() {
       <Route path='/' exact={true} component={HomeScreen} />
       <Route path='/product/:id' component={ProductScreen} />
       <Route path='/cart/:id?' component={CartScreen} />
+      <Route path='/signin' component={SigninScreen} />
     </BrowserRouter>
   );
 }
