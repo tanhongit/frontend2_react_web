@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
-import data from '../data';
+
 function HomeScreen(props) {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -24,7 +24,7 @@ function HomeScreen(props) {
                                 <h2><a href="#">Sản Phẩm <strong>Mới</strong></a></h2>
                             </div>
                             <ul class="products product-thumb-info-list">
-                                {data.products.map(product =>
+                                {products.map(product =>
                                     <li class="col-md-3 col-sm-6 col-xs-12 product">
                                         <a href="shop-product-sidebar.html">
                                             <span class="onsale">Sale!</span>
