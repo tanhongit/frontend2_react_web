@@ -5,13 +5,6 @@ import './index.css';
 import App from './App';
 import store from './store';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'fontawesome/css/font-awesome.css';
-import './theme-elements.css';
-import './skin.css';
-import './theme-shop.css';
-import './owl.carousel.min.css';
-
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

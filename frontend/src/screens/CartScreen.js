@@ -26,69 +26,67 @@ function CartScreen(props) {
     const checkoutHandler = () => {
         props.history.push('/signin?redirect=shipping');
     }
-
-    return <div className="cart">
-    <div className="cart-list">
-      <ul className="cart-list-container">
-        <li>
-          <h3>
-            Shopping Cart
-          </h3>
-          <div>
-            Price
+    
+    return <div className="cart_section">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-10 offset-lg-1">
+            <div className="cart_container">
+              <div className="cart_title">Shopping Cart</div>
+              <div className="cart_items">
+                <ul className="cart_list">
+                  <li className="cart_item clearfix">
+                    <div className="cart_item_image">
+                      <img src="images/shopping_cart.jpg" alt />
+                    </div>
+                    <div className="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                      <div className="cart_item_name cart_info_col">
+                        <div className="cart_item_title">Name</div>
+                        <div className="cart_item_text">MacBook Air 13</div>
+                      </div>
+                      <div className="cart_item_color cart_info_col">
+                        <div className="cart_item_title">Color</div>
+                        <div className="cart_item_text">
+                          <span style={{ backgroundColor: "#999999" }} />
+                          Silver
+                        </div>
+                      </div>
+                      <div className="cart_item_quantity cart_info_col">
+                        <div className="cart_item_title">Quantity</div>
+                        <div className="cart_item_text">1</div>
+                      </div>
+                      <div className="cart_item_price cart_info_col">
+                        <div className="cart_item_title">Price</div>
+                        <div className="cart_item_text">$2000</div>
+                      </div>
+                      <div className="cart_item_total cart_info_col">
+                        <div className="cart_item_title">Total</div>
+                        <div className="cart_item_text">$2000</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              {/* Order Total */}
+              <div className="order_total">
+                <div className="order_total_content text-md-right">
+                  <div className="order_total_title">Order Total:</div>
+                  <div className="order_total_amount">$2000</div>
+                </div>
+              </div>
+              <div className="cart_buttons">
+                <button type="button" className="button cart_button_clear">
+                  Add to Cart
+                </button>
+                <button type="button" className="button cart_button_checkout">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
           </div>
-        </li>
-        {
-          cartItems.length === 0 ?
-            <div>
-              Cart is empty
-          </div>
-            :
-            cartItems.map(item =>
-              <li>
-                <div className="cart-image">
-                  <img src={item.image} alt="product" />
-                </div>
-                <div className="cart-name">
-                  <div>
-                    <Link to={"/product/" + item.product}>
-                      {item.name}
-                    </Link>
-
-                  </div>
-                  <div>
-                    Qty:
-                  <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
-                      {[...Array(item.countInStock).keys()].map(x =>
-                        <option key={x + 1} value={x + 1}>{x + 1}</option>
-                      )}
-                    </select>
-                    <button type="button" className="button" onClick={() => removeFromCartHandler(item.product)} >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-                <div className="cart-price">
-                  ${item.price}
-                </div>
-              </li>
-            )
-        }
-      </ul>
-
-    </div>
-    <div className="cart-action">
-      <h3>
-        Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
-        :
-         $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-      </h3>
-      <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
-        Proceed to Checkout
-      </button>
-
-    </div>
-
-  </div>
+        </div>
+      </div>
+    </div>;
+    
 }
 export default CartScreen;

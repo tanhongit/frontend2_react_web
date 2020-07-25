@@ -26,445 +26,274 @@ function ProductScreen(props) {
 
     return (
         <div>
-            <div className="back-to-result">
-                <Link to="/">Back to result</Link>
+            <div style={{textAlign: "center" }}>
+                <Link className="button cart_button" to="/">Back to result</Link>
             </div>
             {loading ? (
                 <div>Loading...</div>
             ) : error ? (
                 <div>{error} </div>
             ) : (
-                        <div class="container">
-                            <h1>{product.product_name}</h1>
-                            <hr class="tall" />
-
-                            <div class="row">
-                                <div class="col-md-9">
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-
-                                            <div class="owl-carousel" data-plugin-options='{"items": 1}'>
-                                                <div>
-                                                    <div class="thumbnail">
-                                                        <img alt="" class="img-responsive img-rounded"
-                                                            src="/images/office-2.jpg" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="thumbnail">
-                                                        <img alt="" class="img-responsive img-rounded"
-                                                            src="/images/office-2.jpg" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="thumbnail">
-                                                        <img alt="" class="img-responsive img-rounded"
-                                                            src="/images/office-2.jpg" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                        <div>
+                            {/* Single Product */}
+                            <div className="single_product">
+                                <div className="container">
+                                    <div className="row">
+                                        {/* Images */}
+                                        <div className="col-lg-2 order-lg-1 order-2">
+                                            <ul className="image_list">
+                                                <li data-image="//images/single_4.jpg">
+                                                    <img src="/images/single_4.jpg" alt />
+                                                </li>
+                                                <li data-image="/images/single_2.jpg">
+                                                    <img src="/images/single_2.jpg" alt />
+                                                </li>
+                                                <li data-image="/images/single_3.jpg">
+                                                    <img src="/images/single_3.jpg" alt />
+                                                </li>
+                                            </ul>
                                         </div>
-
-                                        <div class="col-md-6">
-
-                                            <div class="summary entry-summary">
-
-                                                <h1 class="shorter"><strong>Blue Ladies Handbag</strong></h1>
-
-                                                <div class="review_num">
-                                                    <span class="count" itemprop="ratingCount">2</span> reviews
-                            </div>
-
-                                                <div title="Rated 5.00 out of 5" class="star-rating">
-                                                    <span ><strong class="rating">5.00</strong> out of 5</span>
-                                                </div>
-
-                                                <p class="price">
-                                                    <span class="amount">$22</span>
-                                                </p>
-
-                                                <p class="taller">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                                tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Lorem ipsum dolor
-                                                sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing.
-                                Fusce in hendrerit purus. </p>
-
-                                                <form enctype="multipart/form-data" method="post" class="cart">
-                                                    <div>Status: {product.countInStock>0? "In stock" : ""}</div>
-                                                    <div class="quantity">
-                                                        {/* <input type="button" class="minus" value="-" />
-                                                        <input type="text" class="input-text qty text" title="Qty" value="1"
-                                                            name="quantity" min="1" step="1" />
-                                                        <input type="button" class="plus" value="+" /> */}
-                                                        <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
-                                                            {[...Array(product.countInStock).keys()].map(x =>
-                                                                <option key={x + 1} value={x + 1}>{x + 1}</option>
-                                                            )}
-                                                        </select>
-                                                    </div>
-                                                    {product.countInStock>0 && <button onClick={handleAddToCart} href="#" class="btn btn-primary btn-icon">Add to cart</button>}
-                                                    
-                                                </form>
-
-                                                <div class="product_meta">
-                                                    <span class="posted_in">Categories: <a rel="tag" href="#">Accessories</a>, <a
-                                                        rel="tag" href="#">Bags</a>.</span>
-                                                </div>
-
+                                        {/* Selected Image */}
+                                        <div className="col-lg-5 order-lg-2 order-1">
+                                            <div className="image_selected">
+                                                <img src="/images/single_4.jpg" alt />
                                             </div>
-
-
                                         </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="tabs tabs-product">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active"><a href="#productDescription"
-                                                        data-toggle="tab">Description</a></li>
-                                                    <li><a href="#productInfo" data-toggle="tab">Aditional Information</a></li>
-                                                    <li><a href="#productReviews" data-toggle="tab">Reviews (2)</a></li>
-                                                </ul>
-                                                <div class="tab-content">
-                                                    <div class="tab-pane active" id="productDescription">
-                                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                        cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta
-                                                        nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum
-                                                        lobortis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus
-                                                        et ultrices posuere cubilia Curae; Praesent nec tempus nibh. Donec
-                                                        mollis commodo metus et fringilla. Etiam venenatis, diam id adipiscing
-                                                        convallis, nisi eros lobortis tellus, feugiat adipiscing ante ante sit
-                                                        amet dolor. Vestibulum vehicula scelerisque facilisis. Sed faucibus
-                                                        placerat bibendum. Maecenas sollicitudin commodo justo, quis hendrerit
-                                                        leo consequat ac. Proin sit amet risus sapien, eget interdum dui. Proin
-                                        justo sapien, varius sit amet hendrerit id, egestas quis mauris.</p>
-                                                    </div>
-                                                    <div class="tab-pane" id="productInfo">
-                                                        <table class="table table-striped push-top">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th>
-                                                                        Size:
-                                                </th>
-                                                                    <td>
-                                                                        Unique
-                                                </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        Colors
-                                                </th>
-                                                                    <td>
-                                                                        Red, Blue
-                                                </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        Material
-                                                </th>
-                                                                    <td>
-                                                                        100% Leather
-                                                </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="tab-pane" id="productReviews">
-                                                        <ul class="comments">
-                                                            <li>
-                                                                <div class="comment">
-                                                                    <div class="img-thumbnail">
-                                                                        <img class="avatar" alt="" src="/images/office-2.jpg" />
+                                        {/* Description */}
+                                        <div className="col-lg-5 order-3">
+                                            <div className="product_description">
+                                                <div className="product_category">Laptops</div>
+                                                <div className="product_name">MacBook Air 13</div>
+                                                <div className="rating_r rating_r_4 product_rating">
+                                                    <i />
+                                                    <i />
+                                                    <i />
+                                                    <i />
+                                                    <i />
+                                                </div>
+                                                <div className="product_text">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Maecenas fermentum. laoreet turpis, nec sollicitudin dolor
+                                                        cursus at. Maecenas aliquet, dolor a faucibus efficitur, nisi
+                                                        tellus cursus urna, eget dictum lacus turpis.
+                            </p>
+                                                </div>
+                                                <div className="order_info d-flex flex-row">
+                                                    <form action="#">
+                                                        <div className="clearfix" style={{ zIndex: 1000 }}>
+                                                            {/* Product Quantity */}
+                                                            <div className="product_quantity clearfix">
+                                                                <span>Quantity: </span>
+                                                                <input
+                                                                    id="quantity_input"
+                                                                    type="text"
+                                                                    pattern="[0-9]*"
+                                                                    defaultValue={1}
+                                                                />
+                                                                <div className="quantity_buttons">
+                                                                    <div
+                                                                        id="quantity_inc_button"
+                                                                        className="quantity_inc quantity_control"
+                                                                    >
+                                                                        <i className="fas fa-chevron-up" />
                                                                     </div>
-                                                                    <div class="comment-block">
-                                                                        <div class="comment-arrow"></div>
-                                                                        <span class="comment-by">
-                                                                            <strong>John Doe</strong>
-                                                                            <span class="pull-right">
-                                                                                <div title="Rated 5.00 out of 5"
-                                                                                    class="star-rating">
-                                                                                    <span ><strong
-                                                                                        class="rating">5.00</strong> out of
-                                                                    5</span>
-                                                                                </div>
-                                                                            </span>
-                                                                        </span>
-                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                        Nam viverra euismod odio, gravida pellentesque urna
-                                                                        varius vitae, gravida pellentesque urna varius vitae.
-                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                        Nam viverra euismod odio, gravida pellentesque urna
-                                                                        varius vitae. Sed dui lorem, adipiscing in adipiscing
-                                                                        et, interdum nec metus. Mauris ultricies, justo eu
-                                                                        convallis placerat, felis enim ornare nisi, vitae mattis
-                                                        nulla ante id dui.</p>
+                                                                    <div
+                                                                        id="quantity_dec_button"
+                                                                        className="quantity_dec quantity_control"
+                                                                    >
+                                                                        <i className="fas fa-chevron-down" />
                                                                     </div>
                                                                 </div>
-                                                            </li>
-                                                        </ul>
-                                                        <hr class="tall" />
-                                                        <h4>Add a review</h4>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-
-                                                                <form action="" id="submitReview" method="post">
-                                                                    <div class="row">
-                                                                        <div class="form-group">
-                                                                            <div class="col-md-6">
-                                                                                <label>Your name *</label>
-                                                                                <input type="text" value=""
-                                                                                    data-msg-required="Please enter your name."
-                                                                                    maxlength="100" class="form-control" name="name"
-                                                                                    id="name" />
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <label>Your email address *</label>
-                                                                                <input type="email" value=""
-                                                                                    data-msg-required="Please enter your email address."
-                                                                                    data-msg-email="Please enter a valid email address."
-                                                                                    maxlength="100" class="form-control"
-                                                                                    name="email" id="email" />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="form-group">
-                                                                            <div class="col-md-12">
-                                                                                <label>Review *</label>
-                                                                                <textarea maxlength="5000"
-                                                                                    data-msg-required="Please enter your message."
-                                                                                    rows="10" class="form-control" name="message"
-                                                                                    id="message"></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <input type="submit" value="Submit Review"
-                                                                                class="btn btn-primary"
-                                                                                data-loading-text="Loading..." />
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
                                                             </div>
-
+                                                            {/* Product Color */}
+                                                            <ul className="product_color">
+                                                                <li>
+                                                                    <span>Color: </span>
+                                                                    <div className="color_mark_container">
+                                                                        <div id="selected_color" className="color_mark" />
+                                                                    </div>
+                                                                    <div className="color_dropdown_button">
+                                                                        <i className="fas fa-chevron-down" />
+                                                                    </div>
+                                                                    <ul className="color_list">
+                                                                        <li>
+                                                                            <div
+                                                                                className="color_mark"
+                                                                                style={{ background: "#999999" }}
+                                                                            />
+                                                                        </li>
+                                                                        <li>
+                                                                            <div
+                                                                                className="color_mark"
+                                                                                style={{ background: "#b19c83" }}
+                                                                            />
+                                                                        </li>
+                                                                        <li>
+                                                                            <div
+                                                                                className="color_mark"
+                                                                                style={{ background: "#000000" }}
+                                                                            />
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div className="product_price">$2000</div>
+                                                        <div className="button_container">
+                                                            <button type="button" className="button cart_button">
+                                                                Add to Cart
+                                </button>
+                                                            <div className="product_fav">
+                                                                <i className="fas fa-heart" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Recently Viewed */}
+                            <div className="viewed">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col">
+                                            <div className="viewed_title_container">
+                                                <h3 className="viewed_title">Recently Viewed</h3>
+                                                <div className="viewed_nav_container">
+                                                    <div className="viewed_nav viewed_prev">
+                                                        <i className="fas fa-chevron-left" />
+                                                    </div>
+                                                    <div className="viewed_nav viewed_next">
+                                                        <i className="fas fa-chevron-right" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="viewed_slider_container">
+                                                {/* Recently Viewed Slider */}
+                                                <div className="owl-carousel owl-theme viewed_slider">
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_1.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">
+                                                                    $225<span>$300</span>
+                                                                </div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">Beoplay H7</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_2.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">$379</div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">LUNA Smartphone</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_3.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">$225</div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">Samsung J730F...</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item is_new d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_4.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">$379</div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">Huawei MediaPad...</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_5.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">
+                                                                    $225<span>$300</span>
+                                                                </div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">Sony PS4 Slim</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    {/* Recently Viewed Item */}
+                                                    <div className="owl-item">
+                                                        <div className="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <div className="viewed_image">
+                                                                <img src="/images/view_6.jpg" alt />
+                                                            </div>
+                                                            <div className="viewed_content text-center">
+                                                                <div className="viewed_price">$375</div>
+                                                                <div className="viewed_name">
+                                                                    <a href="#">Speedlink...</a>
+                                                                </div>
+                                                            </div>
+                                                            <ul className="item_marks">
+                                                                <li className="item_mark item_discount">-25%</li>
+                                                                <li className="item_mark item_new">new</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <hr class="tall" />
-
-                                    <div class="row">
-
-                                        <div class="col-md-12">
-                                            <h2>Related <strong>Products</strong></h2>
-                                        </div>
-
-                                        <ul class="products product-thumb-info-list">
-                                            <li class="col-sm-3 col-xs-12 product">
-                                                <a href="shop-product-sidebar.html">
-                                                    <span class="onsale">Sale!</span>
-                                                </a>
-                                                <span class="product-thumb-info">
-                                                    <a href="shop-cart.html" class="add-to-cart-product">
-                                                        <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
-                                                    </a>
-                                                    <a href="shop-product-sidebar.html">
-                                                        <span class="product-thumb-info-image">
-                                                            <span class="product-thumb-info-act">
-                                                                <span class="product-thumb-info-act-left"><em>View</em></span>
-                                                                <span class="product-thumb-info-act-right"><em><i
-                                                                    class="fa fa-plus"></i> Details</em></span>
-                                                            </span>
-                                                            <img alt="" class="img-responsive" src="/images/office-2.jpg" />
-                                                        </span>
-                                                    </a>
-                                                    <span class="product-thumb-info-content">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <h4>Photo Camera</h4>
-                                                            <span class="price">
-                                                                <del><span class="amount">$325</span></del>
-                                                                <ins><span class="amount">$299</span></ins>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                            <li class="col-sm-3 col-xs-12 product">
-                                                <span class="product-thumb-info">
-                                                    <a href="shop-cart.html" class="add-to-cart-product">
-                                                        <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
-                                                    </a>
-                                                    <a href="shop-product-sidebar.html">
-                                                        <span class="product-thumb-info-image">
-                                                            <span class="product-thumb-info-act">
-                                                                <span class="product-thumb-info-act-left">View</span>
-                                                                <span class="product-thumb-info-act-right"><i
-                                                                    class="fa fa-plus"></i> Details</span>
-                                                            </span>
-                                                            <img alt="" class="img-responsive" src="/images/office-2.jpg" />
-                                                        </span>
-                                                    </a>
-                                                    <span class="product-thumb-info-content">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <h4>Golf Bag</h4>
-                                                            <span class="price">
-                                                                <span class="amount">$72</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                            <li class="col-sm-3 col-xs-12 product">
-                                                <span class="product-thumb-info">
-                                                    <a href="shop-cart.html" class="add-to-cart-product">
-                                                        <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
-                                                    </a>
-                                                    <a href="shop-product-sidebar.html">
-                                                        <span class="product-thumb-info-image">
-                                                            <span class="product-thumb-info-act">
-                                                                <span class="product-thumb-info-act-left">View</span>
-                                                                <span class="product-thumb-info-act-right"><i
-                                                                    class="fa fa-plus"></i> Details</span>
-                                                            </span>
-                                                            <img alt="" class="img-responsive" src="/images/office-2.jpg" />
-                                                        </span>
-                                                    </a>
-                                                    <span class="product-thumb-info-content">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <h4>Workout</h4>
-                                                            <span class="price">
-                                                                <span class="amount">$60</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                            <li class="col-sm-3 col-xs-12 product">
-                                                <span class="product-thumb-info">
-                                                    <a href="shop-cart.html" class="add-to-cart-product">
-                                                        <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
-                                                    </a>
-                                                    <a href="shop-product-sidebar.html">
-                                                        <span class="product-thumb-info-image">
-                                                            <span class="product-thumb-info-act">
-                                                                <span class="product-thumb-info-act-left">View</span>
-                                                                <span class="product-thumb-info-act-right"><i
-                                                                    class="fa fa-plus"></i> Details</span>
-                                                            </span>
-                                                            <img alt="" class="img-responsive" src="/images/office-2.jpg" />
-                                                        </span>
-                                                    </a>
-                                                    <span class="product-thumb-info-content">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <h4>Luxury bag</h4>
-                                                            <span class="price">
-                                                                <span class="amount">$199</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3">
-                                    <aside class="sidebar">
-
-                                        <form>
-                                            <div class="input-group input-group-lg">
-                                                <input class="form-control" placeholder="Search..." name="s" id="s" type="text" />
-                                                <span class="input-group-btn">
-                                                    <button type="submit" class="btn btn-primary btn-lg"><i
-                                                        class="fa fa-search"></i></button>
-                                                </span>
-                                            </div>
-                                        </form>
-
-                                        <hr />
-
-                                        <h5>Tags</h5>
-
-                                        <a href="#"><span class="label label-dark">Nike</span></a>
-                                        <a href="#"><span class="label label-dark">Travel</span></a>
-                                        <a href="#"><span class="label label-dark">Sport</span></a>
-                                        <a href="#"><span class="label label-dark">TV</span></a>
-                                        <a href="#"><span class="label label-dark">Books</span></a>
-                                        <a href="#"><span class="label label-dark">Tech</span></a>
-                                        <a href="#"><span class="label label-dark">Adidas</span></a>
-                                        <a href="#"><span class="label label-dark">Promo</span></a>
-                                        <a href="#"><span class="label label-dark">Reading</span></a>
-                                        <a href="#"><span class="label label-dark">Social</span></a>
-                                        <a href="#"><span class="label label-dark">Books</span></a>
-                                        <a href="#"><span class="label label-dark">Tech</span></a>
-                                        <a href="#"><span class="label label-dark">New</span></a>
-
-                                        <hr />
-
-                                        <h5>Top Rated Products</h5>
-                                        <ul class="simple-post-list">
-                                            <li>
-                                                <div class="post-image">
-                                                    <div class="img-thumbnail">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <img alt="" width="60" height="60" class="img-responsive"
-                                                                src="/images/office-2.jpg" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="post-info">
-                                                    <a href="shop-product-sidebar.html">Photo Camera</a>
-                                                    <div class="post-meta">
-                                                        $299
-                                </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="post-image">
-                                                    <div class="img-thumbnail">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <img alt="" width="60" height="60" class="img-responsive"
-                                                                src="/images/office-2.jpg" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="post-info">
-                                                    <a href="shop-product-sidebar.html">Golf Bag</a>
-                                                    <div class="post-meta">
-                                                        $72
-                                </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="post-image">
-                                                    <div class="img-thumbnail">
-                                                        <a href="shop-product-sidebar.html">
-                                                            <img alt="" width="60" height="60" class="img-responsive"
-                                                                src="/images/office-2.jpg" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="post-info">
-                                                    <a href="shop-product-sidebar.html">Workout</a>
-                                                    <div class="post-meta">
-                                                        $60
-                                </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-
-                                    </aside>
                                 </div>
                             </div>
                         </div>
+
                     )}
         </div>
     );
