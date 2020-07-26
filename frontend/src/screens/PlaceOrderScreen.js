@@ -30,101 +30,96 @@ function PlaceOrderScreen(props) {
   //   }));
   // }
   useEffect(() => {
-   
+
   }, []);
 
   return <div>
     <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
-    <div className="placeorder">
-      <div className="placeorder-info">
-        <div>
-          <h3>
-            Shipping
-          </h3>
-          <div>
-            {cart.shipping.address}, {cart.shipping.city},
-          {cart.shipping.postalCode}, {cart.shipping.country},
+    <div className="ps-content pt-80 pb-80">
+      <div className="ps-container">
+        <div className="ps-cart-listing">
+          <table className="table ps-cart__table">
+            <thead>
+              <tr>
+                <th>All Products</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              {
+                cartItems.length === 0 ?
+                  <div>
+                    Cart is empty
           </div>
-        </div>
-        <div>
-          <h3>Payment</h3>
-          <div>
-            Payment Method: {cart.payment.paymentMethod}
-          </div>
-        </div>
-        <div>
-          <ul className="cart-list-container">
-            <li>
-              <h3>
-                Shopping Cart
-          </h3>
-              <div>
-                Price
-          </div>
-            </li>
-            {
-              cartItems.length === 0 ?
-                <div>
-                  Cart is empty
-          </div>
-                :
-                cartItems.map(item =>
-                  <li>
-                    <div className="cart-image">
-                      <img src={item.image} alt="product" />
-                    </div>
-                    <div className="cart-name">
-                      <div>
-                        <Link to={"/product/" + item.product}>
+                  :
+                  cartItems.map(item =>
+
+                    <tr>
+                      <td>
+                        <a className="ps-product__preview" href="product-detail.html">
+                          <img
+                            width='50'
+                            className="mr-15"
+                            src={"/images/products/" + item.image}
+                            alt
+                          />{" "}
                           {item.name}
-                        </Link>
+                        </a>
+                      </td>
+                      <td>{item.price} Đ</td>
+                      <td>
+                        <div className="form-group--number">
+                          {item.qty}
+                        </div>
+                      </td>
+                      <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>
+                      <td>
 
-                      </div>
-                      <div>
-                        Qty: {item.qty}
-                      </div>
-                    </div>
-                    <div className="cart-price">
-                      ${item.price}
-                    </div>
-                  </li>
-                )
-            }
-          </ul>
+                      </td>
+                    </tr>
+
+                  )
+              }
+            </tbody>
+          </table><br /><br /><br />
+          <h3>Order Summary</h3>
+          <table className="table ps-cart__table">
+            <thead>
+              <tr>
+                <th>Items</th>
+                <th>Shipping</th>
+                <th>Tax</th>
+                <th>Order Total</th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{itemsPrice} VND</td>
+                <td>{shippingPrice} VND</td>
+                <td>{taxPrice} VND</td>
+                <td>{totalPrice} VND</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="ps-cart__actions">
+            <div className="ps-cart__promotion">
+              <div className="form-group">
+                <a href='/' className="ps-btn ps-btn--gray">Continue Shopping</a>
+              </div>
+            </div>
+            <div className="ps-cart__total">
+              <button className="ps-btn" disabled={cartItems.length === 0}>
+                Place Order <i className="ps-icon-next" />
+              </button>
+            </div>
+          </div>
         </div>
-
-      
       </div>
-      <div className="placeorder-action">
-        <ul>
-          <li>
-            <button className="button primary full-width"  >Place Order</button>
-          </li>
-          <li>
-            <h3>Order Summary</h3>
-          </li>
-          <li>
-            <div>Items</div>
-            <div>${itemsPrice}</div>
-          </li>
-          <li>
-            <div>Shipping</div>
-            <div>${shippingPrice}</div>
-          </li>
-          <li>
-            <div>Tax</div>
-            <div>${taxPrice}</div>
-          </li>
-          <li>
-            <div>Order Total</div>
-            <div>${totalPrice}</div>
-          </li>
-        </ul>
-
-
-
-      </div>
-
     </div>
   </div>
 
