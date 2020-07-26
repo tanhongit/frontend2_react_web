@@ -41,25 +41,25 @@ function RegisterScreen(props) {
                   <label>
                     Name <sub>*</sub>
                   </label>
-                  <input name="name" id="name" className="form-control" onChange={(e) => setName(e.target.value)} type="name" placeholder />
+                  <input required name="name" id="name" className="form-control" onChange={(e) => setName(e.target.value)} type="name" placeholder />
                 </div>
                 <div className="form-group">
                   <label>
                     Email <sub>*</sub>
                   </label>
-                  <input name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
+                  <input required name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
                 </div>
                 <div className="form-group mb-25">
                   <label>
                     Password <sub>*</sub>
                   </label>
-                  <input name="password" id="password" className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder />
+                  <input required name="password" id="password" className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder />
                 </div>
                 <div className="form-group mb-25">
                   <label>
                     Password <sub>*</sub>
                   </label>
-                  <input name="rePassword" id="rePassword" className="form-control" onChange={(e) => setRePassword(e.target.value)} type="password" placeholder />
+                  <input required name="rePassword" id="rePassword" className="form-control" onChange={(e) => setRePassword(e.target.value)} type="password" placeholder />
                 </div>
                 <div className="form-group">
                   <button type="submit" className="ps-btn">

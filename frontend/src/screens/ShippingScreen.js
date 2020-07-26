@@ -34,25 +34,25 @@ function ShippingScreen(props) {
                     <label>
                       Address
                     </label>
-                    <input name="address" id="address" className="form-control" onChange={(e) => setAddress(e.target.value)} type="text" placeholder />
+                    <input required name="address" id="address" className="form-control" onChange={(e) => setAddress(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group">
                     <label>
                       City
                     </label>
-                    <input name="city" id="city" className="form-control" onChange={(e) => setCity(e.target.value)} type="text" placeholder />
+                    <input required name="city" id="city" className="form-control" onChange={(e) => setCity(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group mb-25">
                     <label>
                       Postal Code
                     </label>
-                    <input name="postalCode" id="postalCode" className="form-control" onChange={(e) => setPostalCode(e.target.value)} type="text" placeholder />
+                    <input required name="postalCode" id="postalCode" className="form-control" onChange={(e) => setPostalCode(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group mb-25">
                     <label>
                       Country
                     </label>
-                    <input name="country" id="country" className="form-control" onChange={(e) => setCountry(e.target.value)} type="text" placeholder />
+                    <input required name="country" id="country" className="form-control" onChange={(e) => setCountry(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group">
                     <button type="submit" className="ps-btn">

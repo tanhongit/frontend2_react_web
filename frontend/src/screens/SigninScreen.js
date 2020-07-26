@@ -40,13 +40,13 @@ function SigninScreen(props) {
                     <label>
                       Email <sub>*</sub>
                     </label>
-                    <input name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
+                    <input required name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
                   </div>
                   <div className="form-group mb-25">
                     <label>
                       Password <sub>*</sub>
                     </label>
-                    <input name="password" id="password" className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder />
+                    <input required name="password" id="password" className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder />
                   </div>
                   <div className="form-group">
                     <button type="submit" className="ps-btn">
