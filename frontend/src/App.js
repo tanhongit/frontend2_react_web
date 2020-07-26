@@ -23,13 +23,11 @@ function App() {
               <div className="row">
                 <div className="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
                   <p>
-                    460 West 34th Street, 15th floor, New York - Hotline: 804-377-3580
-                    - 804-399-3580
+                    44 Vo Van Ngan, Thu Duc, HCM - Hotline: 804-377-3580
             </p>
                 </div>
                 <div className="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                   <div className="header__actions">
-                    <a href="#">Login &amp; Regiser</a>
                     <div className="btn-group ps-dropdown">
                       <a
                         className="dropdown-toggle"
@@ -37,48 +35,14 @@ function App() {
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                      >
-                        USD
-                  <i className="fa fa-angle-down" />
+                      >{userInfo ? userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" />
                       </a>
                       <ul className="dropdown-menu">
                         <li>
-                          <a href="#">
-                            <img src="images/flag/usa.svg" alt /> USD
-                    </a>
+                          {userInfo ? <Link to="/profile">Profile</Link> : <Link to="/signin">Login</Link>}
                         </li>
                         <li>
-                          <a href="#">
-                            <img src="images/flag/singapore.svg" alt /> SGD
-                    </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <img src="images/flag/japan.svg" alt /> JPN
-                    </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="btn-group ps-dropdown">
-                      <a
-                        className="dropdown-toggle"
-                        href="#"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        Language
-                  <i className="fa fa-angle-down" />
-                      </a>
-                      <ul className="dropdown-menu">
-                        <li>
-                          <a href="#">English</a>
-                        </li>
-                        <li>
-                          <a href="#">Japanese</a>
-                        </li>
-                        <li>
-                          <a href="#">Chinese</a>
+                          {userInfo ? "" : <Link to="/register">Register</Link>}
                         </li>
                       </ul>
                     </div>
@@ -299,7 +263,7 @@ function App() {
                   </button>
                 </form>
                 <div className="ps-cart">
-                  <a className="ps-cart__toggle" href="#">
+                  <a className="ps-cart__toggle" href="/cart">
                     <span>
                       <i>20</i>
                     </span>
@@ -307,7 +271,7 @@ function App() {
                   </a>
                   <div className="ps-cart__listing">
                     <div className="ps-cart__content">
-                      <div className="ps-cart-item">
+                      {/* <div className="ps-cart-item">
                         <a className="ps-cart-item__close" href="#" />
                         <div className="ps-cart-item__thumbnail">
                           <a href="product-detail.html" />
@@ -376,17 +340,18 @@ function App() {
                           </p>
                         </div>
                       </div>
+                    */}
                     </div>
-                    <div className="ps-cart__total">
+                    {/* <div className="ps-cart__total">
                       <p>
                         Number of items:<span>36</span>
                       </p>
                       <p>
                         Item Total:<span>£528.00</span>
                       </p>
-                    </div>
+                    </div> */}
                     <div className="ps-cart__footer">
-                      <a className="ps-btn" href="cart.html">
+                      <a className="ps-btn" href="/checkout">
                         Check out
                   <i className="ps-icon-arrow-left" />
                       </a>
