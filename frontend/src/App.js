@@ -14,383 +14,426 @@ function App() {
   const { userInfo } = userSignin;
   return (
     <BrowserRouter>
+
       <div>
-        {/* Humberger Begin */}
-        <div className="humberger__menu__overlay" />
-        <div className="humberger__menu__wrapper">
-          <div className="humberger__menu__logo">
-            <a href="#">
-              <img src="/img/logo.png" alt />
-            </a>
-          </div>
-          <div className="humberger__menu__cart">
-            <ul>
-              <li>
-                <a href="#">
-                  <i className="fa fa-heart" /> <span>1</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-shopping-bag" /> <span>3</span>
-                </a>
-              </li>
-            </ul>
-            <div className="header__cart__price">
-              item: <span>$150.00</span>
-            </div>
-          </div>
-          <div className="humberger__menu__widget">
-            <div className="header__top__right__language">
-              <img src="/img/language.png" alt />
-              <div>English</div>
-              <span className="arrow_carrot-down" />
-              <ul>
-                <li>
-                  <a href="#">Spanis</a>
-                </li>
-                <li>
-                  <a href="#">English</a>
-                </li>
-              </ul>
-            </div>
-            <div className="header__top__right__auth">
-              <a href="#">
-                <i className="fa fa-user" /> Login
-        </a>
-            </div>
-          </div>
-          <nav className="humberger__menu__nav mobile-menu">
-            <ul>
-              <li className="active">
-                <a href="./index.html">Home</a>
-              </li>
-              <li>
-                <a href="./shop-grid.html">Shop</a>
-              </li>
-              <li>
-                <a href="#">Pages</a>
-                <ul className="header__menu__dropdown">
-                  <li>
-                    <a href="./shop-details.html">Shop Details</a>
-                  </li>
-                  <li>
-                    <a href="./shoping-cart.html">Shoping Cart</a>
-                  </li>
-                  <li>
-                    <a href="./checkout.html">Check Out</a>
-                  </li>
-                  <li>
-                    <a href="./blog-details.html">Blog Details</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="./blog.html">Blog</a>
-              </li>
-              <li>
-                <a href="./contact.html">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <div id="mobile-menu-wrap" />
-          <div className="header__top__right__social">
-            <a href="#">
-              <i className="fa fa-facebook" />
-            </a>
-            <a href="#">
-              <i className="fa fa-twitter" />
-            </a>
-            <a href="#">
-              <i className="fa fa-linkedin" />
-            </a>
-            <a href="#">
-              <i className="fa fa-pinterest-p" />
-            </a>
-          </div>
-          <div className="humberger__menu__contact">
-            <ul>
-              <li>
-                <i className="fa fa-envelope" /> hello@colorlib.com
-        </li>
-              <li>Free Shipping for all Order of $99</li>
-            </ul>
-          </div>
-        </div>
-        {/* Humberger End */}
-        {/* Header Section Begin */}
+        <div className="header--sidebar" />
         <header className="header">
           <div className="header__top">
-            <div className="container">
+            <div className="container-fluid">
               <div className="row">
-                <div className="col-lg-6 col-md-6">
-                  <div className="header__top__left">
-                    <ul>
-                      <li>
-                        <i className="fa fa-envelope" /> hello@colorlib.com
-                </li>
-                      <li>Free Shipping for all Order of $99</li>
-                    </ul>
-                  </div>
+                <div className="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
+                  <p>
+                    460 West 34th Street, 15th floor, New York - Hotline: 804-377-3580
+                    - 804-399-3580
+            </p>
                 </div>
-                <div className="col-lg-6 col-md-6">
-                  <div className="header__top__right">
-                    <div className="header__top__right__social">
-                      <a href="#">
-                        <i className="fa fa-facebook" />
+                <div className="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
+                  <div className="header__actions">
+                    <a href="#">Login &amp; Regiser</a>
+                    <div className="btn-group ps-dropdown">
+                      <a
+                        className="dropdown-toggle"
+                        href="#"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        USD
+                  <i className="fa fa-angle-down" />
                       </a>
-                      <a href="#">
-                        <i className="fa fa-twitter" />
-                      </a>
-                      <a href="#">
-                        <i className="fa fa-linkedin" />
-                      </a>
-                      <a href="#">
-                        <i className="fa fa-pinterest-p" />
-                      </a>
-                    </div>
-                    <div className="header__top__right__language">
-                      <img src="/img/language.png" alt />
-                      <div>English</div>
-                      <span className="arrow_carrot-down" />
-                      <ul>
+                      <ul className="dropdown-menu">
                         <li>
-                          <a href="#">Spanis</a>
+                          <a href="#">
+                            <img src="images/flag/usa.svg" alt /> USD
+                    </a>
                         </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/flag/singapore.svg" alt /> SGD
+                    </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/flag/japan.svg" alt /> JPN
+                    </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="btn-group ps-dropdown">
+                      <a
+                        className="dropdown-toggle"
+                        href="#"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Language
+                  <i className="fa fa-angle-down" />
+                      </a>
+                      <ul className="dropdown-menu">
                         <li>
                           <a href="#">English</a>
                         </li>
+                        <li>
+                          <a href="#">Japanese</a>
+                        </li>
+                        <li>
+                          <a href="#">Chinese</a>
+                        </li>
                       </ul>
-                    </div>
-                    <div className="header__top__right__auth">
-                      <a href="#">
-                        <i className="fa fa-user" /> Login
-                </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3">
+          <nav className="navigation">
+            <div className="container-fluid">
+              <div className="navigation__column left">
                 <div className="header__logo">
-                  <a href="./index.html">
-                    <img src="/img/logo.png" alt />
+                  <a className="ps-logo" href="index.html">
+                    <img src="images/logo.png" alt />
                   </a>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <nav className="header__menu">
-                  <ul>
-                    <li className="active">
-                      <a href="./index.html">Home</a>
-                    </li>
-                    <li>
-                      <a href="./shop-grid.html">Shop</a>
-                    </li>
-                    <li>
-                      <a href="#">Pages</a>
-                      <ul className="header__menu__dropdown">
-                        <li>
-                          <a href="./shop-details.html">Shop Details</a>
-                        </li>
-                        <li>
-                          <a href="./shoping-cart.html">Shoping Cart</a>
-                        </li>
-                        <li>
-                          <a href="./checkout.html">Check Out</a>
-                        </li>
-                        <li>
-                          <a href="./blog-details.html">Blog Details</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="./blog.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="./contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div className="col-lg-3">
-                <div className="header__cart">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-heart" /> <span>1</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-shopping-bag" /> <span>3</span>
-                      </a>
-                    </li>
-                  </ul>
-                  <div className="header__cart__price">
-                    item: <span>$150.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="humberger__open">
-              <i className="fa fa-bars" />
-            </div>
-          </div>
-        </header>
-        {/* Header Section End */}
-        {/* Hero Section Begin */}
-        <section className="hero">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3">
-                <div className="hero__categories">
-                  <div className="hero__categories__all">
-                    <i className="fa fa-bars" />
-                    <span>All departments</span>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="#">Fresh Meat</a>
-                    </li>
-                    <li>
-                      <a href="#">Vegetables</a>
-                    </li>
-                    <li>
-                      <a href="#">Fruit &amp; Nut Gifts</a>
-                    </li>
-                    <li>
-                      <a href="#">Fresh Berries</a>
-                    </li>
-                    <li>
-                      <a href="#">Ocean Foods</a>
-                    </li>
-                    <li>
-                      <a href="#">Butter &amp; Eggs</a>
-                    </li>
-                    <li>
-                      <a href="#">Fastfood</a>
-                    </li>
-                    <li>
-                      <a href="#">Fresh Onion</a>
-                    </li>
-                    <li>
-                      <a href="#">Papayaya &amp; Crisps</a>
-                    </li>
-                    <li>
-                      <a href="#">Oatmeal</a>
-                    </li>
-                    <li>
-                      <a href="#">Fresh Bananas</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-9">
-                <div className="hero__search">
-                  <div className="hero__search__form">
-                    <form action="#">
-                      <div className="hero__search__categories">
-                        All Categories
-                  <span className="arrow_carrot-down" />
+              <div className="navigation__column center">
+                <ul className="main-menu menu">
+                  <li className="menu-item menu-item-has-children dropdown">
+                    <a href="index.html">Home</a>
+                    <ul className="sub-menu">
+                      <li className="menu-item">
+                        <a href="index.html">Homepage #1</a>
+                      </li>
+                      <li className="menu-item">
+                        <a href="#">Homepage #2</a>
+                      </li>
+                      <li className="menu-item">
+                        <a href="#">Homepage #3</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="menu-item menu-item-has-children has-mega-menu">
+                    <a href="#">Men</a>
+                    <div className="mega-menu">
+                      <div className="mega-wrap">
+                        <div className="mega-column">
+                          <ul className="mega-item mega-features">
+                            <li>
+                              <a href="product-listing.html">NEW RELEASES</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">FEATURES SHOES</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">BEST SELLERS</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">NOW TRENDING</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">SUMMER ESSENTIALS</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">
+                                MOTHER'S DAY COLLECTION
+                        </a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">FAN GEAR</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="mega-column">
+                          <h4 className="mega-heading">Shoes</h4>
+                          <ul className="mega-item">
+                            <li>
+                              <a href="product-listing.html">All Shoes</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Running</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Training &amp; Gym</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Basketball</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Football</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Soccer</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Baseball</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="mega-column">
+                          <h4 className="mega-heading">CLOTHING</h4>
+                          <ul className="mega-item">
+                            <li>
+                              <a href="product-listing.html">
+                                Compression &amp; Nike Pro
+                        </a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Tops &amp; T-Shirts</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Polos</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">
+                                Hoodies &amp; Sweatshirts
+                        </a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Jackets &amp; Vests</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Pants &amp; Tights</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Shorts</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="mega-column">
+                          <h4 className="mega-heading">Accessories</h4>
+                          <ul className="mega-item">
+                            <li>
+                              <a href="product-listing.html">
+                                Compression &amp; Nike Pro
+                        </a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Tops &amp; T-Shirts</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Polos</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">
+                                Hoodies &amp; Sweatshirts
+                        </a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Jackets &amp; Vests</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Pants &amp; Tights</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Shorts</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="mega-column">
+                          <h4 className="mega-heading">BRAND</h4>
+                          <ul className="mega-item">
+                            <li>
+                              <a href="product-listing.html">NIKE</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Adidas</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">Dior</a>
+                            </li>
+                            <li>
+                              <a href="product-listing.html">B&amp;G</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                      <input type="text" placeholder="What do yo u need?" />
-                      <button type="submit" className="site-btn">
-                        SEARCH
-                </button>
-                    </form>
-                  </div>
-                  <div className="hero__search__phone">
-                    <div className="hero__search__phone__icon">
-                      <i className="fa fa-phone" />
                     </div>
-                    <div className="hero__search__phone__text">
-                      <h5>+65 11.188.888</h5>
-                      <span>support 24/7 time</span>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#">Women</a>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#">Kids</a>
+                  </li>
+                  <li className="menu-item menu-item-has-children dropdown">
+                    <a href="#">News</a>
+                    <ul className="sub-menu">
+                      <li className="menu-item menu-item-has-children dropdown">
+                        <a href="blog-grid.html">Blog-grid</a>
+                        <ul className="sub-menu">
+                          <li className="menu-item">
+                            <a href="blog-grid.html">Blog Grid 1</a>
+                          </li>
+                          <li className="menu-item">
+                            <a href="blog-grid-2.html">Blog Grid 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="menu-item">
+                        <a href="blog-list.html">Blog List</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="menu-item menu-item-has-children dropdown">
+                    <a href="#">Contact</a>
+                    <ul className="sub-menu">
+                      <li className="menu-item">
+                        <a href="contact-us.html">Contact Us #1</a>
+                      </li>
+                      <li className="menu-item">
+                        <a href="contact-us.html">Contact Us #2</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div className="navigation__column right">
+                <form className="ps-search--header" action="do_action" method="post">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Search Product…"
+                  />
+                  <button>
+                    <i className="ps-icon-search" />
+                  </button>
+                </form>
+                <div className="ps-cart">
+                  <a className="ps-cart__toggle" href="#">
+                    <span>
+                      <i>20</i>
+                    </span>
+                    <i className="ps-icon-shopping-cart" />
+                  </a>
+                  <div className="ps-cart__listing">
+                    <div className="ps-cart__content">
+                      <div className="ps-cart-item">
+                        <a className="ps-cart-item__close" href="#" />
+                        <div className="ps-cart-item__thumbnail">
+                          <a href="product-detail.html" />
+                          <img src="images/cart-preview/1.jpg" alt />
+                        </div>
+                        <div className="ps-cart-item__content">
+                          <a
+                            className="ps-cart-item__title"
+                            href="product-detail.html"
+                          >
+                            Amazin’ Glazin’
+                    </a>
+                          <p>
+                            <span>
+                              Quantity:<i>12</i>
+                            </span>
+                            <span>
+                              Total:<i>£176</i>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="ps-cart-item">
+                        <a className="ps-cart-item__close" href="#" />
+                        <div className="ps-cart-item__thumbnail">
+                          <a href="product-detail.html" />
+                          <img src="images/cart-preview/2.jpg" alt />
+                        </div>
+                        <div className="ps-cart-item__content">
+                          <a
+                            className="ps-cart-item__title"
+                            href="product-detail.html"
+                          >
+                            The Crusty Croissant
+                    </a>
+                          <p>
+                            <span>
+                              Quantity:<i>12</i>
+                            </span>
+                            <span>
+                              Total:<i>£176</i>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="ps-cart-item">
+                        <a className="ps-cart-item__close" href="#" />
+                        <div className="ps-cart-item__thumbnail">
+                          <a href="product-detail.html" />
+                          <img src="images/cart-preview/3.jpg" alt />
+                        </div>
+                        <div className="ps-cart-item__content">
+                          <a
+                            className="ps-cart-item__title"
+                            href="product-detail.html"
+                          >
+                            The Rolling Pin
+                    </a>
+                          <p>
+                            <span>
+                              Quantity:<i>12</i>
+                            </span>
+                            <span>
+                              Total:<i>£176</i>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="ps-cart__total">
+                      <p>
+                        Number of items:<span>36</span>
+                      </p>
+                      <p>
+                        Item Total:<span>£528.00</span>
+                      </p>
+                    </div>
+                    <div className="ps-cart__footer">
+                      <a className="ps-btn" href="cart.html">
+                        Check out
+                  <i className="ps-icon-arrow-left" />
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div className="hero__item set-bg" data-setbg="/img/hero/banner.jpg">
-                  <div className="hero__text">
-                    <span>FRUIT FRESH</span>
-                    <h2>
-                      Vegetable <br />
-                100% Organic
-              </h2>
-                    <p>Free Pickup and Delivery Available</p>
-                    <a href="#" className="primary-btn">
-                      SHOP NOW
-              </a>
-                  </div>
+                <div className="menu-toggle">
+                  <span />
                 </div>
               </div>
             </div>
+          </nav>
+        </header>
+        <div className="header-services">
+          <div
+            className="ps-services owl-slider"
+            data-owl-auto="true"
+            data-owl-loop="true"
+            data-owl-speed={7000}
+            data-owl-gap={0}
+            data-owl-nav="true"
+            data-owl-dots="false"
+            data-owl-item={1}
+            data-owl-item-xs={1}
+            data-owl-item-sm={1}
+            data-owl-item-md={1}
+            data-owl-item-lg={1}
+            data-owl-duration={1000}
+            data-owl-mousedrag="on"
+          >
+            <p className="ps-service">
+              <i className="ps-icon-delivery" />
+              <strong>Free delivery</strong>: Get free standard delivery on every
+        order with Sky Store
+      </p>
+            <p className="ps-service">
+              <i className="ps-icon-delivery" />
+              <strong>Free delivery</strong>: Get free standard delivery on every
+        order with Sky Store
+      </p>
+            <p className="ps-service">
+              <i className="ps-icon-delivery" />
+              <strong>Free delivery</strong>: Get free standard delivery on every
+        order with Sky Store
+      </p>
           </div>
-        </section>
-        {/* Hero Section End */}
-        {/* Categories Section Begin */}
-        <section className="categories">
-          <div className="container">
-            <div className="row">
-              <div className="categories__slider owl-carousel">
-                <div className="col-lg-3">
-                  <div
-                    className="categories__item set-bg"
-                    data-setbg="/img/categories/cat-1.jpg"
-                  >
-                    <h5>
-                      <a href="#">Fresh Fruit</a>
-                    </h5>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div
-                    className="categories__item set-bg"
-                    data-setbg="/img/categories/cat-2.jpg"
-                  >
-                    <h5>
-                      <a href="#">Dried Fruit</a>
-                    </h5>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div
-                    className="categories__item set-bg"
-                    data-setbg="/img/categories/cat-3.jpg"
-                  >
-                    <h5>
-                      <a href="#">Vegetables</a>
-                    </h5>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div
-                    className="categories__item set-bg"
-                    data-setbg="/img/categories/cat-4.jpg"
-                  >
-                    <h5>
-                      <a href="#">drink fruits</a>
-                    </h5>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div
-                    className="categories__item set-bg"
-                    data-setbg="/img/categories/cat-5.jpg"
-                  >
-                    <h5>
-                      <a href="#">drink fruits</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Categories Section End */}
+        </div>
       </div>
 
 
@@ -401,121 +444,189 @@ function App() {
       <Route path='/register' component={RegisterScreen} />
       <Route path='/products' component={ProductsScreen} />
 
-      {
-        /* Footer Section Begin */
-      }
-      <footer className="footer spad">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer__about">
-                <div className="footer__about__logo">
-                  <a href="./index.html">
-                    <img src="/img/logo.png" alt />
-                  </a>
-                </div>
-                <ul>
-                  <li>Address: 60-49 Road 11378 New York</li>
-                  <li>Phone: +65 11.188.888</li>
-                  <li>Email: hello@colorlib.com</li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-              <div className="footer__widget">
-                <h6>Useful Links</h6>
-                <ul>
-                  <li>
-                    <a href="#">About Us</a>
-                  </li>
-                  <li>
-                    <a href="#">About Our Shop</a>
-                  </li>
-                  <li>
-                    <a href="#">Secure Shopping</a>
-                  </li>
-                  <li>
-                    <a href="#">Delivery infomation</a>
-                  </li>
-                  <li>
-                    <a href="#">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="#">Our Sitemap</a>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a href="#">Who We Are</a>
-                  </li>
-                  <li>
-                    <a href="#">Our Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Projects</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                  <li>
-                    <a href="#">Innovation</a>
-                  </li>
-                  <li>
-                    <a href="#">Testimonials</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-12">
-              <div className="footer__widget">
-                <h6>Join Our Newsletter Now</h6>
-                <p>Get E-mail updates about our latest shop and special offers.</p>
-                <form action="#">
-                  <input type="text" placeholder="Enter your mail" />
-                  <button type="submit" className="site-btn">
-                    Subscribe
-            </button>
-                </form>
-                <div className="footer__widget__social">
-                  <a href="#">
-                    <i className="fa fa-facebook" />
-                  </a>
-                  <a href="#">
-                    <i className="fa fa-instagram" />
-                  </a>
-                  <a href="#">
-                    <i className="fa fa-twitter" />
-                  </a>
-                  <a href="#">
-                    <i className="fa fa-pinterest" />
-                  </a>
-                </div>
-              </div>
-            </div>
+      <div>
+  <div className="ps-subscribe">
+    <div className="ps-container">
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+          <h3>
+            <i className="fa fa-envelope" />
+            Sign up to Newsletter
+          </h3>
+        </div>
+        <div className="col-lg-5 col-md-7 col-sm-12 col-xs-12 ">
+          <form className="ps-subscribe__form" action="do_action" method="post">
+            <input className="form-control" type="text" placeholder />
+            <button>Sign up now</button>
+          </form>
+        </div>
+        <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12 ">
+          <p>
+            ...and receive <span>$20</span> coupon for first shopping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ps-footer bg--cover"
+    data-background="images/background/parallax.jpg"
+  >
+    <div className="ps-footer__content">
+      <div className="ps-container">
+        <div className="row">
+          <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+            <aside className="ps-widget--footer ps-widget--info">
+              <header>
+                <a className="ps-logo" href="index.html">
+                  <img src="images/logo-white.png" alt />
+                </a>
+                <h3 className="ps-widget__title">Address Office 1</h3>
+              </header>
+              <footer>
+                <p>
+                  <strong>460 West 34th Street, 15th floor, New York</strong>
+                </p>
+                <p>
+                  Email:{" "}
+                  <a href="mailto:support@store.com">support@store.com</a>
+                </p>
+                <p>Phone: +323 32434 5334</p>
+                <p>Fax: ++323 32434 5333</p>
+              </footer>
+            </aside>
           </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="footer__copyright">
-                <div className="footer__copyright__text">
-                  <p>
-                    {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-              Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
-                    <a href="https://colorlib.com" target="_blank">
-                      Colorlib
-              </a>
-                    {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                  </p>
-                </div>
-                <div className="footer__copyright__payment">
-                  <img src="/img/payment-item.png" alt />
-                </div>
-              </div>
-            </div>
+          <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+            <aside className="ps-widget--footer ps-widget--info second">
+              <header>
+                <h3 className="ps-widget__title">Address Office 2</h3>
+              </header>
+              <footer>
+                <p>
+                  <strong>PO Box 16122 Collins Victoria 3000 Australia</strong>
+                </p>
+                <p>
+                  Email:{" "}
+                  <a href="mailto:support@store.com">support@store.com</a>
+                </p>
+                <p>Phone: +323 32434 5334</p>
+                <p>Fax: ++323 32434 5333</p>
+              </footer>
+            </aside>
+          </div>
+          <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
+            <aside className="ps-widget--footer ps-widget--link">
+              <header>
+                <h3 className="ps-widget__title">Find Our store</h3>
+              </header>
+              <footer>
+                <ul className="ps-list--link">
+                  <li>
+                    <a href="#">Coupon Code</a>
+                  </li>
+                  <li>
+                    <a href="#">SignUp For Email</a>
+                  </li>
+                  <li>
+                    <a href="#">Site Feedback</a>
+                  </li>
+                  <li>
+                    <a href="#">Careers</a>
+                  </li>
+                </ul>
+              </footer>
+            </aside>
+          </div>
+          <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
+            <aside className="ps-widget--footer ps-widget--link">
+              <header>
+                <h3 className="ps-widget__title">Get Help</h3>
+              </header>
+              <footer>
+                <ul className="ps-list--line">
+                  <li>
+                    <a href="#">Order Status</a>
+                  </li>
+                  <li>
+                    <a href="#">Shipping and Delivery</a>
+                  </li>
+                  <li>
+                    <a href="#">Returns</a>
+                  </li>
+                  <li>
+                    <a href="#">Payment Options</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </footer>
+            </aside>
+          </div>
+          <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
+            <aside className="ps-widget--footer ps-widget--link">
+              <header>
+                <h3 className="ps-widget__title">Products</h3>
+              </header>
+              <footer>
+                <ul className="ps-list--line">
+                  <li>
+                    <a href="#">Shoes</a>
+                  </li>
+                  <li>
+                    <a href="#">Clothing</a>
+                  </li>
+                  <li>
+                    <a href="#">Accessries</a>
+                  </li>
+                  <li>
+                    <a href="#">Football Boots</a>
+                  </li>
+                </ul>
+              </footer>
+            </aside>
           </div>
         </div>
-      </footer>
-
+      </div>
+    </div>
+    <div className="ps-footer__copyright">
+      <div className="ps-container">
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+            <p>
+              © <a href="#">SKYTHEMES</a>, Inc. All rights Resevered. Design by{" "}
+              <a href="#"> Alena Studio</a>
+            </p>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+            <ul className="ps-social">
+              <li>
+                <a href="#">
+                  <i className="fa fa-facebook" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-google-plus" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-instagram" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>;
 
     </BrowserRouter>
   );
