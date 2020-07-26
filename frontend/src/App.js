@@ -11,6 +11,7 @@ import ProductsScreen from './screens/ProductsScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import { logout } from './actions/userActions';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './actions/cartAction';
@@ -365,6 +366,7 @@ function App() {
       <Route path="/payment" component={PaymentScreen} />
       <Route path="/placeorder" component={PlaceOrderScreen} />
       <Route path="/category/:id" component={HomeScreen} />
+      <Route path="/profile" component={ProfileScreen} />
       <div>
         <div className="ps-subscribe">
           <div className="ps-container">
