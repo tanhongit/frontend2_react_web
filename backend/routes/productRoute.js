@@ -9,6 +9,27 @@ router.get('/', async (req, res) => {
   res.send(products);
 });
 
+router.put('/:id', async (req, res) => {
+  const productId = req.params.id;
+  const product = await Product.findById(productId);
+  if (product) {
+    product.product_name = req.body.name;
+    product.product_price = req.body.price;
+    product.image = req.body.image;
+    product.brand = req.body.brand;
+    product.category_id = req.body.category;
+    product.countInStock = req.body.countInStock;
+    product.product_description = req.body.description;
+    const updatedProduct = await product.save();
+    if (updatedProduct) {
+      return res
+        .status(200)
+        .send({ message: 'Product Updated', data: updatedProduct });
+    }
+  }
+  return res.status(500).send({ message: ' Error in Updating Product.' });
+});
+
 router.post('/', async (req, res) => {
   const product = new Product({
     product_name: req.body.name,
