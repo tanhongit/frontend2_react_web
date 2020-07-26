@@ -364,6 +364,7 @@ function App() {
       <Route path="/shipping" component={ShippingScreen} />
       <Route path="/payment" component={PaymentScreen} />
       <Route path="/placeorder" component={PlaceOrderScreen} />
+      <Route path="/category/:id" component={HomeScreen} />
       <div>
         <div className="ps-subscribe">
           <div className="ps-container">

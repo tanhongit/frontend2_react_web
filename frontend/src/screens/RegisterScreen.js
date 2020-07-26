@@ -37,6 +37,8 @@ function RegisterScreen(props) {
                 - Create Account
         </h2>
               <form className="ps-contact__form" onSubmit={submitHandler} method="post">
+                {loading && <div>Loading...</div>}
+                {error && <div>{error}</div>}
                 <div className="form-group">
                   <label>
                     Name <sub>*</sub>
