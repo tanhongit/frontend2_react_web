@@ -90,7 +90,7 @@ function HomeScreen() {
                           <p className="ps-shoe__categories">
                             Cate: <a href="#">{product.category_id}</a>, Brand: <a href="#">{product.brand}</a>.
                         </p>
-                          <span style={{ paddingTop: 15 }} className="ps-shoe__price">{product.product_price} Đ</span>
+                          <span style={{ paddingTop: 15 }} className="ps-shoe__price"> <Link to={'/product/' + product._id}>{product.product_price} Đ</Link></span>
                         </div>
                       </div>
                     </div>

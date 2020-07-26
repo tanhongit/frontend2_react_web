@@ -85,9 +85,6 @@ function ProductScreen(props) {
                           </p>
                         </div>
                         <div className="ps-product__block ps-product__size">
-                          <h4>
-                            CHOOSE SIZE<a href="#">Size chart</a>
-                          </h4>
                           Qty:{' '}
                           <select className="ps-select selectpicker"
                             value={qty}

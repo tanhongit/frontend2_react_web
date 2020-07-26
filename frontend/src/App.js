@@ -13,6 +13,7 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import { logout } from './actions/userActions';
 import { useDispatch } from 'react-redux';
+import { removeFromCart } from './actions/cartAction';
 
 function App() {
   const userSignin = useSelector(state => state.userSignin);
@@ -21,6 +22,12 @@ function App() {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
+  }
+
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
+  const removeFromCartHandler = (productId) => {
+    dispatch(removeFromCart(productId));
   }
   return (
     <BrowserRouter>
@@ -266,85 +273,36 @@ function App() {
                   </a>
                   <div className="ps-cart__listing">
                     <div className="ps-cart__content">
-                      {/* <div className="ps-cart-item">
-                        <a className="ps-cart-item__close" href="#" />
-                        <div className="ps-cart-item__thumbnail">
-                          <a href="product-detail.html" />
-                          <img src="images/cart-preview/1.jpg" alt />
-                        </div>
-                        <div className="ps-cart-item__content">
-                          <a
-                            className="ps-cart-item__title"
-                            href="product-detail.html"
-                          >
-                            Amazin’ Glazin’
+                      {
+                        cartItems.length === 0 ?
+                          <div>Cart is empty</div>
+                          :
+                          cartItems.map(item =>
+                          <div className="ps-cart-item">
+                            <a className="ps-cart-item__close" onClick={() => removeFromCartHandler(item.product)}/>
+                            <div className="ps-cart-item__thumbnail">
+                              <a href={"/product/" + item.product} />
+                              <img src={"/images/products/" + item.image} alt />
+                            </div>
+                            <div className="ps-cart-item__content">
+                              <a
+                                className="ps-cart-item__title"
+                                href={"/product/" + item.product}
+                              >
+                               {item.name}
                     </a>
-                          <p>
-                            <span>
-                              Quantity:<i>12</i>
-                            </span>
-                            <span>
-                              Total:<i>£176</i>
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="ps-cart-item">
-                        <a className="ps-cart-item__close" href="#" />
-                        <div className="ps-cart-item__thumbnail">
-                          <a href="product-detail.html" />
-                          <img src="images/cart-preview/2.jpg" alt />
-                        </div>
-                        <div className="ps-cart-item__content">
-                          <a
-                            className="ps-cart-item__title"
-                            href="product-detail.html"
-                          >
-                            The Crusty Croissant
-                    </a>
-                          <p>
-                            <span>
-                              Quantity:<i>12</i>
-                            </span>
-                            <span>
-                              Total:<i>£176</i>
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="ps-cart-item">
-                        <a className="ps-cart-item__close" href="#" />
-                        <div className="ps-cart-item__thumbnail">
-                          <a href="product-detail.html" />
-                          <img src="images/cart-preview/3.jpg" alt />
-                        </div>
-                        <div className="ps-cart-item__content">
-                          <a
-                            className="ps-cart-item__title"
-                            href="product-detail.html"
-                          >
-                            The Rolling Pin
-                    </a>
-                          <p>
-                            <span>
-                              Quantity:<i>12</i>
-                            </span>
-                            <span>
-                              Total:<i>£176</i>
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    */}
+                              <p>
+                                <span>
+                                  Qty:<i>{item.qty}</i>
+                                </span>
+                                <span>
+                                  Total:<i>{item.qty * item.price}</i>
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          )}
                     </div>
-                    {/* <div className="ps-cart__total">
-                      <p>
-                        Number of items:<span>36</span>
-                      </p>
-                      <p>
-                        Item Total:<span>£528.00</span>
-                      </p>
-                    </div> */}
                     <div className="ps-cart__footer">
                       <a className="ps-btn" href={userInfo ? '/shipping' : '/signin'}>
                         Check out
@@ -426,7 +384,7 @@ function App() {
                 <p>
                   ...and receive <span>$20</span> coupon for first shopping.
           </p>
-              </div>  
+              </div>
             </div>
           </div>
         </div>
