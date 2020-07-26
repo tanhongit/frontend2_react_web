@@ -220,21 +220,21 @@ function App() {
                     </div>
                   </li>
                   <li className="menu-item menu-item-has-children dropdown">
-                    <a href="#">News <i className="fa fa-angle-down" /></a>
+                    <a href="#">Category <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item menu-item-has-children dropdown">
-                        <a href="blog-grid.html">Blog-grid</a>
+                        <Link to="/category/Trà%20Sữa">Tra Sua</Link>
                         <ul className="sub-menu">
                           <li className="menu-item">
-                            <a href="blog-grid.html">Blog Grid 1</a>
+                          <Link to="/category/Nước%20Uống">Nuoc Uong</Link>
                           </li>
                           <li className="menu-item">
-                            <a href="blog-grid-2.html">Blog Grid 2</a>
+                          <Link to="/category/Ăn%20Vặt">Ăn Vặt</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item">
-                        <a href="blog-list.html">Blog List</a>
+                      <Link to="/category/Bánh%20Xèo">Bánh Xèo</Link>
                       </li>
                     </ul>
                   </li>
@@ -246,6 +246,9 @@ function App() {
                       </li>
                       <li className="menu-item">
                         {userInfo ? "" : <Link to="/register">Register</Link>}
+                      </li>
+                      <li className="menu-item">
+                        {userInfo ? <Link to="/products">Manager Products</Link> : ""}
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
