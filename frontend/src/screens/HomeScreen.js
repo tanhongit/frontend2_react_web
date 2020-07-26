@@ -71,7 +71,7 @@ function HomeScreen(props) {
                   <option value={3}>Price (High to Low)</option>
                 </select>
               </div>
-              <div className="ps-pagination">
+              {/* <div className="ps-pagination">
                 <ul className="pagination">
                   <li>
                     <a href="#">
@@ -96,7 +96,7 @@ function HomeScreen(props) {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
 
@@ -142,7 +142,7 @@ function HomeScreen(props) {
                   <option value={3}>Price (High to Low)</option>
                 </select>
               </div>
-              <div className="ps-pagination">
+              {/* <div className="ps-pagination">
                 <ul className="pagination">
                   <li>
                     <a href="#">
@@ -167,7 +167,7 @@ function HomeScreen(props) {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="ps-sidebar" data-mh="product-listing">

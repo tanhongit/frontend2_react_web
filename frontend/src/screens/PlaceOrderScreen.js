@@ -72,7 +72,7 @@ function PlaceOrderScreen(props) {
                       <td>{item.price} Đ</td>
                       <td>
                         <div className="form-group--number">
-                          {item.qty}
+                          {item.qty <= item.countInStock ? item.qty : 1}
                         </div>
                       </td>
                       <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>

@@ -294,10 +294,10 @@ function App() {
                                 </a>
                                 <p>
                                   <span>
-                                    Qty:<i>{item.qty}</i>
+                                    Qty:<i>{item.qty <= item.countInStock ? item.qty : 1}</i>
                                   </span>
                                   <span>
-                                    Total:<i>{item.qty * item.price}</i>
+                                    Total:<i>{item.qty <= item.countInStock ? item.qty * item.price : item.price}</i>
                                   </span>
                                 </p>
                               </div>
