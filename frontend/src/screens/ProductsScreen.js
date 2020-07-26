@@ -4,7 +4,7 @@ import axios from 'axios';
 import {
   saveProduct,
   listProducts,
-  deleteProdcut,
+  deleteProduct,
 } from '../actions/productActions';
 
 function ProductsScreen(props) {
@@ -21,19 +21,19 @@ function ProductsScreen(props) {
   const productList = useSelector((state) => state.productList);
   const { loading, products, error } = productList;
 
-  const productSave = useSelector((state) => state.productSave);
+  const productSave = useSelector((state) => state.productSave); 
   const {
     loading: loadingSave,
-    success: successSave,
+    success: successSave,               
     error: errorSave,
-  } = productSave;
+  } = productSave;         
 
-  // const productDelete = useSelector((state) => state.productDelete);
-  // const {
-  //   loading: loadingDelete,
-  //   success: successDelete,
-  //   error: errorDelete,
-  // } = productDelete;
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    success: successDelete,
+    error: errorDelete,
+  } = productDelete;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function ProductsScreen(props) {
     return () => {
       //
     };
-  }, []);
+  }, [successSave, successDelete]);
 
   const openModal = (product) => {
     setModalVisible(true);
@@ -62,29 +62,30 @@ function ProductsScreen(props) {
     dispatch(saveProduct({  _id: id,name, price, image, brand, category, countInStock, description }));
   }
 
-  // const deleteHandler = (product) => {
-  //   dispatch(deleteProdcut(product._id));
-  // };
-  // const uploadFileHandler = (e) => {
-  //   const file = e.target.files[0];
-  //   const bodyFormData = new FormData();
-  //   bodyFormData.append('image', file);
-  //   setUploading(true);
-  //   axios
-  //     .post('/api/uploads/s3', bodyFormData, {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     })
-  //     .then((response) => {
-  //       setImage(response.data);
-  //       setUploading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setUploading(false);
-  //     });
-  // };
+  const deleteHandler = (product) => {
+    
+    dispatch(deleteProduct(product._id));
+  };
+  const uploadFileHandler = (e) => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append('image', file);
+    setUploading(true);
+    axios
+      .post('/api/uploads/s3', bodyFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then((response) => {
+        setImage(response.data);
+        setUploading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setUploading(false);
+      });
+  };
   return (
     <div className="content content-margined">
       <div className="product-header">
@@ -217,14 +218,14 @@ function ProductsScreen(props) {
                 <td>{product.category_id}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <button
+                  <button 
                     className="button" onClick={() => openModal(product)}
                   >
                     Edit
                   </button>{' '}
                   <button
-                    className="button"
-                  //  onClick={() => deleteHandler(product)}
+                    className="button" 
+                   onClick={() => deleteHandler(product)}
                   >
                     Delete
                   </button>
