@@ -2546,7 +2546,7 @@
     .ps-shoe:hover .ps-shoe__thumbnail {
       z-index: 10000; }
     .ps-shoe:hover .ps-shoe__content {
-      padding-top: 100px;
+      padding-top: 80px;
       bottom: -90px;
       max-height: none; }
     .ps-shoe:hover .ps-shoe__variants {
