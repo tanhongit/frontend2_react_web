@@ -57,55 +57,40 @@ function App() {
             <div className="container-fluid">
               <div className="navigation__column left">
                 <div className="header__logo">
-                  <a className="ps-logo" href="index.html">
-                    <img src="images/logo.png" alt />
-                  </a>
+                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt /></Link>
                 </div>
               </div>
               <div className="navigation__column center">
                 <ul className="main-menu menu">
-                  <li className="menu-item menu-item-has-children dropdown">
-                    <a href="index.html">Home</a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="index.html">Homepage #1</a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="#">Homepage #2</a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="#">Homepage #3</a>
-                      </li>
-                    </ul>
-                  </li>
+
                   <li className="menu-item menu-item-has-children has-mega-menu">
-                    <a href="#">Men</a>
+                    <a href="/">Home <i className="fa fa-angle-down" /></a>
                     <div className="mega-menu">
                       <div className="mega-wrap">
                         <div className="mega-column">
                           <ul className="mega-item mega-features">
                             <li>
-                              <a href="product-listing.html">NEW RELEASES</a>
+                              <a href="#">NEW RELEASES</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">FEATURES SHOES</a>
+                              <a href="#">FEATURES SHOES</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">BEST SELLERS</a>
+                              <a href="#">BEST SELLERS</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">NOW TRENDING</a>
+                              <a href="#">NOW TRENDING</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">SUMMER ESSENTIALS</a>
+                              <a href="#">SUMMER ESSENTIALS</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">
+                              <a href="#">
                                 MOTHER'S DAY COLLECTION
                         </a>
                             </li>
                             <li>
-                              <a href="product-listing.html">FAN GEAR</a>
+                              <a href="#">FAN GEAR</a>
                             </li>
                           </ul>
                         </div>
@@ -113,25 +98,25 @@ function App() {
                           <h4 className="mega-heading">Shoes</h4>
                           <ul className="mega-item">
                             <li>
-                              <a href="product-listing.html">All Shoes</a>
+                              <a href="#">All Shoes</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Running</a>
+                              <a href="#">Running</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Training &amp; Gym</a>
+                              <a href="#">Training &amp; Gym</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Basketball</a>
+                              <a href="#">Basketball</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Football</a>
+                              <a href="#">Football</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Soccer</a>
+                              <a href="#">Soccer</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Baseball</a>
+                              <a href="#">Baseball</a>
                             </li>
                           </ul>
                         </div>
@@ -139,29 +124,29 @@ function App() {
                           <h4 className="mega-heading">CLOTHING</h4>
                           <ul className="mega-item">
                             <li>
-                              <a href="product-listing.html">
+                              <a href="#">
                                 Compression &amp; Nike Pro
                         </a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Tops &amp; T-Shirts</a>
+                              <a href="#">Tops &amp; T-Shirts</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Polos</a>
+                              <a href="#">Polos</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">
+                              <a href="#">
                                 Hoodies &amp; Sweatshirts
                         </a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Jackets &amp; Vests</a>
+                              <a href="#">Jackets &amp; Vests</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Pants &amp; Tights</a>
+                              <a href="#">Pants &amp; Tights</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Shorts</a>
+                              <a href="#">Shorts</a>
                             </li>
                           </ul>
                         </div>
@@ -169,29 +154,29 @@ function App() {
                           <h4 className="mega-heading">Accessories</h4>
                           <ul className="mega-item">
                             <li>
-                              <a href="product-listing.html">
+                              <a href="#">
                                 Compression &amp; Nike Pro
                         </a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Tops &amp; T-Shirts</a>
+                              <a href="#">Tops &amp; T-Shirts</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Polos</a>
+                              <a href="#">Polos</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">
+                              <a href="#">
                                 Hoodies &amp; Sweatshirts
                         </a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Jackets &amp; Vests</a>
+                              <a href="#">Jackets &amp; Vests</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Pants &amp; Tights</a>
+                              <a href="#">Pants &amp; Tights</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Shorts</a>
+                              <a href="#">Shorts</a>
                             </li>
                           </ul>
                         </div>
@@ -199,30 +184,24 @@ function App() {
                           <h4 className="mega-heading">BRAND</h4>
                           <ul className="mega-item">
                             <li>
-                              <a href="product-listing.html">NIKE</a>
+                              <a href="#">NIKE</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Adidas</a>
+                              <a href="#">Adidas</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">Dior</a>
+                              <a href="#">Dior</a>
                             </li>
                             <li>
-                              <a href="product-listing.html">B&amp;G</a>
+                              <a href="#">B&amp;G</a>
                             </li>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li className="menu-item">
-                    <a href="#">Women</a>
-                  </li>
-                  <li className="menu-item">
-                    <a href="#">Kids</a>
-                  </li>
                   <li className="menu-item menu-item-has-children dropdown">
-                    <a href="#">News</a>
+                    <a href="#">News <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item menu-item-has-children dropdown">
                         <a href="blog-grid.html">Blog-grid</a>
@@ -241,13 +220,13 @@ function App() {
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children dropdown">
-                    <a href="#">Contact</a>
+                    <a href="/profile">{userInfo ? userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item">
-                        <a href="contact-us.html">Contact Us #1</a>
+                        {userInfo ? <Link to="/profile">Profile</Link> : <Link to="/signin">Login</Link>}
                       </li>
                       <li className="menu-item">
-                        <a href="contact-us.html">Contact Us #2</a>
+                        {userInfo ? "" : <Link to="/register">Register</Link>}
                       </li>
                     </ul>
                   </li>
@@ -353,7 +332,7 @@ function App() {
                       </p>
                     </div> */}
                     <div className="ps-cart__footer">
-                      <a className="ps-btn" href="/checkout">
+                      <a className="ps-btn" href={userInfo ? '/shipping' : '/signin'}>
                         Check out
                   <i className="ps-icon-arrow-left" />
                       </a>
@@ -387,17 +366,17 @@ function App() {
             <p className="ps-service">
               <i className="ps-icon-delivery" />
               <strong>Free delivery</strong>: Get free standard delivery on every
-        order with Sky Store
+        order ChiKoi Shop
       </p>
             <p className="ps-service">
               <i className="ps-icon-delivery" />
               <strong>Free delivery</strong>: Get free standard delivery on every
-        order with Sky Store
+        order with ChiKoi Shop
       </p>
             <p className="ps-service">
               <i className="ps-icon-delivery" />
               <strong>Free delivery</strong>: Get free standard delivery on every
-        order with Sky Store
+        order with ChiKoi Shop
       </p>
           </div>
         </div>
@@ -439,7 +418,7 @@ function App() {
         </div>
         <div
           className="ps-footer bg--cover"
-          data-background="images/background/parallax.jpg"
+          data-background="images/image1-1-homepage-1.jpg"
         >
           <div className="ps-footer__content">
             <div className="ps-container">
@@ -447,21 +426,18 @@ function App() {
                 <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                   <aside className="ps-widget--footer ps-widget--info">
                     <header>
-                      <a className="ps-logo" href="index.html">
-                        <img src="images/logo-white.png" alt />
-                      </a>
+                      <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt /></Link>
                       <h3 className="ps-widget__title">Address Office 1</h3>
                     </header>
                     <footer>
                       <p>
-                        <strong>460 West 34th Street, 15th floor, New York</strong>
+                        <strong>44 Vo Van Ngan, Thu Duc, HCM</strong>
                       </p>
                       <p>
                         Email:{" "}
                         <a href="mailto:support@store.com">support@store.com</a>
                       </p>
-                      <p>Phone: +323 32434 5334</p>
-                      <p>Fax: ++323 32434 5333</p>
+                      <p>Phone: +84123456789</p>
                     </footer>
                   </aside>
                 </div>
@@ -472,14 +448,13 @@ function App() {
                     </header>
                     <footer>
                       <p>
-                        <strong>PO Box 16122 Collins Victoria 3000 Australia</strong>
+                        <strong>44 Vo Van Ngan, Duc Thu, AAA</strong>
                       </p>
                       <p>
                         Email:{" "}
                         <a href="mailto:support@store.com">support@store.com</a>
                       </p>
-                      <p>Phone: +323 32434 5334</p>
-                      <p>Fax: ++323 32434 5333</p>
+                      <p>Phone: +84876543210</p>
                     </footer>
                   </aside>
                 </div>
@@ -563,8 +538,7 @@ function App() {
               <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                   <p>
-                    © <a href="#">SKYTHEMES</a>, Inc. All rights Resevered. Design by{" "}
-                    <a href="#"> Alena Studio</a>
+                    © All rights Resevered
                   </p>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
@@ -595,7 +569,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>;
+      </div>
 
     </BrowserRouter>
   );
