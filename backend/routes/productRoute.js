@@ -4,8 +4,29 @@ import { isAuth, isAdmin } from '../util';
 
 const router = express.Router();
 
+// router.get('/', async (req, res) => {
+//   const products = await Product.find({});
+//   res.send(products);
+// });
+
 router.get('/', async (req, res) => {
-  const products = await Product.find({});
+  const category_id = req.query.category_id ? { category_id: req.query.category_id } : {};
+  const searchKeyword = req.query.searchKeyword
+    ? {
+        name: {
+          $regex: req.query.searchKeyword,
+          $options: 'i',
+        },
+      }
+    : {};
+  const sortOrder = req.query.sortOrder
+    ? req.query.sortOrder === 'lowest'
+      ? { price: 1 }
+      : { price: -1 }
+    : { _id: -1 };
+  const products = await Product.find({ ...category_id, ...searchKeyword }).sort(
+    sortOrder
+  );
   res.send(products);
 });
 
