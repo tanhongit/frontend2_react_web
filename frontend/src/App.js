@@ -11,9 +11,17 @@ import ProductsScreen from './screens/ProductsScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import { logout } from './actions/userActions';
+import { useDispatch } from 'react-redux';
+
 function App() {
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
+
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  }
   return (
     <BrowserRouter>
 
@@ -45,6 +53,9 @@ function App() {
                         </li>
                         <li>
                           {userInfo ? "" : <Link to="/register">Register</Link>}
+                        </li>
+                        <li className="menu-item">
+                          {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
                         </li>
                       </ul>
                     </div>
@@ -227,6 +238,9 @@ function App() {
                       </li>
                       <li className="menu-item">
                         {userInfo ? "" : <Link to="/register">Register</Link>}
+                      </li>
+                      <li className="menu-item">
+                        {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
                       </li>
                     </ul>
                   </li>
