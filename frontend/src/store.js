@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import { productListReducer, productDetailsReducer } from './reducers/productReducers';
+import { productListReducer, productSaveReducer, productDetailsReducer } from './reducers/productReducers';
 import Cookie from 'js-cookie';
 import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/CartReducers';
@@ -14,7 +14,8 @@ const reducer = combineReducers({
     productDetails: productDetailsReducer,
     cart: cartReducer,
     userSignin: userSigninReducer, 
-    userRegister: userRegisterReducer
+    userRegister: userRegisterReducer,
+    productSave: productSaveReducer,
 
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
