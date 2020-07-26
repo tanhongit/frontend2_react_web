@@ -3,6 +3,7 @@ import { addToCart, removeFromCart } from '../actions/cartAction';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 function CartScreen(props) {
 
   const cart = useSelector(state => state.cart);
@@ -12,7 +13,7 @@ function CartScreen(props) {
   const productId = props.match.params.id;
   const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1
   const dispatch = useDispatch();
-
+  const total_price = 0;
   const removeFromCartHandler = (productId) => {
     dispatch(removeFromCart(productId));
   }
@@ -41,96 +42,53 @@ function CartScreen(props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <a className="ps-product__preview" href="product-detail.html">
-                  <img
-                    className="mr-15"
-                    src="images/product/cart-preview/1.jpg"
-                    alt
-                  />{" "}
-                air jordan One mid
-              </a>
-              </td>
-              <td>$150</td>
-              <td>
-                <div className="form-group--number">
-                  <button className="minus">
-                    <span>-</span>
-                  </button>
-                  <input className="form-control" type="text" defaultValue={2} />
-                  <button className="plus">
-                    <span>+</span>
-                  </button>
-                </div>
-              </td>
-              <td>$300</td>
-              <td>
-                <div className="ps-remove" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a className="ps-product__preview" href="product-detail.html">
-                  <img
-                    className="mr-15"
-                    src="images/product/cart-preview/2.jpg"
-                    alt
-                  />{" "}
-                The Crusty Croissant
-              </a>
-              </td>
-              <td>$150</td>
-              <td>
-                <div className="form-group--number">
-                  <button className="minus">
-                    <span>-</span>
-                  </button>
-                  <input className="form-control" type="text" defaultValue={2} />
-                  <button className="plus">
-                    <span>+</span>
-                  </button>
-                </div>
-              </td>
-              <td>$300</td>
-              <td>
-                <div className="ps-remove" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a className="ps-product__preview" href="product-detail.html">
-                  <img
-                    className="mr-15"
-                    src="images/product/cart-preview/3.jpg"
-                    alt
-                  />
-                The Rolling Pin
-              </a>
-              </td>
-              <td>$150</td>
-              <td>
-                <div className="form-group--number">
-                  <button className="minus">
-                    <span>-</span>
-                  </button>
-                  <input className="form-control" type="text" defaultValue={2} />
-                  <button className="plus">
-                    <span>+</span>
-                  </button>
-                </div>
-              </td>
-              <td>$300</td>
-              <td>
-                <div className="ps-remove" />
-              </td>
-            </tr>
+            {
+              cartItems.length === 0 ?
+                <div>
+                  Cart is empty
+          </div>
+                :
+                cartItems.map(item =>
+
+                  <tr>
+                    <td>
+                      <a className="ps-product__preview" href="product-detail.html">
+                        <img
+                          width='50'
+                          className="mr-15"
+                          src={"/images/products/" + item.image}
+                          alt
+                        />{" "}
+                        {item.name}
+                      </a>
+                    </td>
+                    <td>{item.price} Đ</td>
+                    <td>
+
+                      <div className="form-group--number">
+                        <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
+                          {[...Array(item.countInStock).keys()].map(x =>
+                            <option key={x + 1} value={x + 1}>{x + 1}</option>
+                          )}
+                        </select>
+                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} /> In stock: {item.countInStock}
+                      </div>
+
+                    </td>
+                    <td>{item.qty * item.price} Đ</td>
+                    <td>
+                      <button className="ps-remove" onClick={() => removeFromCartHandler(item.product)}></button>
+                    </td>
+                  </tr>
+
+                )
+            }
           </tbody>
         </table>
         <div className="ps-cart__actions">
           <div className="ps-cart__promotion">
             <div className="form-group">
-              
+
             </div>
             <div className="form-group">
               <button className="ps-btn ps-btn--gray">Continue Shopping</button>
@@ -138,12 +96,11 @@ function CartScreen(props) {
           </div>
           <div className="ps-cart__total">
             <h3>
-              Total Price: <span> 2599.00 $</span>
+              Total Price: <span> {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span>
             </h3>
-            <a className="ps-btn" href="checkout.html">
-              Process to checkout
-            <i className="ps-icon-next" />
-            </a>
+            <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0}>
+              Proceed to Checkout <i className="ps-icon-next" />
+            </button>
           </div>
         </div>
       </div>
