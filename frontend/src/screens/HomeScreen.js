@@ -25,7 +25,7 @@ function HomeScreen(props) {
   return (
     loading ? <div>Loading...</div> :
       error ? <div>{error}</div> :
-       
+        <div>
           <div className="ps-section--features-product ps-section masonry-root pt-100 pb-100">
             <div className="ps-container">
               <div className="ps-section__content pb-50">
@@ -110,7 +110,7 @@ function HomeScreen(props) {
               </div>
             </div>
           </div>
-        );
+        </div>);
 }
 
 export default HomeScreen;
