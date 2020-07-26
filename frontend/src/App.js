@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProductsScreen from './screens/ProductsScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
 function App() {
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
@@ -409,7 +410,7 @@ function App() {
       <Route path='/register' component={RegisterScreen} />
       <Route path='/products' component={ProductsScreen} />
       <Route path="/shipping" component={ShippingScreen} />
-      {/* <Route path="/payment" component={PaymentScreen} /> */}
+      <Route path="/payment" component={PaymentScreen} />
       <div>
         <div className="ps-subscribe">
           <div className="ps-container">

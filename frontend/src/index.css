@@ -6543,6 +6543,7 @@
 
 .checkout-steps {
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   width: 40rem;
   margin: 1rem auto;
@@ -6550,6 +6551,7 @@
 .checkout-steps > div {
   border-top: 0.3rem #c0c0c0 solid;
   color: #c0c0c0;
+  font-weight: bold;
   flex: 1 1;
   padding-top: 1rem;
 }
