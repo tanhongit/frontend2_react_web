@@ -71,11 +71,11 @@ function CartScreen(props) {
                             <option key={x + 1} value={x + 1}>{x + 1}</option>
                           )}
                         </select>
-                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} /> In stock: {item.countInStock}
+                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty <= item.countInStock ? item.qty : '1'} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} /> In stock: {item.countInStock}
                       </div>
 
                     </td>
-                    <td>{item.qty * item.price} Đ</td>
+                    <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>
                     <td>
                       <button className="ps-remove" onClick={() => removeFromCartHandler(item.product)}></button>
                     </td>
@@ -91,12 +91,12 @@ function CartScreen(props) {
 
             </div>
             <div className="form-group">
-              <button className="ps-btn ps-btn--gray">Continue Shopping</button>
+              <a href='/' className="ps-btn ps-btn--gray">Continue Shopping</a>
             </div>
           </div>
           <div className="ps-cart__total">
             <h3>
-              Total Price: <span> {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span>
+              Total Price: <span> {cartItems.reduce((a, c) => c.qty <= c.countInStock ? a + c.price * c.qty : a + c.price, 0)}</span>
             </h3>
             <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0}>
               Proceed to Checkout <i className="ps-icon-next" />
