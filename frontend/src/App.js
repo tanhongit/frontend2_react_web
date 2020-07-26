@@ -275,32 +275,32 @@ function App() {
                     <div className="ps-cart__content">
                       {
                         cartItems.length === 0 ?
-                          <div>Cart is empty</div>
+                          <div style={{ textAlign: "center" }}>Cart is empty</div>
                           :
                           cartItems.map(item =>
-                          <div className="ps-cart-item">
-                            <a className="ps-cart-item__close" onClick={() => removeFromCartHandler(item.product)}/>
-                            <div className="ps-cart-item__thumbnail">
-                              <a href={"/product/" + item.product} />
-                              <img src={"/images/products/" + item.image} alt />
+                            <div className="ps-cart-item">
+                              <a className="ps-cart-item__close" onClick={() => removeFromCartHandler(item.product)} />
+                              <div className="ps-cart-item__thumbnail">
+                                <a href={"/product/" + item.product} />
+                                <img src={"/images/products/" + item.image} alt />
+                              </div>
+                              <div className="ps-cart-item__content">
+                                <a
+                                  className="ps-cart-item__title"
+                                  href={"/product/" + item.product}
+                                >
+                                  {item.name}
+                                </a>
+                                <p>
+                                  <span>
+                                    Qty:<i>{item.qty}</i>
+                                  </span>
+                                  <span>
+                                    Total:<i>{item.qty * item.price}</i>
+                                  </span>
+                                </p>
+                              </div>
                             </div>
-                            <div className="ps-cart-item__content">
-                              <a
-                                className="ps-cart-item__title"
-                                href={"/product/" + item.product}
-                              >
-                               {item.name}
-                    </a>
-                              <p>
-                                <span>
-                                  Qty:<i>{item.qty}</i>
-                                </span>
-                                <span>
-                                  Total:<i>{item.qty * item.price}</i>
-                                </span>
-                              </p>
-                            </div>
-                          </div>
                           )}
                     </div>
                     <div className="ps-cart__footer">
