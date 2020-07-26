@@ -54,19 +54,19 @@ const saveProduct = (product) => async (dispatch, getState) => {
 
 const deleteProduct = (productId) => async (dispatch, getState) => {
     try {
-      const {
-        userSignin: { userInfo },
-      } = getState();
-      dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
-      const { data } = await axios.delete('/api/products/' + productId, {
-        headers: {
-          Authorization: 'Bearer ' + userInfo.token,
-        },
-      });
-      dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
+        const {
+            userSignin: { userInfo },
+        } = getState();
+        dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
+        const { data } = await axios.delete('/api/products/' + productId, {
+            headers: {
+                Authorization: 'Bearer ' + userInfo.token,
+            },
+        });
+        dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
     } catch (error) {
-      dispatch({ type: PRODUCT_DELETE_FAIL, payload: error.message });
+        dispatch({ type: PRODUCT_DELETE_FAIL, payload: error.message });
     }
-  };
+};
 
-export { listProducts, detailsProduct, saveProduct , deleteProduct};
+export { listProducts, detailsProduct, saveProduct, deleteProduct };

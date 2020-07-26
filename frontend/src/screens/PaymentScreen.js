@@ -30,7 +30,7 @@ function PaymentScreen(props) {
                     <h4>Choose your option</h4>
                     <div className="form-group">
                       <label>
-                        <b>Paypal</b> 
+                        <b>Paypal</b>
                       </label>
                       <input
                         type="radio"

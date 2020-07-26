@@ -426,13 +426,13 @@ function App() {
                 <p>
                   ...and receive <span>$20</span> coupon for first shopping.
           </p>
-              </div>
+              </div>  
             </div>
           </div>
         </div>
         <div
           className="ps-footer bg--cover"
-          data-background="images/image1-1-homepage-1.jpg"
+          data-background="/images/image1-1-homepage-1.jpg"
         >
           <div className="ps-footer__content">
             <div className="ps-container">

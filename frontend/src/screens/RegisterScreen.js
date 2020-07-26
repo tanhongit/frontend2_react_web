@@ -37,7 +37,7 @@ function RegisterScreen(props) {
                 - Create Account
         </h2>
               <form className="ps-contact__form" onSubmit={submitHandler} method="post">
-              <div className="form-group">
+                <div className="form-group">
                   <label>
                     Name <sub>*</sub>
                   </label>
@@ -63,14 +63,14 @@ function RegisterScreen(props) {
                 </div>
                 <div className="form-group">
                   <button type="submit" className="ps-btn">
-                  Register
+                    Register
               <i className="ps-icon-next" />
                   </button>
                 </div>
               </form>
             </div>
             <div className="ps-section__header pt-50">
-            Already have an account? <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Login Your Account</Link>
+              Already have an account? <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Login Your Account</Link>
             </div>
           </div>
         </div>
