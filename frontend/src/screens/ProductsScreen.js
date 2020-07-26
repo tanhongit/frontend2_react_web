@@ -105,6 +105,8 @@ function ProductsScreen(props) {
                     - Create Product
           </h2>
                   <form className="ps-contact__form" onSubmit={submitHandler} method="post">
+                    {loadingSave && <div>Loading...</div>}
+                    {errorSave && <div>{errorSave}</div>}
                     <div className="form-group">
                       <label>
                         Name <sub>*</sub>
