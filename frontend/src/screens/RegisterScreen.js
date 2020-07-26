@@ -27,51 +27,55 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
-  return <div className="form">
-    <form onSubmit={submitHandler} >
-      <ul className="form-container">
-        <li>
-          <h2>Create Account</h2>
-        </li>
-        <li>
-          {loading && <div>Loading...</div>}
-          {error && <div>{error}</div>}
-        </li>
-        <li>
-          <label htmlFor="name">
-            Name
-          </label>
-          <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="email">
-            Email
-          </label>
-          <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="rePassword">Re-Enter Password</label>
-          <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <button type="submit" className="button primary">Register</button>
-        </li>
-        <li>
-          Already have an account?
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
-
-        </li>
-
-      </ul>
-    </form>
-  </div>
+  return <main className="ps-main">
+    <div className="ps-contact ps-contact--2 ps-section pt-80 pb-80">
+      <div className="ps-container">
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+            <div className="ps-section__header pt-50">
+              <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
+                - Create Account
+        </h2>
+              <form className="ps-contact__form" onSubmit={submitHandler} method="post">
+              <div className="form-group">
+                  <label>
+                    Name <sub>*</sub>
+                  </label>
+                  <input name="name" id="name" className="form-control" onChange={(e) => setName(e.target.value)} type="name" placeholder />
+                </div>
+                <div className="form-group">
+                  <label>
+                    Email <sub>*</sub>
+                  </label>
+                  <input name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
+                </div>
+                <div className="form-group mb-25">
+                  <label>
+                    Password <sub>*</sub>
+                  </label>
+                  <input name="password" id="password" className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder />
+                </div>
+                <div className="form-group mb-25">
+                  <label>
+                    Password <sub>*</sub>
+                  </label>
+                  <input name="rePassword" id="rePassword" className="form-control" onChange={(e) => setRePassword(e.target.value)} type="password" placeholder />
+                </div>
+                <div className="form-group">
+                  <button type="submit" className="ps-btn">
+                  Register
+              <i className="ps-icon-next" />
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div className="ps-section__header pt-50">
+            Already have an account? <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Login Your Account</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 }
 export default RegisterScreen;
