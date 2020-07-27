@@ -226,15 +226,15 @@ function App() {
                         <Link to="/category/Trà%20Sữa">Tra Sua</Link>
                         <ul className="sub-menu">
                           <li className="menu-item">
-                          <Link to="/category/Nước%20Uống">Nuoc Uong</Link>
+                            <Link to="/category/Nước%20Uống">Nuoc Uong</Link>
                           </li>
                           <li className="menu-item">
-                          <Link to="/category/Ăn%20Vặt">Ăn Vặt</Link>
+                            <Link to="/category/Ăn%20Vặt">Ăn Vặt</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item">
-                      <Link to="/category/Bánh%20Xèo">Bánh Xèo</Link>
+                        <Link to="/category/Bánh%20Xèo">Bánh Xèo</Link>
                       </li>
                     </ul>
                   </li>
@@ -248,7 +248,7 @@ function App() {
                         {userInfo ? "" : <Link to="/register">Register</Link>}
                       </li>
                       <li className="menu-item">
-                        {userInfo ? <Link to="/products">Manager Products</Link> : ""}
+                        {userInfo && userInfo.isAdmin ? <Link to="/products">Manager Products</Link> : ""}
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
@@ -364,7 +364,7 @@ function App() {
       <Route path='/cart/:id?' component={CartScreen} />
       <Route path='/signin' component={SigninScreen} />
       <Route path='/register' component={RegisterScreen} />
-      <Route path='/products' component={ProductsScreen} />
+      {userInfo && userInfo.isAdmin ? <Route path='/products' component={ProductsScreen} /> : ""}
       <Route path="/shipping" component={ShippingScreen} />
       <Route path="/payment" component={PaymentScreen} />
       <Route path="/placeorder" component={PlaceOrderScreen} />

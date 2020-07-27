@@ -86,7 +86,7 @@ function PlaceOrderScreen(props) {
             </tbody>
           </table><br /><br /><br />
           <h3>Order Summary</h3>
-          <table className="table ps-cart__table">
+          <table className="table ps-cart__table">￼
             <thead>
               <tr>
                 <th>Items</th>

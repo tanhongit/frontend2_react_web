@@ -87,7 +87,7 @@ function HomeScreen(props) {
                     <div className="col-md-7">
                       <div>SEACRH PRODUCT: </div>
                       <form onSubmit={submitHandler}>
-                        <input placeholder="Search product here..." name="search" className="form-control" onChange={(e) => setSearchKeyword(e.target.value)} />
+                        <input placeholder="Search product here..." name="searchKeyword" className="form-control" onChange={(e) => setSearchKeyword(e.target.value)} />
                         <button className="btn btn-success" value="search" type="submit">Search<i class="ti-search"></i></button>
                       </form>
                     </div>
@@ -103,7 +103,7 @@ function HomeScreen(props) {
                 </div> */}
                 <div className="ps-product__columns">
                   {/* product */}
-                  {products.map((product) => (
+                  {products.map(product =>
                     <div className="ps-product__column">
                       <div className="ps-shoe mb-30">
                         <div className="ps-shoe__thumbnail">
@@ -129,7 +129,7 @@ function HomeScreen(props) {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  )}
                   {/* end product */}
                 </div>
 
