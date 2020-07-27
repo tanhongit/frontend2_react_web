@@ -81,7 +81,7 @@ function HomeScreen(props) {
                 </ul>
               </div> */}
                 </div>
-                <div className="container">
+                {/* <div className="container">
                   {category_id && <h2>{category_id}</h2>}
                   <div className="row">
                     <div className="col-md-7">
@@ -100,10 +100,7 @@ function HomeScreen(props) {
                       </select>
                     </div>
                   </div>
-                </div>
-
-
-
+                </div> */}
                 <div className="ps-product__columns">
                   {/* product */}
                   {products.map((product) => (
