@@ -4,3 +4,6 @@ npm install mongoose
 npm install jsonwebtoken
 
 npm install body-parser
+
+export mongodb 
+mongoexport --collection=users --db=tanhong --out=users_is_tanhong_db.json
