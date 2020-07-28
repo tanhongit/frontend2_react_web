@@ -10,3 +10,10 @@ npm install body-parser
 export mongodb 
 https://docs.mongodb.com/manual/reference/program/mongoexport/
 mongoexport --collection=users --db=tanhong --out=users_is_tanhong_db.json
+
+
+
+start mongodb
+sudo systemctl stop mongod.service
+sudo systemctl start mongod.service
+sudo systemctl enable mongod.service
