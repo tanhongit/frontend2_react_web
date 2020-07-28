@@ -40,10 +40,13 @@ function ProductsScreen(props) {
 
   useEffect(() => {
     if (userInfo) {
-      if (successSave) {
-        setModalVisible(false);
+      if (userInfo.isAdmin) {
+        if (successSave) {
+          setModalVisible(false);
+        }
+        dispatch(listProducts());
       }
-      dispatch(listProducts());
+      else props.history.push("/");
     } else {
       props.history.push("/");
     }
