@@ -13,6 +13,19 @@ function ShippingScreen(props) {
 
   const dispatch = useDispatch();
 
+  //validation user 
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
+
+  useEffect(() => {
+    if (!userInfo) {
+      props.history.push("/");
+    }
+    return () => {
+    };
+  }, [userInfo])
+
+  //submit
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(saveShipping({ address, city, postalCode, country }));
