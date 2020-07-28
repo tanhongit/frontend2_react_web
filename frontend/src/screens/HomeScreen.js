@@ -115,10 +115,10 @@ function HomeScreen(props) {
                         </div>
                         <div className="ps-shoe__content">
                           <div class="ps-shoe__variants">
-                            {product.countInStock >= 1 ? 
-                            <a href={"/cart/" + product._id + "?qty=1"} className='ps-btn btn btn-primary btn-add-to-cart-home'>Add to Cart</a>
-                            : <button disabled className="btn btn-info">Out of stock</button>}
-                            
+                            {product.countInStock >= 1 ?
+                              <a href={"/cart/" + product._id + "?qty=1"} className='ps-btn btn btn-primary btn-add-to-cart-home'>Add to Cart</a>
+                              : <button disabled className="btn btn-info">Out of stock</button>}
+
                           </div>
                           <div className="ps-shoe__detail">
                             <a className="ps-shoe__name" href={'/product/' + product._id}>
@@ -137,7 +137,7 @@ function HomeScreen(props) {
                 </div>
 
 
-                <div className="ps-product-action">
+                {/* <div className="ps-product-action">
                   <div className="ps-product__filter">
                     <select className="ps-select selectpicker">
                       <option value={1}>Shortby</option>
@@ -146,33 +146,33 @@ function HomeScreen(props) {
                       <option value={3}>Price (High to Low)</option>
                     </select>
                   </div>
-                  {/* <div className="ps-pagination">
-                <ul className="pagination">
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-angle-left" />
-                    </a>
-                  </li>
-                  <li className="active">
-                    <a href="#">1</a>
-                  </li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li>
-                    <a href="#">...</a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-angle-right" />
-                    </a>
-                  </li>
-                </ul>
-              </div> */}
-                </div>
+                  <div className="ps-pagination">
+                    <ul className="pagination">
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-angle-left" />
+                        </a>
+                      </li>
+                      <li className="active">
+                        <a href="#">1</a>
+                      </li>
+                      <li>
+                        <a href="#">2</a>
+                      </li>
+                      <li>
+                        <a href="#">3</a>
+                      </li>
+                      <li>
+                        <a href="#">...</a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-angle-right" />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div> */}
               </div>
               <div className="ps-sidebar" data-mh="product-listing">
                 <aside className="ps-widget--sidebar ps-widget--category">

@@ -77,7 +77,7 @@ function App() {
             <div className="container-fluid">
               <div className="navigation__column left">
                 <div className="header__logo">
-                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt /></Link>
+                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="Logo" /></Link>
                 </div>
               </div>
               <div className="navigation__column center">

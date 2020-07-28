@@ -11,10 +11,14 @@ function ProfileScreen(props) {
 
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
+
+  //logout
   const handleLogout = () => {
     dispatch(logout());
     props.history.push("/signin");
   }
+
+  //update
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(update({ userId: userInfo._id, email, name, password }))

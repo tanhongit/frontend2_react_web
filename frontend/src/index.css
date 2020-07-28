@@ -1855,7 +1855,7 @@
     margin-bottom: 15px;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -1898,7 +1898,7 @@
     margin-bottom: 50px;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -2574,7 +2574,7 @@
   .ps-shoe--sidebar {
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -3053,7 +3053,7 @@
     margin-bottom: 30px;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -3156,7 +3156,7 @@
     margin-bottom: 50px;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -3706,24 +3706,15 @@
   .ps-section--offer {
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    box-direction: normal;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
-    -webkit-box-lines: multiple;
-    -moz-box-lines: multiple;
-    box-lines: multiple;
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -3958,7 +3949,7 @@
       padding: 35px 30px;
       display: -webkit-box;
       display: -moz-box;
-      display: box;
+       
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
@@ -4038,9 +4029,6 @@
         opacity: 1;
         display: none; }
         .mega-menu .mega-wrap {
-          -webkit-box-lines: multiple;
-          -moz-box-lines: multiple;
-          box-lines: multiple;
           -webkit-flex-wrap: wrap;
           -moz-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
@@ -4583,11 +4571,11 @@
         height: 100%;
         z-index: 10; }
       .ps-cart-item__thumbnail:hover > img {
-        -webkit-transform: rodtatscale(1.2, 1.2);
+        /* -webkit-transform: rodtatscale(1.2, 1.2);
         -moz-transform: rodtatscale(1.2, 1.2);
         -ms-transform: rodtatscale(1.2, 1.2);
         -o-transform: rodtatscale(1.2, 1.2);
-        transform: rodtatscale(1.2, 1.2); }
+        transform: rodtatscale(1.2, 1.2); */} 
       .ps-cart-item__thumbnail:hover > a {
         background-color: rgba(42, 195, 125, 0.5); }
     .ps-cart-item__title {
@@ -4769,7 +4757,7 @@
     border-top: solid 1px #e5e5e5;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -5221,7 +5209,7 @@
     @media (max-width: 767px) {
       .ps-services .ps-service {
         max-height: 50px;
-        overlow-y: hidden;
+        /* overlow-y: hidden; */
         font-size: 12px; } }
   
   .ps-footer {
@@ -5275,7 +5263,7 @@
     margin-bottom: 40px;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -5339,7 +5327,7 @@
     flex-flow: row nowrap;
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -5703,7 +5691,7 @@
   .ps-product--hotdeal {
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+     
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -5814,12 +5802,6 @@
         line-height: 1.6em; } }
     .ps-product--hotdeal.reverse {
       margin-bottom: 30px;
-      -webkit-box-orient: horizontal;
-      -moz-box-orient: horizontal;
-      box-orient: horizontal;
-      -webkit-box-direction: reverse;
-      -moz-box-direction: reverse;
-      box-direction: reverse;
       -webkit-flex-direction: row-reverse;
       -moz-flex-direction: row-reverse;
       flex-direction: row-reverse;
@@ -5861,7 +5843,7 @@
         .ps-product--hotdeal.reverse {
           display: -webkit-box;
           display: -moz-box;
-          display: box;
+           
           display: -webkit-flex;
           display: -moz-flex;
           display: -ms-flexbox;
