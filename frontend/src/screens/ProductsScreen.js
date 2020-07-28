@@ -98,7 +98,7 @@ function ProductsScreen(props) {
   return (
     <div className="content content-margined">
       <div className="product-header">
-        <h3>Products Manager</h3>
+        <h2 style={{ textAlign: "center", padding: 30, fontWeight: "bold" }}>Products Manager</h2>
         <br /><br />
         <button className="btn btn-success" onClick={() => openModal({})}>
           Create Product
@@ -179,8 +179,8 @@ function ProductsScreen(props) {
       )
       }
 
-      <div className="product-list">
-        <table className="table">
+      <div className="ps-cart-listing">
+        <table className="table ps-cart__table">
           <thead>
             <tr>
               <th>ID</th>

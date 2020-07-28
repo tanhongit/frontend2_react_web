@@ -13,6 +13,7 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrdersScreen from './screens/OrdersScreen';
 import { logout } from './actions/userActions';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './actions/cartAction';
@@ -252,6 +253,9 @@ function App() {
                         {userInfo && userInfo.isAdmin ? <Link to="/products">Manager Products</Link> : ""}
                       </li>
                       <li className="menu-item">
+                        {userInfo && userInfo.isAdmin ? <Link to="/orders">Order Products</Link> : ""}
+                      </li>
+                      <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
                       </li>
                     </ul>
@@ -373,6 +377,7 @@ function App() {
       <Route path="/placeorder" component={PlaceOrderScreen} />
       <Route path="/category/:id" component={HomeScreen} />
       <Route path="/profile" component={ProfileScreen} />
+      <Route path="/orders" component={OrdersScreen} />
       <div>
         <div className="ps-subscribe">
           <div className="ps-container">
