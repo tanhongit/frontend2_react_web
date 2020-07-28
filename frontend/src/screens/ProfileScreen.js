@@ -31,6 +31,9 @@ function ProfileScreen(props) {
       setName(userInfo.name);
       setPassword(userInfo.password);
     }
+    else{
+      props.history.push("/");
+    }
     // dispatch(listMyOrders());
     return () => {
 

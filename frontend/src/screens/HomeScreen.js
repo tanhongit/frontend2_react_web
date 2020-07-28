@@ -115,7 +115,10 @@ function HomeScreen(props) {
                         </div>
                         <div className="ps-shoe__content">
                           <div class="ps-shoe__variants">
+                            {product.countInStock >= 1 ? 
                             <a href={"/cart/" + product._id + "?qty=1"} className='ps-btn btn btn-primary btn-add-to-cart-home'>Add to Cart</a>
+                            : <button disabled className="btn btn-info">Out of stock</button>}
+                            
                           </div>
                           <div className="ps-shoe__detail">
                             <a className="ps-shoe__name" href={'/product/' + product._id}>

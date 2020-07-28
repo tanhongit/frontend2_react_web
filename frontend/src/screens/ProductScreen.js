@@ -100,10 +100,10 @@ function ProductScreen(props) {
                           </select>
                         </div>
                         <div className="ps-product__shopping">
-                          <button className="ps-btn mb-10" onClick={handleAddToCart}>
-                            Add to cart
-                <i className="ps-icon-next" />
-                          </button>
+                          {product.countInStock >= 1 ?
+                            <button className="ps-btn mb-10" onClick={handleAddToCart}>Add to cart<i className="ps-icon-next" /></button>
+                            : <button disabled className="btn btn-info">Out of stock</button>}
+
                           <div className="ps-product__actions">
                             <a className="mr-10" href="whishlist.html">
                               <i className="ps-icon-heart" />

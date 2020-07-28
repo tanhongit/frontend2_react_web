@@ -53,7 +53,7 @@ function App() {
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                      >{userInfo ? userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" />
+                      >{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" />
                       </a>
                       <ul className="dropdown-menu">
                         <li>
@@ -239,7 +239,7 @@ function App() {
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children dropdown">
-                    <a href="/profile">{userInfo ? userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
+                    <a href="/profile">{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item">
                         {userInfo ? <Link to="/profile">Profile</Link> : <Link to="/signin">Login</Link>}
@@ -295,14 +295,15 @@ function App() {
                                 >
                                   {item.name}
                                 </a>
-                                <p>
-                                  <span>
-                                    Qty:<i>{item.qty <= item.countInStock ? item.qty : 1}</i>
-                                  </span>
-                                  <span>
-                                    Total:<i>{item.qty <= item.countInStock ? item.qty * item.price : item.price}</i>
-                                  </span>
-                                </p>
+                                {item.countInStock >= 1 ?
+                                  <p>
+                                    <span>
+                                      Qty:<i>{item.qty <= item.countInStock ? item.qty : 1}</i>
+                                    </span>
+                                    <span>
+                                      Total:<i>{item.qty <= item.countInStock ? item.qty * item.price : item.price}</i>
+                                    </span>
+                                  </p> : <button disabled className="btn btn-info">Out of stock</button>}
                               </div>
                             </div>
                           )}
@@ -364,7 +365,7 @@ function App() {
       <Route path='/cart/:id?' component={CartScreen} />
       <Route path='/signin' component={SigninScreen} />
       <Route path='/register' component={RegisterScreen} />
-      {userInfo && userInfo.isAdmin ? <Route path='/products' component={ProductsScreen} /> : ""}
+      <Route path='/products' component={ProductsScreen} />
       <Route path="/shipping" component={ShippingScreen} />
       <Route path="/payment" component={PaymentScreen} />
       <Route path="/placeorder" component={PlaceOrderScreen} />

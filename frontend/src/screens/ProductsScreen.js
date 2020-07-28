@@ -20,6 +20,8 @@ function ProductsScreen(props) {
   const [uploading, setUploading] = useState(false);
   const productList = useSelector((state) => state.productList);
   const { loading, products, error } = productList;
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
 
   const productSave = useSelector((state) => state.productSave);
   const {
@@ -37,14 +39,18 @@ function ProductsScreen(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (successSave) {
-      setModalVisible(false);
+    if (userInfo) {
+      if (successSave) {
+        setModalVisible(false);
+      }
+      dispatch(listProducts());
+    } else {
+      props.history.push("/");
     }
-    dispatch(listProducts());
     return () => {
       //
     };
-  }, [successSave, successDelete]);
+  }, [successSave, successDelete, userInfo]);
 
   const openModal = (product) => {
     setModalVisible(true);
