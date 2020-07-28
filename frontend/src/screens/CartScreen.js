@@ -52,7 +52,7 @@ function CartScreen(props) {
 
                   <tr>
                     <td>
-                      <a className="ps-product__preview" href="product-detail.html">
+                      <a className="ps-product__preview" href={'/product/' + item.product}>
                         <img
                           width='50'
                           className="mr-15"
