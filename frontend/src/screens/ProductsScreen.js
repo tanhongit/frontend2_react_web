@@ -184,8 +184,10 @@ function ProductsScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
+              <th>Image Avatar</th>
               <th>Name</th>
               <th>Price</th>
+              <th>countInStock</th>
               <th>Category</th>
               <th>Brand</th>
               <th>Action</th>
@@ -195,8 +197,10 @@ function ProductsScreen(props) {
             {products.map((product) => (
               <tr key={product._id}>
                 <td>{product._id}</td>
+                <td><img style={{ width: 50 }} alt="product" src={'/images/products/' + product.image}></img></td>
                 <td>{product.product_name}</td>
                 <td>{product.product_price}</td>
+                <td>{product.countInStock}</td>
                 <td>{product.category_id}</td>
                 <td>{product.brand}</td>
                 <td>

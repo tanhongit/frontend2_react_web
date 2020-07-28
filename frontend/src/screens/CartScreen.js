@@ -44,9 +44,7 @@ function CartScreen(props) {
           <tbody>
             {
               cartItems.length === 0 ?
-                <div>
-                  Cart is empty
-          </div>
+                <div className="cart-is-empty"><h2>Cart is empty</h2></div>
                 :
                 cartItems.map(item =>
 
