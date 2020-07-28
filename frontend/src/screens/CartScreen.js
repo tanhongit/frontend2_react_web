@@ -71,11 +71,11 @@ function CartScreen(props) {
                             <option key={x + 1} value={x + 1}>{x + 1}</option>
                           )}
                         </select>
-                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty <= item.countInStock ? item.qty : '1'} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} /> In stock: {item.countInStock}
+                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty <= item.countInStock && item.qty > 0 ? item.qty : '1'} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} /> In stock: {item.countInStock}
                       </div>
 
                     </td>
-                    <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>
+                    <td>{item.qty <= item.countInStock && item.qty > 0 ? item.qty * item.price : item.price} Đ</td>
                     <td>
                       <button className="ps-remove" onClick={() => removeFromCartHandler(item.product)}></button>
                     </td>

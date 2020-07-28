@@ -299,10 +299,10 @@ function App() {
                                 {item.countInStock >= 1 ?
                                   <p>
                                     <span>
-                                      Qty:<i>{item.qty <= item.countInStock ? item.qty : 1}</i>
+                                      Qty:<i>{item.qty <= item.countInStock && item.qty > 0 ? item.qty : 1}</i>
                                     </span>
                                     <span>
-                                      Total:<i>{item.qty <= item.countInStock ? item.qty * item.price : item.price}</i>
+                                      Total:<i>{item.qty <= item.countInStock && item.qty > 0 ? item.qty * item.price : item.price}</i>
                                     </span>
                                   </p> : <button disabled className="btn btn-info">Out of stock</button>}
                               </div>
