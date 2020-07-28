@@ -16,6 +16,7 @@ function PlaceOrderScreen(props) {
   } else if (!payment.paymentMethod) {
     props.history.push("/payment");
   }
+
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
   const taxPrice = 0.15 * itemsPrice;
@@ -29,8 +30,10 @@ function PlaceOrderScreen(props) {
       orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
       taxPrice, totalPrice
     }));
+    //delete cart when created
     Cookie.remove("cartItems");
   }
+
   useEffect(() => {
     if (success) {
       props.history.push("/order/" + order._id);
@@ -44,33 +47,30 @@ function PlaceOrderScreen(props) {
         <div className="ps-cart-listing">
           <table className="table ps-cart__table">
             <thead>
-              <tr>
-                <th>All Products</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th />
-              </tr>
-            </thead>
+                <tr>
+                  <th>All Products</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th />
+                </tr>
+              </thead>
             <tbody>
               {
                 cartItems.length === 0 ?
-                  <div>
-                    Cart is empty
-          </div>
+                  <div>Cart is empty</div>
                   :
                   cartItems.map(item =>
-
                     <tr>
                       <td>
-                        <a className="ps-product__preview" href="product-detail.html">
+                        <a className="ps-product__preview" href={'/product/' + item.product}>
                           <img
                             width='50'
                             className="mr-15"
                             src={"/images/products/" + item.image}
                             alt
-                          />{" "}
-                          {item.name}
+                          />
+                          {" " + item.name}
                         </a>
                       </td>
                       <td>{item.price} Đ</td>
@@ -81,10 +81,8 @@ function PlaceOrderScreen(props) {
                       </td>
                       <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>
                       <td>
-
                       </td>
                     </tr>
-
                   )
               }
             </tbody>
@@ -108,7 +106,6 @@ function PlaceOrderScreen(props) {
               </tr>
             </tbody>
           </table>
-
           <div className="ps-cart__actions">
             <div className="ps-cart__promotion">
               <div className="form-group">
@@ -125,7 +122,6 @@ function PlaceOrderScreen(props) {
       </div>
     </div>
   </div>
-
 }
 
 export default PlaceOrderScreen;
