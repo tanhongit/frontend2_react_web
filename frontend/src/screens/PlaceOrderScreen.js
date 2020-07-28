@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
-// import { createOrder } from '../actions/orderActions';
+import { createOrder } from '../actions/orderActions';
+import Cookie from 'js-cookie';
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
-  // const orderCreate = useSelector(state => state.orderCreate);
-  // const { loading, success, error, order } = orderCreate;
+  const orderCreate = useSelector(state => state.orderCreate);
+  const { loading, success, error, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -22,16 +23,19 @@ function PlaceOrderScreen(props) {
 
   const dispatch = useDispatch();
 
-  // const placeOrderHandler = () => {
-  //   // create an order
-  //   dispatch(createOrder({
-  //     orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
-  //     taxPrice, totalPrice
-  //   }));
-  // }
+  const placeOrderHandler = () => {
+    // create an order
+    dispatch(createOrder({
+      orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
+      taxPrice, totalPrice
+    }));
+    Cookie.remove("cartItems");
+  }
   useEffect(() => {
-
-  }, []);
+    if (success) {
+      props.history.push("/order/" + order._id);
+    }
+  }, [success]);
 
   return <div>
     <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
@@ -84,7 +88,7 @@ function PlaceOrderScreen(props) {
                   )
               }
             </tbody>
-          </table><br /><br /><br />
+          </table>
           <h3>Order Summary</h3>
           <table className="table ps-cart__table">￼
             <thead>
@@ -93,7 +97,6 @@ function PlaceOrderScreen(props) {
                 <th>Shipping</th>
                 <th>Tax</th>
                 <th>Order Total</th>
-                <th />
               </tr>
             </thead>
             <tbody>
@@ -113,7 +116,7 @@ function PlaceOrderScreen(props) {
               </div>
             </div>
             <div className="ps-cart__total">
-              <button className="ps-btn" disabled={cartItems.length === 0}>
+              <button className="ps-btn" onClick={placeOrderHandler} disabled={cartItems.length === 0}>
                 Place Order <i className="ps-icon-next" />
               </button>
             </div>

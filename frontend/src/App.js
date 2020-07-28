@@ -12,6 +12,7 @@ import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import OrderScreen from './screens/OrderScreen';
 import { logout } from './actions/userActions';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './actions/cartAction';
@@ -366,6 +367,7 @@ function App() {
       <Route path='/signin' component={SigninScreen} />
       <Route path='/register' component={RegisterScreen} />
       <Route path='/products' component={ProductsScreen} />
+      <Route path="/order/:id" component={OrderScreen} />
       <Route path="/shipping" component={ShippingScreen} />
       <Route path="/payment" component={PaymentScreen} />
       <Route path="/placeorder" component={PlaceOrderScreen} />
