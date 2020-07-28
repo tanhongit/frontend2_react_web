@@ -54,7 +54,7 @@ function App() {
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                      >{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" />
+                      >{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : "User: " + userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" />
                       </a>
                       <ul className="dropdown-menu">
                         <li>
@@ -240,7 +240,7 @@ function App() {
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children dropdown">
-                    <a href="/profile">{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
+                    <a href="/profile">{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : "User: " + userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item">
                         {userInfo ? <Link to="/profile">Profile</Link> : <Link to="/signin">Login</Link>}

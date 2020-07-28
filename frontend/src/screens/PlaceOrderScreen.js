@@ -17,7 +17,7 @@ function PlaceOrderScreen(props) {
     props.history.push("/payment");
   }
 
-  const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+  const itemsPrice = cartItems.reduce((a, c) => c.qty <= c.countInStock && c.qty > 0 ? a + c.price * c.qty : a + c.price, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
   const taxPrice = 0.15 * itemsPrice;
   const totalPrice = itemsPrice + shippingPrice + taxPrice;
@@ -47,14 +47,14 @@ function PlaceOrderScreen(props) {
         <div className="ps-cart-listing">
           <table className="table ps-cart__table">
             <thead>
-                <tr>
-                  <th>All Products</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th />
-                </tr>
-              </thead>
+              <tr>
+                <th>All Products</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th />
+              </tr>
+            </thead>
             <tbody>
               {
                 cartItems.length === 0 ?
@@ -76,10 +76,10 @@ function PlaceOrderScreen(props) {
                       <td>{item.price} Đ</td>
                       <td>
                         <div className="form-group--number">
-                          {item.qty <= item.countInStock ? item.qty : 1}
+                          {item.qty <= item.countInStock && item.qty > 0 ? item.qty : 1}
                         </div>
                       </td>
-                      <td>{item.qty <= item.countInStock ? item.qty * item.price : item.price} Đ</td>
+                      <td>{item.qty <= item.countInStock && item.qty > 0 ? item.qty * item.price : item.price} Đ</td>
                       <td>
                       </td>
                     </tr>

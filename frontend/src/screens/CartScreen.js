@@ -96,7 +96,7 @@ function CartScreen(props) {
           </div>
           <div className="ps-cart__total">
             <h3>
-              Total Price: <span> {cartItems.reduce((a, c) => c.qty <= c.countInStock ? a + c.price * c.qty : a + c.price, 0)}</span>
+              Total Price: <span> {cartItems.reduce((a, c) => c.qty <= c.countInStock && c.qty > 0 ? a + c.price * c.qty : a + c.price, 0)}</span>
             </h3>
             <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0}>
               Proceed to Checkout <i className="ps-icon-next" />
