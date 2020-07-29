@@ -29,37 +29,37 @@ function PaymentScreen(props) {
                   <form className="ps-contact__form" onSubmit={submitHandler} method="post">
                     <h4>Choose your option</h4>
                     <div className="form-group">
-                      <label>
+                      <label for="paymentPaypal">
                         <div className="paymentScreen"><img src="/images/paypal-512.jpg"></img> Paypal</div>
                       </label>
                       <input
                         type="radio"
                         name="paymentMethod"
-                        id="paymentMethod"
+                        id="paymentPaypal"
                         value="paypal"
                         onChange={(e) => setPaymentMethod(e.target.value)}
                       ></input>
                     </div>
                     <div className="form-group">
-                      <label>
+                      <label for="paymentMasterCart">
                         <div className="paymentScreen"><img src="/images/mastercart.png"></img> Master Cart</div>
                       </label>
                       <input
                         type="radio"
                         name="paymentMethod"
-                        id="paymentMethod"
+                        id="paymentMasterCart"
                         value="master-cart"
                         onChange={(e) => setPaymentMethod(e.target.value)}
                       ></input>
                     </div>
                     <div className="form-group">
-                      <label>
+                      <label for="paymentVisa">
                         <div className="paymentScreen"><img src="/images/visa-icon-0.png"></img> Visa</div>
                       </label>
                       <input
                         type="radio"
                         name="paymentMethod"
-                        id="paymentMethod"
+                        id="paymentVisa"
                         value="visa"
                         onChange={(e) => setPaymentMethod(e.target.value)}
                       ></input>
