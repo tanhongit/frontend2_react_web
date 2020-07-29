@@ -2,8 +2,10 @@ import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    product_name: { type: String, required: true },
+    //rating
     rating: { type: Number, default: 0 },
+    //comments
     comment: { type: String, required: true },
   },
   {

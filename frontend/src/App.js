@@ -78,7 +78,7 @@ function App() {
             <div className="container-fluid">
               <div className="navigation__column left">
                 <div className="header__logo">
-                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="Logo" /></Link>
+                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="logo"/></Link>
                 </div>
               </div>
               <div className="navigation__column center">
@@ -225,18 +225,18 @@ function App() {
                     <a href="#">Category <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item menu-item-has-children dropdown">
-                        <Link to="/category/Trà%20Sữa">Tra Sua</Link>
+                        <Link to="/category/TraSua">Tra Sua</Link>
                         <ul className="sub-menu">
                           <li className="menu-item">
-                            <Link to="/category/Nước%20Uống">Nuoc Uong</Link>
+                            <Link to="/category/NuocUong">Nuoc Uong</Link>
                           </li>
                           <li className="menu-item">
-                            <Link to="/category/Ăn%20Vặt">Ăn Vặt</Link>
+                            <Link to="/category/AnVat">Ăn Vặt</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item">
-                        <Link to="/category/Bánh%20Xèo">Bánh Xèo</Link>
+                        <Link to="/category/BanhXeo">Bánh Xèo</Link>
                       </li>
                     </ul>
                   </li>
@@ -412,7 +412,7 @@ function App() {
                 <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                   <aside className="ps-widget--footer ps-widget--info">
                     <header>
-                      <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt /></Link>
+                      <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="logo" /></Link>
                       <h3 className="ps-widget__title">Address Office 1</h3>
                     </header>
                     <footer>

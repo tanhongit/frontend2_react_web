@@ -156,7 +156,7 @@ function ProductsScreen(props) {
                       <label>
                         description <sub>*</sub>
                       </label>
-                      <input value={description} required name="description" id="description" className="form-control" onChange={(e) => setDescription(e.target.value)} type="text" placeholder />
+                      <textarea value={description} required name="description" id="description" className="form-control" onChange={(e) => setDescription(e.target.value)} type="text" placeholder />
                     </div>
                     <div className="form-group">
                       <button type="submit" className="btn btn-success">

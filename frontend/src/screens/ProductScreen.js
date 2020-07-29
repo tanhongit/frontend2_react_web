@@ -76,7 +76,7 @@ function ProductScreen(props) {
                           Cate: <a href="#">{product.category_id}</a> <br /> Brand: <a href="#">{product.brand}</a>.
                         </p>
                         <h3 className="ps-product__price">
-                          {product.product_price} Đ <del>£ 330</del>
+                          {product.product_price} Đ <del>500 Đ</del>
                         </h3>
                         <div className="ps-product__block ps-product__quickview">
                           <h4>QUICK REVIEW</h4>
