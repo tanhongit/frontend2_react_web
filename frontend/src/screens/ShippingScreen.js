@@ -41,6 +41,7 @@ function ShippingScreen(props) {
       <div className="ps-contact ps-contact--2 ps-section pt-80 pb-80">
         <div className="ps-container">
           <div className="row">
+            {cartItems.length === 0 ? <h2>Cart is Empty</h2> : ""}
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
               <div className="ps-section__header pt-50">
                 <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
@@ -51,25 +52,25 @@ function ShippingScreen(props) {
                     <label>
                       Address
                     </label>
-                    <input disabled={cartItems.length === 0} required name="address" id="address" className="form-control" onChange={(e) => setAddress(e.target.value)} type="text" placeholder />
+                    <input required disabled={cartItems.length === 0} required name="address" id="address" className="form-control" onChange={(e) => setAddress(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group">
                     <label>
                       City
                     </label>
-                    <input disabled={cartItems.length === 0} required name="city" id="city" className="form-control" onChange={(e) => setCity(e.target.value)} type="text" placeholder />
+                    <input required disabled={cartItems.length === 0} required name="city" id="city" className="form-control" onChange={(e) => setCity(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group mb-25">
                     <label>
                       Postal Code
                     </label>
-                    <input disabled={cartItems.length === 0} required name="postalCode" id="postalCode" className="form-control" onChange={(e) => setPostalCode(e.target.value)} type="text" placeholder />
+                    <input required disabled={cartItems.length === 0} required name="postalCode" id="postalCode" className="form-control" onChange={(e) => setPostalCode(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group mb-25">
                     <label>
                       Country
                     </label>
-                    <input disabled={cartItems.length === 0} required name="country" id="country" className="form-control" onChange={(e) => setCountry(e.target.value)} type="text" placeholder />
+                    <input required disabled={cartItems.length === 0} required name="country" id="country" className="form-control" onChange={(e) => setCountry(e.target.value)} type="text" placeholder />
                   </div>
                   <div className="form-group">
                     <button type="submit" className="ps-btn" disabled={cartItems.length === 0}>
