@@ -1,5 +1,0 @@
-{"_id":{"$oid":"5f1c7f25a59cfc7d622cf582"},"isAdmin":true,"name":"TanHong","email":"tanhong@gmail.com","password":"12345","__v":0}
-{"_id":{"$oid":"5f1c95885489d8ca9aac8953"},"isAdmin":true,"name":"TanHong","email":"tanhongi@gmail.com","password":"1234","__v":0}
-{"_id":{"$oid":"5f1ca00cb20b7e2f899171c0"},"isAdmin":false,"name":"hiiiii","email":"hiiiii@gmail.com","password":"123","__v":0}
-{"_id":{"$oid":"5f1d3b25860229461b04c09d"},"isAdmin":false,"name":"fshterhst","email":"scodeweb2016@gmail.com","password":"123","__v":0}
-{"_id":{"$oid":"5f1d94fd860229461b04c09f"},"isAdmin":false,"name":"fdfszgrdsgr","email":"scodeweb2017@gmail.com","password":"123","__v":0}
