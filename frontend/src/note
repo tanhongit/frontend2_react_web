@@ -11,9 +11,14 @@ export mongodb
 https://docs.mongodb.com/manual/reference/program/mongoexport/
 mongoexport --collection=users --db=tanhong --out=users_is_tanhong_db.json
 
+import mongodb
+goto folder have file
+mongoimport --db=tanhong --collection=users --file=users_is_tanhong_db_29_7_20.json
 
+windows 
+https://helpex.vn/question/lam-cach-nao-de-khoi-dong-mongo-db-tu-windows--5cbfcd38ae03f6340c34af16?lastactivity
 
-start mongodb
+start mongodb ubnutu
 sudo systemctl stop mongod.service
 sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
