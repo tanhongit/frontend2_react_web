@@ -63,7 +63,7 @@ function OrdersScreen(props) {
                 <td>
                   <Link to={"/order/" + order._id} className="btn btn-info" >Details</Link>
                   {' '}
-                  <button type="button" onClick={() => deleteHandler(order)} className="btn btn-danger">Delete</button>
+                  <button type="button" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler(order) }} className="btn btn-danger">Delete</button>
                 </td>
               </tr>))}
           </tbody>

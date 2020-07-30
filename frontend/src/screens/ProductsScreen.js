@@ -211,7 +211,8 @@ function ProductsScreen(props) {
                   </button>{' '}
                   <button
                     className="btn btn btn-danger"
-                    onClick={() => deleteHandler(product)}
+
+                    onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler(product) }}
                   >
                     Delete
                   </button>

@@ -250,10 +250,10 @@ function App() {
                         {userInfo ? "" : <Link to="/register">Register</Link>}
                       </li>
                       <li className="menu-item">
-                        {userInfo && userInfo.isAdmin ? <Link to="/products">Manager Products</Link> : ""}
+                        {userInfo && userInfo.isAdmin ? <Link to="/products">Products Manager</Link> : ""}
                       </li>
                       <li className="menu-item">
-                        {userInfo && userInfo.isAdmin ? <Link to="/orders">Order Products</Link> : ""}
+                        {userInfo && userInfo.isAdmin ? <Link to="/orders">Order Manager</Link> : ""}
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
