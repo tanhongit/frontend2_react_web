@@ -101,7 +101,7 @@ function CartScreen(props) {
               <a href='/' className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Continue Shopping</a>
             </div>
             <div className="form-group">
-              <button onClick={deleteThisCart} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Cart</button>
+              <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteThisCart() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Cart</button>
             </div>
           </div>
           <div className="ps-cart__total">
