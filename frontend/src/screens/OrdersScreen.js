@@ -48,21 +48,24 @@ function OrdersScreen(props) {
             </tr>
           </thead>
           <tbody>
-            {orders.map(order => (<tr key={order._id}>
-              <td>{order._id}</td>
-              <td>{order.createdAt}</td>
-              <td>{order.totalPrice}</td>
-              <td>{order.user.name}</td>
-              <td>{order.isPaid.toString()}</td>
-              <td>{order.paidAt}</td>
-              <td>{order.isDelivered.toString()}</td>
-              <td>{order.deliveredAt}</td>
-              <td>
-                <Link to={"/order/" + order._id} className="btn btn-info" >Details</Link>
-                {' '}
-                <button type="button" onClick={() => deleteHandler(order)} className="btn btn-danger">Delete</button>
-              </td>
-            </tr>))}
+            {orders.length === 0 ?
+              <div style={{ textAlign: "center" }} className="cart-is-empty"><h2>Order is empty</h2></div>
+              :
+              orders.map(order => (<tr key={order._id}>
+                <td>{order._id}</td>
+                <td>{order.createdAt}</td>
+                <td>{order.totalPrice}</td>
+                <td>{order.user.name}</td>
+                <td>{order.isPaid.toString()}</td>
+                <td>{order.paidAt}</td>
+                <td>{order.isDelivered.toString()}</td>
+                <td>{order.deliveredAt}</td>
+                <td>
+                  <Link to={"/order/" + order._id} className="btn btn-info" >Details</Link>
+                  {' '}
+                  <button type="button" onClick={() => deleteHandler(order)} className="btn btn-danger">Delete</button>
+                </td>
+              </tr>))}
           </tbody>
         </table>
       </div>
