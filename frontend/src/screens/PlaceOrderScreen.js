@@ -32,6 +32,7 @@ function PlaceOrderScreen(props) {
     }));
     //delete cart when created
     Cookie.remove("cartItems");
+    window.location.reload();
   }
 
   useEffect(() => {

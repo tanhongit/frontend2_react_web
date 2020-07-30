@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { addToCart, removeFromCart } from '../actions/cartAction';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Cookie from 'js-cookie';
 
 function CartScreen(props) {
 
@@ -26,6 +26,13 @@ function CartScreen(props) {
 
   const checkoutHandler = () => {
     props.history.push('/signin?redirect=shipping');
+  }
+
+  let history = useHistory();
+  const deleteThisCart = () => {
+    Cookie.remove("cartItems");
+    history.push('/cart')
+    window.location.reload();
   }
 
   return <div className="ps-content pt-80 pb-80">
@@ -91,7 +98,10 @@ function CartScreen(props) {
 
             </div>
             <div className="form-group">
-              <a href='/' className="ps-btn ps-btn--gray">Continue Shopping</a>
+              <a href='/' className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Continue Shopping</a>
+            </div>
+            <div className="form-group">
+              <button onClick={deleteThisCart} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Cart</button>
             </div>
           </div>
           <div className="ps-cart__total">
