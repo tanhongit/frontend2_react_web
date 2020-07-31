@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { listProducts } from '../actions/productActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../actions/cartAction';
 import Rating from '../components/Rating';
 function HomeScreen(props) {
   // const [products, setProducts] = useState([]);
-  const [searchKeyword, setSearchKeyword] = useState('');
-  const [sortOrder, setSortOrder] = useState('');
+  // const [searchKeyword, setSearchKeyword] = useState('');
+  // const [sortOrder, setSortOrder] = useState('');
   const category = props.match.params.id ? props.match.params.id : '';
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
@@ -27,14 +28,14 @@ function HomeScreen(props) {
     };
   }, [category])
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
-  const sortHandler = (e) => {
-    setSortOrder(e.target.value);
-    dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   dispatch(listProducts(category, searchKeyword, sortOrder));
+  // };
+  // const sortHandler = (e) => {
+  //   setSortOrder(e.target.value);
+  //   dispatch(listProducts(category, searchKeyword, sortOrder));
+  // };
   return (
     <>
       <main className="ps-main">
@@ -76,7 +77,7 @@ function HomeScreen(props) {
                 </ul>
               </div> */}
             </div>
-            <div className="container">
+            {/* <div className="container">
               {category && <h2>{category}</h2>}
               <div className="row">
                 <div className="col-md-7">
@@ -95,7 +96,7 @@ function HomeScreen(props) {
                   </select>
                 </div>
               </div>
-            </div>
+            </div> */}
             {loading ? <div>Loading...</div> :
               error ? <div>{error}</div> : (
                 <div className="ps-product__columns">
