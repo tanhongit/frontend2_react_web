@@ -10,7 +10,7 @@ const router = express.Router();
 // });
 
 router.get('/', async (req, res) => {
-  const category_id = req.query.category_id ? { category_id: req.query.category_id } : {};
+  const category = req.query.category ? { category: req.query.category } : {};
   const searchKeyword = req.query.searchKeyword
     ? {
         name: {
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
       ? { price: 1 }
       : { price: -1 }
     : { _id: -1 };
-  const products = await Product.find({ ...category_id, ...searchKeyword }).sort(
+  const products = await Product.find({ ...category, ...searchKeyword }).sort(
     sortOrder
   );
   res.send(products);
@@ -47,7 +47,7 @@ router.put('/:id', async (req, res) => {
     product.product_price = req.body.price;
     product.image = req.body.image;
     product.brand = req.body.brand;
-    product.category_id = req.body.category;
+    product.category = req.body.category;
     product.countInStock = req.body.countInStock;
     product.product_description = req.body.description;
     const updatedProduct = await product.save();
@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
     product_price: req.body.price,
     image: req.body.image,
     brand: req.body.brand,
-    category_id: req.body.category,
+    category: req.body.category,
     countInStock: req.body.countInStock,
     product_description: req.body.description,
     rating: req.body.rating,

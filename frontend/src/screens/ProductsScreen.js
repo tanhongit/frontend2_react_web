@@ -63,7 +63,7 @@ function ProductsScreen(props) {
     setDescription(product.product_description);
     setImage(product.image);
     setBrand(product.brand);
-    setCategory(product.category_id);
+    setCategory(product.category);
     setCountInStock(product.countInStock);
   };
   const submitHandler = (e) => {
@@ -201,7 +201,7 @@ function ProductsScreen(props) {
                 <td>{product.product_name}</td>
                 <td>{product.product_price}</td>
                 <td>{product.countInStock}</td>
-                <td>{product.category_id}</td>
+                <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
                   <button

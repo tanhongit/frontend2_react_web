@@ -3,7 +3,7 @@ export default {
     {
       _id: '1',
       product_name: 'Slim Shirt',
-      category_id: '1',
+      category: '1',
       image: '/images/pin.png',
       product_price: 60,
       product_description: ' Nike',
@@ -14,7 +14,7 @@ export default {
     {
       _id: '2',
       product_name: 'Fit Shirt',
-      category_id: '2',
+      category: '2',
       image: '/images/pin.png',
       product_price: 50,
       product_description: ' Nike',
@@ -25,7 +25,7 @@ export default {
     {
       _id: '3',
       product_name: 'Best Pants',
-      category_id: '1',
+      category: '1',
       image: '/images/pin.png',
       product_price: 70,
       product_description: ' Nike',
@@ -35,7 +35,7 @@ export default {
     }, {
       _id: '4',
       product_name: 'Best Pants',
-      category_id: '3',
+      category: '3',
       image: '/images/pin.png',
       product_price: 70,
       product_description: ' Nike',
@@ -46,7 +46,7 @@ export default {
     {
       _id: '5',
       product_name: 'Slim Shirt',
-      category_id: '1',
+      category: '1',
       image: '/images/pin.png',
       product_price: 60,
       product_description: ' Nike',
@@ -57,7 +57,7 @@ export default {
     {
       _id: '6',
       product_name: 'Fit Shirt',
-      category_id: '2',
+      category: '2',
       image: '/images/pin.png',
       product_price: 50,
       product_description: ' Nike',
@@ -68,7 +68,7 @@ export default {
     {
       _id: '7',
       product_name: 'Fit Shirt',
-      category_id: '2',
+      category: '2',
       image: '/images/pin.png',
       product_price: 50,
       product_description: ' Nike',
@@ -79,7 +79,7 @@ export default {
     {
       _id: '8',
       product_name: 'Fit Shirt',
-      category_id: '2',
+      category: '2',
       image: '/images/pin.png',
       product_price: 50,
       product_description: ' Nike',

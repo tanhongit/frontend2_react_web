@@ -13,15 +13,15 @@ import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL, PRODUCT_
 // };
 
 const listProducts = (
-    category_id = '',
+    category = '',
     searchKeyword = '',
     sortOrder = ''
 ) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
         const { data } = await axios.get(
-            '/api/products?category_id=' +
-            category_id +
+            '/api/products?category=' +
+            category +
             '&searchKeyword=' +
             searchKeyword +
             '&sortOrder=' +

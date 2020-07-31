@@ -9,7 +9,7 @@ function HomeScreen(props) {
   // const [products, setProducts] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortOrder, setSortOrder] = useState('');
-  const category_id = props.match.params.id ? props.match.params.id : '';
+  const category = props.match.params.id ? props.match.params.id : '';
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
@@ -20,20 +20,20 @@ function HomeScreen(props) {
     // }
     // //call
     // fetchData();
-    dispatch(listProducts(category_id));
+    dispatch(listProducts(category));
 
     return () => {
 
     };
-  }, [category_id])
+  }, [category])
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(listProducts(category_id, searchKeyword, sortOrder));
+    dispatch(listProducts(category, searchKeyword, sortOrder));
   };
   const sortHandler = (e) => {
     setSortOrder(e.target.value);
-    dispatch(listProducts(category_id, searchKeyword, sortOrder));
+    dispatch(listProducts(category, searchKeyword, sortOrder));
   };
   return (
     <>
@@ -81,8 +81,8 @@ function HomeScreen(props) {
                 </ul>
               </div> */}
                 </div>
-                {/* <div className="container">
-                  {category_id && <h2>{category_id}</h2>}
+                <div className="container">
+                  {category && <h2>{category}</h2>}
                   <div className="row">
                     <div className="col-md-7">
                       <div>SEACRH PRODUCT: </div>
@@ -100,7 +100,7 @@ function HomeScreen(props) {
                       </select>
                     </div>
                   </div>
-                </div> */}
+                </div>
                 <div className="ps-product__columns">
                   {/* product */}
                   {products.map(product =>
@@ -125,7 +125,7 @@ function HomeScreen(props) {
                               {product.product_name}
                             </a>
                             <p className="ps-shoe__categories">
-                              Cate: <a href="#">{product.category_id}</a>, Brand: <a href="#">{product.brand}</a>.
+                              Cate: <a href="#">{product.category}</a>, Brand: <a href="#">{product.brand}</a>.
                         </p>
                             <span style={{ paddingTop: 15 }} className="ps-shoe__price"> <Link to={'/product/' + product._id}>{product.product_price} Đ</Link></span>
                           </div>

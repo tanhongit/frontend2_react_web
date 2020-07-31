@@ -73,7 +73,7 @@ function ProductScreen(props) {
                       <div className="ps-product__info">
                         <h1>{product.product_name}</h1>
                         <p className="ps-product__category">
-                          Cate: <a href="#">{product.category_id}</a> <br /> Brand: <a href="#">{product.brand}</a>.
+                          Cate: <a href="#">{product.category}</a> <br /> Brand: <a href="#">{product.brand}</a>.
                         </p>
                         <h3 className="ps-product__price">
                           {product.product_price} Đ <del>500 Đ</del>
