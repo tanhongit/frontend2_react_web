@@ -79,7 +79,7 @@ function FavoriteScreen(props) {
             <div style={{ textAlign: "center" }} className="ps-cart__actions">
               <div className="ps-cart__total">
                 <a href='/' className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Continue Shopping</a>
-                <button disabled={favoriteItems.length === 0} onClick={() => { if (window.confirm('Are you sure delete this cart?')) deleteThisFavorite() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Favorites</button>
+                <button disabled={favoriteItems.length === 0} onClick={() => { if (window.confirm('Are you sure delete this favorite?')) deleteThisFavorite() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Favorites</button>
                 <button className="ps-btn" disabled={favoriteItems.length === 0} onClick={addAllItemToCart}>
                   Add to Cart All <i className="ps-icon-next" />
                 </button>
