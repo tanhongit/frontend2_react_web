@@ -12,11 +12,13 @@ import {
     orderListReducer,
     orderDeleteReducer,
 } from './reducers/orderReducers';
+import { favoriteReducer } from './reducers/FavoriteReducers';
 
 const cartItems = Cookie.getJSON('cartItems') || [];
+const favoriteItems = Cookie.getJSON('favoriteItems') || [];
 const userInfo = Cookie.getJSON('userInfo') || null;
 
-const initialState = { cart: { cartItems, shipping: {}, payment: {} }, userSignin: { userInfo } };
+const initialState = { cart: { cartItems, shipping: {}, payment: {} }, userSignin: { userInfo }, favorite: { favoriteItems } };
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
@@ -32,6 +34,7 @@ const reducer = combineReducers({
     myOrderList: myOrderListReducer,
     orderList: orderListReducer,
     orderDelete: orderDeleteReducer,
+    favorite: favoriteReducer,
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)));

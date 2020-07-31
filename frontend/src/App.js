@@ -17,6 +17,7 @@ import OrdersScreen from './screens/OrdersScreen';
 import { logout } from './actions/userActions';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './actions/cartAction';
+import FavoriteScreen from './screens/FavoriteScreen';
 
 function App() {
   const userSignin = useSelector(state => state.userSignin);
@@ -378,6 +379,7 @@ function App() {
       <Route path="/category/:id" component={HomeScreen} />
       <Route path="/profile" component={ProfileScreen} />
       <Route path="/orders" component={OrdersScreen} />
+      <Route path='/favorite/:id' component={FavoriteScreen} />
       <div>
         <div className="ps-subscribe">
           <div className="ps-container">

@@ -105,7 +105,7 @@ function ProductScreen(props) {
                             : <button disabled className="btn btn-info">Out of stock</button>}
 
                           <div className="ps-product__actions">
-                            <a className="mr-10" href="whishlist.html">
+                            <a className="mr-10" href={"/favorite/" + props.match.params.id} >
                               <i className="ps-icon-heart" />
                             </a>
                           </div>

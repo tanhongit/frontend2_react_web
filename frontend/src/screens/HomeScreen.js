@@ -4,8 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { listProducts } from '../actions/productActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../actions/cartAction';
-import Rating from '../components/Rating';
+
 function HomeScreen(props) {
   // const [products, setProducts] = useState([]);
   // const [searchKeyword, setSearchKeyword] = useState('');
@@ -105,7 +104,7 @@ function HomeScreen(props) {
                     <div className="ps-product__column">
                       <div className="ps-shoe mb-30">
                         <div className="ps-shoe__thumbnail">
-                          <a className="ps-shoe__favorite" href="#">
+                          <a className="ps-shoe__favorite" href={'/favorite/' + product._id}>
                             <i className="ps-icon-heart" />
                           </a>
                           <Link to={'/product/' + product._id}><img src={"/images/products/" + product.image} alt='product' /></Link>

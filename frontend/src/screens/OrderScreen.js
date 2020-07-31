@@ -29,9 +29,9 @@ function OrderScreen(props) {
           <div>
             <h3>
               <b>Shipping</b>
-          </h3>
+            </h3>
             <div style={{ paddingTop: 15 }}>
-             <b>Address:</b> {order.shipping.address}, {order.shipping.city},
+              <b>Address:</b> {order.shipping.address}, {order.shipping.city},
           {order.shipping.postalCode}, {order.shipping.country}.
           </div>
             <div>
@@ -70,7 +70,7 @@ function OrderScreen(props) {
                             {item.name}
                           </Link>
                         </div>
-                        <div style={{textAlign:"center"}}>
+                        <div style={{ textAlign: "center" }}>
                           <b>Qty:</b> {item.qty}
                         </div>
                       </div>
