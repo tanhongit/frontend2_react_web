@@ -20,8 +20,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/api/users',userRoute);
-app.use('/api/products',productRoute);
+app.use('/api/users', userRoute);
+app.use('/api/products', productRoute);
 app.use('/api/orders', orderRoute);
 // app.get("/api/products/:id", (req, res) => {
 //     const productID = req.params.id;
@@ -36,4 +36,6 @@ app.use('/api/orders', orderRoute);
 //     res.send(data.products);
 // });
 
-app.listen(5000, () => { console.log('Server start at http://localhost:5000') });
+app.listen(config.PORT, () => {
+    console.log('Server started at http://localhost:5000');
+});
