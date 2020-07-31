@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-// import data from '../data';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userActions';
-// import React, { /*useState,*/ useEffect } from 'react';
 function SigninScreen(props) {
 
   const [email, setEmail] = useState('');
@@ -14,6 +12,7 @@ function SigninScreen(props) {
 
   const dispatch = useDispatch();
   const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
+
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);
@@ -21,10 +20,12 @@ function SigninScreen(props) {
     return () => {
     };
   }, [userInfo]);
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
   }
+
   return (
     <main className="ps-main">
       <div className="ps-contact ps-contact--2 ps-section pt-80 pb-80">
@@ -42,6 +43,8 @@ function SigninScreen(props) {
                     </label>
                     <input required name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
                   </div>
+                  {loading && <div>Loading...</div>}
+                  {error && <div>{error}</div>}
                   <div className="form-group mb-25">
                     <label>
                       Password <sub>*</sub>

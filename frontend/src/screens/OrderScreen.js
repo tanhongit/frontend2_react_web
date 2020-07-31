@@ -82,8 +82,6 @@ function OrderScreen(props) {
               }
             </ul>
           </div>
-
-
         </div>
         <div className="placeorder-action">
           <ul>
@@ -110,7 +108,6 @@ function OrderScreen(props) {
         </div>
       </div>
     </div>
-
 }
 
 export default OrderScreen;

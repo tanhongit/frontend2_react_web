@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { logout, update } from '../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -35,7 +34,7 @@ function ProfileScreen(props) {
       setName(userInfo.name);
       setPassword(userInfo.password);
     }
-    else{
+    else {
       props.history.push("/");
     }
     // dispatch(listMyOrders());

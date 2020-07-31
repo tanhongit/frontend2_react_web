@@ -55,26 +55,16 @@ function ProductsScreen(props) {
     };
   }, [successSave, successDelete, userInfo]);
 
-  const openModal = (product) => {
-    setModalVisible(true);
-    setId(product._id);
-    setName(product.product_name);
-    setPrice(product.product_price);
-    setDescription(product.product_description);
-    setImage(product.image);
-    setBrand(product.brand);
-    setCategory(product.category);
-    setCountInStock(product.countInStock);
-  };
+  const openModal = openModalFunction(setModalVisible, setId, setName, setPrice, setDescription, setImage, setBrand, setCategory, setCountInStock);
   const submitHandler = (e) => {
     (e).preventDefault();
     dispatch(saveProduct({ _id: id, name, price, image, brand, category, countInStock, description }));
   }
 
   const deleteHandler = (product) => {
-
     dispatch(deleteProduct(product._id));
   };
+  
   const uploadFileHandler = (e) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();
@@ -226,3 +216,18 @@ function ProductsScreen(props) {
   );
 }
 export default ProductsScreen;
+
+function openModalFunction(setModalVisible, setId, setName, setPrice, setDescription, setImage, setBrand, setCategory, setCountInStock) {
+  return (product) => {
+    setModalVisible(true);
+    setId(product._id);
+    setName(product.product_name);
+    setPrice(product.product_price);
+    setDescription(product.product_description);
+    setImage(product.image);
+    setBrand(product.brand);
+    setCategory(product.category);
+    setCountInStock(product.countInStock);
+  };
+}
+

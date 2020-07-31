@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-// import data from '../data';
 import { useSelector, useDispatch } from 'react-redux';
-// import React, { /*useState,*/ useEffect } from 'react';
 import { detailsProduct } from '../actions/productActions';
 function ProductScreen(props) {
   // console.log(props.match.params.id);
@@ -14,9 +12,7 @@ function ProductScreen(props) {
 
   useEffect(() => {
     dispatch(detailsProduct(props.match.params.id));
-
     return () => {
-
     };
   }, []);
 
@@ -67,13 +63,13 @@ function ProductScreen(props) {
                       </div>
                       <div className="ps-product__thumbnail--mobile">
                         <div className="ps-product__main-img">
-                          <img src={"/images/products/" + product.image} alt />
+                          <img src={"/images/products/" + product.image} alt="product" />
                         </div>
                       </div>
                       <div className="ps-product__info">
                         <h1>{product.product_name}</h1>
                         <p className="ps-product__category">
-                          Cate: <a href="#">{product.category}</a> <br /> Brand: <a href="#">{product.brand}</a>.
+                          Cate: <a href={'/category/' + product.category}>{product.category}</a> <br /> Brand: <a href="#">{product.brand}</a>.
                         </p>
                         <h3 className="ps-product__price">
                           {product.product_price} Đ <del>500 Đ</del>

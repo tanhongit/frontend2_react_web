@@ -8,12 +8,13 @@ function RegisterScreen(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rePassword, setRePassword] = useState('');
+  const [, setRePassword] = useState('');
   const userRegister = useSelector(state => state.userRegister);
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
 
   const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
+
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);
@@ -27,6 +28,7 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
+
   return <main className="ps-main">
     <div className="ps-contact ps-contact--2 ps-section pt-80 pb-80">
       <div className="ps-container">

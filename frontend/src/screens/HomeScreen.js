@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 // import axios from "axios";
 // import { productListReducer } from '../reducers/productReducers';
 import { listProducts } from '../actions/productActions';
@@ -21,9 +21,7 @@ function HomeScreen(props) {
     // //call
     // fetchData();
     dispatch(listProducts(category));
-
     return () => {
-
     };
   }, [category])
 

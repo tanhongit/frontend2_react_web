@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorite, removeFavorite } from '../actions/favoriteAction';
@@ -32,12 +32,7 @@ function FavoriteScreen(props) {
     window.location.reload();
   }
 
-  const addAllItemToCart = () => {
-    favoriteItems.map(item =>
-      dispatch(addToCart(item.product, 1))
-    )
-    props.history.push('/cart')
-  }
+  const addAllItemToCart = addAllItemCart()
 
   return (
     <>
@@ -95,5 +90,13 @@ function FavoriteScreen(props) {
       </main >
     </>
   );
+
+  function addAllItemCart() {
+    return () => {
+      favoriteItems.map(item => dispatch(addToCart(item.product, 1))
+      );
+      props.history.push('/cart');
+    };
+  }
 }
 export default FavoriteScreen;

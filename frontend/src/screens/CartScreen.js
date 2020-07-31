@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { addToCart, removeFromCart } from '../actions/cartAction';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Cookie from 'js-cookie';
 
 function CartScreen(props) {
 
   const cart = useSelector(state => state.cart);
-
   const { cartItems } = cart;
 
   const productId = props.match.params.id;
