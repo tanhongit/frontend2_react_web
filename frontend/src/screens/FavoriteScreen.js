@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorite, removeFavorite } from '../actions/favoriteAction';
+import Cookie from 'js-cookie';
 
 function FavoriteScreen(props) {
 
@@ -21,6 +22,13 @@ function FavoriteScreen(props) {
 
   const removeFromFavoriteHandler = (productId) => {
     dispatch(removeFavorite(productId));
+  }
+
+  let history = useHistory();
+  const deleteThisFavorite = () => {
+    Cookie.remove("favoriteItems");
+    history.push('/favorite')
+    window.location.reload();
   }
 
   return (
@@ -64,6 +72,15 @@ function FavoriteScreen(props) {
                     </div>
                   )
               }
+            </div>
+            <div style={{ textAlign: "center" }} className="ps-cart__actions">
+              <div className="ps-cart__total">
+                <a href='/' className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Continue Shopping</a>
+                <button disabled={favoriteItems.length === 0} onClick={() => { if (window.confirm('Are you sure delete this cart?')) deleteThisFavorite() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Cart</button>
+                <button className="ps-btn" disabled={favoriteItems.length === 0}>
+                  Add to Cart All <i className="ps-icon-next" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
