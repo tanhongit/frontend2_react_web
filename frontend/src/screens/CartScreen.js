@@ -35,6 +35,8 @@ function CartScreen(props) {
     window.location.reload();
   }
 
+
+
   return <div className="ps-content pt-80 pb-80">
     <div className="ps-container">
       <div className="ps-cart-listing">
@@ -108,7 +110,10 @@ function CartScreen(props) {
             <h3>
               Total Price: <span> {cartItems.reduce((a, c) => c.qty <= c.countInStock && c.qty > 0 ? a + c.price * c.qty : a + c.price, 0)}</span>
             </h3>
-            <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0}>
+            {cartItems.map(item =>
+              item.countInStock === 0 && <div style={{ textAlign: "center", paddingBottom: 20, fontWeight: "bold", color: "red" }}>Shopping cart has a few products out of stock </div>
+            )}
+            <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0 || cartItems.reduce((a, c) => c.countInStock === 0)}>
               Proceed to Checkout <i className="ps-icon-next" />
             </button>
           </div>
