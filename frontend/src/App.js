@@ -291,7 +291,7 @@ function App() {
                               <a className="ps-cart-item__close" onClick={() => removeFromCartHandler(item.product)} />
                               <div className="ps-cart-item__thumbnail">
                                 <a href={"/product/" + item.product} />
-                                <img src={"/images/products/" + item.image} alt />
+                                <img src={"/images/products/" + item.image} alt="product" />
                               </div>
                               <div className="ps-cart-item__content">
                                 <a
