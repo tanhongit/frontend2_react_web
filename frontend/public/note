@@ -1,12 +1,16 @@
 source tutorial: https://www.youtube.com/watch?v=Fy9SdZLBTOo
 
+---------------------------------------------- NPM
 npm install dotenv
 npm install mongoose
 
 npm install jsonwebtoken
 
 npm install body-parser
+------------------------------
 
+
+---------------------------------------------- Mongo
 export mongodb 
 https://docs.mongodb.com/manual/reference/program/mongoexport/
 mongoexport --collection=users --db=tanhong --out=users_is_tanhong_db.json
@@ -15,6 +19,9 @@ import mongodb
 goto folder have file
 mongoimport --db=tanhong --collection=users --file=users_is_tanhong_db_29_7_20.json
 
+delete table 
+https://www.tutorialkart.com/mongodb/mongodb-delete-collection/
+
 windows 
 https://helpex.vn/question/lam-cach-nao-de-khoi-dong-mongo-db-tu-windows--5cbfcd38ae03f6340c34af16?lastactivity
 
@@ -22,3 +29,4 @@ start mongodb ubnutu
 sudo systemctl stop mongod.service
 sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
+--------------------------------

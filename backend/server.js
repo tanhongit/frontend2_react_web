@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data';
+// import data from './data';
 import dotenv from 'dotenv';
 import config from './config';
 import mongoose from 'mongoose';
