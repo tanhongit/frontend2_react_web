@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorite, removeFavorite } from '../actions/favoriteAction';
 import Cookie from 'js-cookie';
+import { addToCart } from '../actions/cartAction';
 
 function FavoriteScreen(props) {
 
@@ -29,6 +30,13 @@ function FavoriteScreen(props) {
     Cookie.remove("favoriteItems");
     history.push('/favorite')
     window.location.reload();
+  }
+
+  const addAllItemToCart = () => {
+    favoriteItems.map(item =>
+      dispatch(addToCart(item.product, 1))
+    )
+    props.history.push('/cart')
   }
 
   return (
@@ -76,8 +84,8 @@ function FavoriteScreen(props) {
             <div style={{ textAlign: "center" }} className="ps-cart__actions">
               <div className="ps-cart__total">
                 <a href='/' className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Continue Shopping</a>
-                <button disabled={favoriteItems.length === 0} onClick={() => { if (window.confirm('Are you sure delete this cart?')) deleteThisFavorite() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Cart</button>
-                <button className="ps-btn" disabled={favoriteItems.length === 0}>
+                <button disabled={favoriteItems.length === 0} onClick={() => { if (window.confirm('Are you sure delete this cart?')) deleteThisFavorite() }} className="ps-btn ps-btn--gray" style={{ textAlign: "center" }}>Delete This Favorites</button>
+                <button className="ps-btn" disabled={favoriteItems.length === 0} onClick={addAllItemToCart}>
                   Add to Cart All <i className="ps-icon-next" />
                 </button>
               </div>

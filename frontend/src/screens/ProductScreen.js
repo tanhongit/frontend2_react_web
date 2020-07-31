@@ -121,8 +121,7 @@ function ProductScreen(props) {
                               role="tab"
                               data-toggle="tab"
                             >
-                              Overview
-                </a>
+                              Overview</a>
                           </li>
                           <li>
                             <a
@@ -131,8 +130,7 @@ function ProductScreen(props) {
                               role="tab"
                               data-toggle="tab"
                             >
-                              ADDITIONAL
-                </a>
+                              ADDITIONAL</a>
                           </li>
                         </ul>
                       </div>
