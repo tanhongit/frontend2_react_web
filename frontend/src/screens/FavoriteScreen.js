@@ -28,7 +28,7 @@ function FavoriteScreen(props) {
   let history = useHistory();
   const deleteThisFavorite = () => {
     Cookie.remove("favoriteItems");
-    history.push('/favorite')
+    history.push('/favorite/1')
     window.location.reload();
   }
 

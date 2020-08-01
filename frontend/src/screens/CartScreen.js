@@ -82,7 +82,7 @@ function CartScreen(props) {
                       </div>
 
                     </td>
-                    <td>{item.countInStock}</td>
+                    <td>{item.countInStock === 0 ? <b style={{ color: "red" }}>{item.countInStock}</b> : item.countInStock}</td>
                     <td>{item.qty <= item.countInStock && item.qty > 0 ? item.qty * item.price : item.price} Đ</td>
                     <td>
                       <button className="ps-remove" onClick={() => removeFromCartHandler(item.product)}></button>

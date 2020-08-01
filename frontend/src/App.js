@@ -79,7 +79,7 @@ function App() {
             <div className="container-fluid">
               <div className="navigation__column left">
                 <div className="header__logo">
-                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="logo"/></Link>
+                  <Link className="ps-logo" to="/"><img src="/logo-chikoiquan-tan-hong-it.png" alt="logo" /></Link>
                 </div>
               </div>
               <div className="navigation__column center">
@@ -231,13 +231,13 @@ function App() {
                           <li className="menu-item">
                             <Link to="/category/NuocUong">Nuoc Uong</Link>
                           </li>
-                          <li className="menu-item">
-                            <Link to="/category/AnVat">Ăn Vặt</Link>
-                          </li>
                         </ul>
                       </li>
                       <li className="menu-item">
                         <Link to="/category/BanhXeo">Bánh Xèo</Link>
+                      </li>
+                      <li className="menu-item">
+                        <Link to="/category/AnVat">Ăn Vặt</Link>
                       </li>
                     </ul>
                   </li>
@@ -258,6 +258,9 @@ function App() {
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
+                      </li>
+                      <li className="menu-item">
+                        <Link to="/favorite/1">Favorite</Link>
                       </li>
                     </ul>
                   </li>
