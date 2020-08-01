@@ -43,8 +43,8 @@ router.put('/:id', async (req, res) => {
   const productId = req.params.id;
   const product = await Product.findById(productId);
   if (product) {
-    product.product_name = req.body.name;
-    product.product_price = req.body.price;
+    product.name = req.body.name;
+    product.price = req.body.price;
     product.image = req.body.image;
     product.brand = req.body.brand;
     product.category = req.body.category;
@@ -62,8 +62,8 @@ router.put('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const product = new Product({
-    product_name: req.body.name,
-    product_price: req.body.price,
+    name: req.body.name,
+    price: req.body.price,
     image: req.body.image,
     brand: req.body.brand,
     category: req.body.category,

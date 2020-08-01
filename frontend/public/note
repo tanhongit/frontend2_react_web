@@ -21,6 +21,7 @@ mongoimport --db=tanhong --collection=users --file=users_is_tanhong_db_29_7_20.j
 
 delete table 
 https://www.tutorialkart.com/mongodb/mongodb-delete-collection/
+db.<collection_name>.drop()
 
 windows 
 https://helpex.vn/question/lam-cach-nao-de-khoi-dong-mongo-db-tu-windows--5cbfcd38ae03f6340c34af16?lastactivity

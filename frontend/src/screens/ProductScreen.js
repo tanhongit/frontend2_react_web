@@ -67,12 +67,12 @@ function ProductScreen(props) {
                         </div>
                       </div>
                       <div className="ps-product__info">
-                        <h1>{product.product_name}</h1>
+                        <h1>{product.name}</h1>
                         <p className="ps-product__category">
                           Cate: <a href={'/category/' + product.category}>{product.category}</a> <br /> Brand: <a href="#">{product.brand}</a>.
                         </p>
                         <h3 className="ps-product__price">
-                          {product.product_price} Đ <del>500 Đ</del>
+                          {product.price} Đ <del>500 Đ</del>
                         </h3>
                         <div className="ps-product__block ps-product__quickview">
                           <h4>QUICK REVIEW</h4>

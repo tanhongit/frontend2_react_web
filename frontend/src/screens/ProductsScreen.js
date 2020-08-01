@@ -164,8 +164,8 @@ function ProductsScreen(props) {
               <tr key={product._id}>
                 <td>{product._id}</td>
                 <td><img style={{ width: 50 }} alt="product" src={'/images/products/' + product.image}></img></td>
-                <td>{product.product_name}</td>
-                <td>{product.product_price}</td>
+                <td>{product.name}</td>
+                <td>{product.price}</td>
                 <td>{product.countInStock}</td>
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
@@ -197,8 +197,8 @@ function openModalFunction(setModalVisible, setId, setName, setPrice, setDescrip
   return (product) => {
     setModalVisible(true);
     setId(product._id);
-    setName(product.product_name);
-    setPrice(product.product_price);
+    setName(product.name);
+    setPrice(product.price);
     setDescription(product.product_description);
     setImage(product.image);
     setBrand(product.brand);

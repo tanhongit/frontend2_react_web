@@ -8,8 +8,8 @@ const addToFavorite = (productId) => async (dispatch, getState) => {
         dispatch({
             type: FAVORITE_ADD_ITEM, payload: {
                 product: data._id,
-                name: data.product_name,
-                price: data.product_price,
+                name: data.name,
+                price: data.price,
                 image: data.image,
                 category: data.category,
                 countInStock: data.countInStock,

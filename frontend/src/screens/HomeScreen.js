@@ -117,12 +117,12 @@ function HomeScreen(props) {
                           </div>
                           <div className="ps-shoe__detail">
                             <a className="ps-shoe__name" href={'/product/' + product._id}>
-                              {product.product_name}
+                              {product.name}
                             </a>
                             <p className="ps-shoe__categories">
                               Cate: <a href="#">{product.category}</a>, Brand: <a href="#">{product.brand}</a>.
                         </p>
-                            <span style={{ paddingTop: 15 }} className="ps-shoe__price"> <Link to={'/product/' + product._id}>{product.product_price} Đ</Link></span>
+                            <span style={{ paddingTop: 15 }} className="ps-shoe__price"> <Link to={'/product/' + product._id}>{product.price} Đ</Link></span>
                           </div>
                         </div>
                       </div>
