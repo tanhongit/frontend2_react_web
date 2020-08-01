@@ -5,10 +5,10 @@ import { listOrders, deleteOrder } from '../actions/orderActions';
 
 function OrdersScreen(props) {
   const orderList = useSelector(state => state.orderList);
-  const { loading, orders, error } = orderList;
+  const { loading, orders } = orderList;
 
   const orderDelete = useSelector(state => state.orderDelete);
-  const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
+  const { loading: loadingDelete, success: successDelete } = orderDelete;
 
   const dispatch = useDispatch();
 
@@ -60,11 +60,12 @@ function OrdersScreen(props) {
                 <td>{order.paidAt}</td>
                 <td>{order.isDelivered.toString()}</td>
                 <td>{order.deliveredAt}</td>
-                <td>
-                  <Link to={"/order/" + order._id} className="btn btn-info" >Details</Link>
-                  {' '}
-                  <button type="button" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler(order) }} className="btn btn-danger">Delete</button>
-                </td>
+                {loadingDelete ? <td><div>Loading...</div></td> :
+                  <td>
+                    <Link to={"/order/" + order._id} className="btn btn-info" >Details</Link><span> </span>
+                    <button type="button" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler(order) }} className="btn btn-danger">Delete</button>
+                  </td>
+                }
               </tr>))}
           </tbody>
         </table>

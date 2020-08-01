@@ -17,9 +17,8 @@ function ProductsScreen(props) {
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [description, setDescription] = useState('');
-  const [uploading, setUploading] = useState(false);
   const productList = useSelector((state) => state.productList);
-  const { loading, products, error } = productList;
+  const { products } = productList;
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
 
@@ -32,9 +31,7 @@ function ProductsScreen(props) {
 
   const productDelete = useSelector((state) => state.productDelete);
   const {
-    loading: loadingDelete,
     success: successDelete,
-    error: errorDelete,
   } = productDelete;
   const dispatch = useDispatch();
 
@@ -51,7 +48,6 @@ function ProductsScreen(props) {
       props.history.push("/");
     }
     return () => {
-      //
     };
   }, [successSave, successDelete, userInfo]);
 
@@ -64,27 +60,7 @@ function ProductsScreen(props) {
   const deleteHandler = (product) => {
     dispatch(deleteProduct(product._id));
   };
-  
-  const uploadFileHandler = (e) => {
-    const file = e.target.files[0];
-    const bodyFormData = new FormData();
-    bodyFormData.append('image', file);
-    setUploading(true);
-    axios
-      .post('/api/uploads/s3', bodyFormData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then((response) => {
-        setImage(response.data);
-        setUploading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setUploading(false);
-      });
-  };
+
   return (
     <div className="content content-margined">
       <div className="product-header">

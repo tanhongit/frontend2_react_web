@@ -260,7 +260,7 @@ function App() {
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
                       </li>
                       <li className="menu-item">
-                        <Link to="/favorite/1">Favorite</Link>
+                        <Link to="/favorite/products">Favorite</Link>
                       </li>
                     </ul>
                   </li>
@@ -279,7 +279,7 @@ function App() {
                 </form>
                 <div className="ps-cart">
                   <a className="ps-cart__toggle" href="/cart">
-                    {cartItems.length === 0 ? "" : <span><i>!</i></span>}
+                    {cartItems.length === 0 ? "" : <span><i className="fa fa-exclamation-triangle" aria-hidden="true"></i></span>}
                     <i className="ps-icon-shopping-cart" />
                   </a>
                   <div className="ps-cart__listing">

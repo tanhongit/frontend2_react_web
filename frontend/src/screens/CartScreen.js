@@ -109,8 +109,7 @@ function CartScreen(props) {
             <h3>
               Total Price: <span> {cartItems.reduce((a, c) => c.qty <= c.countInStock && c.qty > 0 ? a + c.price * c.qty : a + c.price, 0)}</span>
             </h3>
-            {checkItemCartOutOfStock != 0 && <div style={{ textAlign: "center", paddingBottom: 20, fontWeight: "bold", color: "red" }}>Shopping cart has a few products out of stock </div>
-            }
+            {checkItemCartOutOfStock != 0 && <div style={{ textAlign: "center", paddingBottom: 20, fontWeight: "bold", color: "red" }}>Shopping cart has a few products out of stock. Couldn't order.</div>}
             <button onClick={checkoutHandler} className="ps-btn" disabled={cartItems.length === 0 || checkItemCartOutOfStock != 0}>
               Proceed to Checkout <i className="ps-icon-next" />
             </button>
