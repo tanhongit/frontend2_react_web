@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 // import axios from "axios";
 // import { productListReducer } from '../reducers/productReducers';
 import { listProducts } from '../actions/productActions';
@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 function HomeScreen(props) {
   // const [products, setProducts] = useState([]);
-  // const [searchKeyword, setSearchKeyword] = useState('');
-  // const [sortOrder, setSortOrder] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [sortOrder, setSortOrder] = useState('');
   const category = props.match.params.id ? props.match.params.id : '';
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
@@ -25,20 +25,49 @@ function HomeScreen(props) {
     };
   }, [category])
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   dispatch(listProducts(category, searchKeyword, sortOrder));
-  // };
-  // const sortHandler = (e) => {
-  //   setSortOrder(e.target.value);
-  //   dispatch(listProducts(category, searchKeyword, sortOrder));
-  // };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(listProducts(category, searchKeyword, sortOrder));
+  };
+
+  const sortHandler = (e) => {
+    setSortOrder(e.target.value);
+    dispatch(listProducts(category, searchKeyword, sortOrder));
+  };
+
   return (
     <>
       <main className="ps-main">
         <div className="ps-products-wrap pt-80 pb-80">
           <div className="ps-products" data-mh="product-listing">
             <div className="ps-product-action">
+
+              <div className="container">
+                {category && <h2>{category}</h2>}
+                <div className="row">
+                  <div className="col-md-7">
+                    <div style={{ fontWeight: "bold", padding: 15 }}>SEACRH PRODUCT: </div>
+                    <form onSubmit={submitHandler}>
+                      <div className="row">
+                        <div className="col-md-9">
+                          <input placeholder="Search product here..." className="form-control" onChange={(e) => setSearchKeyword(e.target.value)} />
+                        </div>
+                        <div className="col-md-3">
+                          <button style={{ fontWeight: "bold", marginTop: 10 }} className="btn btn-success" value="search" type="submit">Search<i class="ti-search"></i></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div style={{ fontWeight: "bold" }} className="col-md-3">
+                    <div style={{ fontWeight: "bold", padding: 15 }}>SORT PRODUCT BY: </div>
+                    <select className="form-control" name="sortOrder" onChange={sortHandler}>
+                      <option value="">Newest</option>
+                      <option value="lowest">Lowest</option>
+                      <option value="highest">Highest</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
               {/* <div className="ps-product__filter">
                     <select className="ps-select selectpicker">
                       <option value={1}>Shortby</option>
@@ -74,26 +103,6 @@ function HomeScreen(props) {
                 </ul>
               </div> */}
             </div>
-            {/* <div className="container">
-              {category && <h2>{category}</h2>}
-              <div className="row">
-                <div className="col-md-7">
-                  <div>SEACRH PRODUCT: </div>
-                  <form onSubmit={submitHandler}>
-                    <input placeholder="Search product here..." className="form-control" onChange={(e) => setSearchKeyword(e.target.value)} />
-                    <button className="btn btn-success" value="search" type="submit">Search<i class="ti-search"></i></button>
-                  </form>
-                </div>
-                <div className="col-md-3">
-                  SORT PRODUCT BY: {' '}
-                  <select className="form-control" name="sortOrder" onChange={sortHandler}>
-                    <option value="">Newest</option>
-                    <option value="lowest">Lowest</option>
-                    <option value="highest">Highest</option>
-                  </select>
-                </div>
-              </div>
-            </div> */}
             {loading ? <div>Loading...</div> :
               error ? <div>{error}</div> : (
                 <div className="ps-product__columns">
