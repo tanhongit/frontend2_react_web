@@ -1,6 +1,6 @@
 import axios from "axios";
 import Axios from "axios";
-import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_SUCCESS, PRODUCT_SAVE_REQUEST, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_FAIL, PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAIL, PRODUCT_FILTER_BY_CATE, PRODUCT_ORDER_BY_PRICE } from "../constants/productConstants";
+import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_SUCCESS, PRODUCT_SAVE_REQUEST, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_FAIL, PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAIL } from "../constants/productConstants";
 
 // const listProducts = () => async (dispatch) => {
 //     try {
@@ -90,43 +90,4 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
     }
 };
 
-const filterProducts = (products, category) => (dispatch) => {
-    dispatch({
-        type: PRODUCT_FILTER_BY_CATE,
-        payload: {
-            category: category,
-            items:
-                category === ""
-                    ? products
-                    : products.filter((x) => x.category.indexOf(category) >= 0),
-        },
-    });
-};
-
-const sortProducts = (filteredProducts, sort) => (dispatch) => {
-    const sortedProducts = filteredProducts.slice();
-    if (sort === "latest") {
-        sortedProducts.sort((a, b) => (a._id > b._id ? 1 : -1));
-    } else {
-        sortedProducts.sort((a, b) =>
-            sort === "lowest"
-                ? a.price > b.price
-                    ? 1
-                    : -1
-                : a.price > b.price
-                    ? -1
-                    : 1
-        );
-    }
-    console.log(sortedProducts);
-    dispatch({
-        type: PRODUCT_ORDER_BY_PRICE,
-        payload: {
-            sort: sort,
-            items: sortedProducts,
-        },
-    });
-};
-
-
-export { listProducts, detailsProduct, saveProduct, deleteProduct, filterProducts, sortProducts };
+export { listProducts, detailsProduct, saveProduct, deleteProduct };
