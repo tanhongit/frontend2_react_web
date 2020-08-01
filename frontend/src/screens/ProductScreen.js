@@ -77,7 +77,7 @@ function ProductScreen(props) {
                         <div className="ps-product__block ps-product__quickview">
                           <h4>QUICK REVIEW</h4>
                           <p>
-                            {product.product_description}
+                            {product.description}
                           </p>
                         </div>
                         <div className="ps-product__block ps-product__size">
@@ -133,7 +133,7 @@ function ProductScreen(props) {
                       <div className="tab-content mb-60">
                         <div className="tab-pane active" role="tabpanel" id="tab_01">
                           <p>
-                            {product.product_description}
+                            {product.description}
                           </p>
                         </div>
                         <div className="tab-pane" role="tabpanel" id="tab_04">

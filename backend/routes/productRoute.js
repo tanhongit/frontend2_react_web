@@ -49,7 +49,7 @@ router.put('/:id', async (req, res) => {
     product.brand = req.body.brand;
     product.category = req.body.category;
     product.countInStock = req.body.countInStock;
-    product.product_description = req.body.description;
+    product.description = req.body.description;
     const updatedProduct = await product.save();
     if (updatedProduct) {
       return res
@@ -68,7 +68,7 @@ router.post('/', async (req, res) => {
     brand: req.body.brand,
     category: req.body.category,
     countInStock: req.body.countInStock,
-    product_description: req.body.description,
+    description: req.body.description,
     rating: req.body.rating,
     numReviews: req.body.numReviews,
   });

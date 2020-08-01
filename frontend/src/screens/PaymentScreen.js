@@ -28,7 +28,7 @@ function PaymentScreen(props) {
                     <h4>Choose your option</h4>
                     <div className="form-group">
                       <label for="paymentPaypal">
-                        <div className="paymentScreen"><img src="/images/paypal-512.jpg"></img> Paypal</div>
+                        <div className="paymentScreen"><img src="/images/paypal-512.jpg" alt="product"></img> Paypal</div>
                       </label>
                       <input
                         type="radio"
@@ -40,7 +40,7 @@ function PaymentScreen(props) {
                     </div>
                     <div className="form-group">
                       <label for="paymentMasterCart">
-                        <div className="paymentScreen"><img src="/images/mastercart.png"></img> Master Cart</div>
+                        <div className="paymentScreen"><img src="/images/mastercart.png" alt="product"></img> Master Cart</div>
                       </label>
                       <input
                         type="radio"
@@ -52,7 +52,7 @@ function PaymentScreen(props) {
                     </div>
                     <div className="form-group">
                       <label for="paymentVisa">
-                        <div className="paymentScreen"><img src="/images/visa-icon-0.png"></img> Visa</div>
+                        <div className="paymentScreen"><img src="/images/visa-icon-0.png" alt="product"></img> Visa</div>
                       </label>
                       <input
                         type="radio"

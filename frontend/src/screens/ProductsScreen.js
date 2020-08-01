@@ -198,7 +198,7 @@ function openModalFunction(setModalVisible, setId, setName, setPrice, setDescrip
     setId(product._id);
     setName(product.name);
     setPrice(product.price);
-    setDescription(product.product_description);
+    setDescription(product.description);
     setImage(product.image);
     setBrand(product.brand);
     setCategory(product.category);
