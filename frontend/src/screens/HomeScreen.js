@@ -41,9 +41,8 @@ function HomeScreen(props) {
         <div className="ps-products-wrap pt-80 pb-80">
           <div className="ps-products" data-mh="product-listing">
             <div className="ps-product-action">
-
+              {category && <h2>{category}</h2>}
               <div className="container">
-                {category && <h2>{category}</h2>}
                 <div className="row">
                   <div className="col-md-7">
                     <div style={{ fontWeight: "bold", padding: 15 }}>SEACRH PRODUCT: </div>
@@ -58,24 +57,16 @@ function HomeScreen(props) {
                       </div>
                     </form>
                   </div>
-                  <div style={{ fontWeight: "bold" }} className="col-md-3">
-                    <div style={{ fontWeight: "bold", padding: 15 }}>SORT PRODUCT BY: </div>
-                    <select className="form-control" name="sortOrder" onChange={sortHandler}>
-                      <option value="">Newest</option>
-                      <option value="lowest">Lowest</option>
-                      <option value="highest">Highest</option>
-                    </select>
-                  </div>
                 </div>
               </div>
-              {/* <div className="ps-product__filter">
-                    <select className="ps-select selectpicker">
-                      <option value={1}>Shortby</option>
-                      <option value={2}>Name</option>
-                      <option value={3}>Price (Low to High)</option>
-                      <option value={3}>Price (High to Low)</option>
-                    </select>
-                  </div> */}
+              <div style={{ fontWeight: "bold" }} className="ps-product__filter">
+                <div style={{ fontWeight: "bold", padding: 15 }}>SORT PRODUCT BY: </div>
+                <select className="form-control" name="sortOrder" onChange={sortHandler}>
+                  <option value="">Newest</option>
+                  <option value="lowest">Price (Highest to Lowest)</option>
+                  <option value="highest">Price (Lowest to Highest)</option>
+                </select>
+              </div>
               {/* <div className="ps-pagination">
                 <ul className="pagination">
                   <li>
@@ -122,7 +113,6 @@ function HomeScreen(props) {
                             {product.countInStock >= 1 ?
                               <a href={"/cart/" + product._id + "?qty=1"} className='ps-btn btn btn-primary btn-add-to-cart-home'>Add to Cart</a>
                               : <button disabled className="btn btn-info">Out of stock</button>}
-
                           </div>
                           <div className="ps-shoe__detail">
                             <a className="ps-shoe__name" href={'/product/' + product._id}>

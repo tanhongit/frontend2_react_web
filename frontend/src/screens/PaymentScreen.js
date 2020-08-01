@@ -23,8 +23,7 @@ function PaymentScreen(props) {
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                 <div className="ps-section__header pt-50">
                   <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
-                    - Payment
-            </h2>
+                    - Payment</h2>
                   <form className="ps-contact__form" onSubmit={submitHandler} method="post">
                     <h4>Choose your option</h4>
                     <div className="form-group">
