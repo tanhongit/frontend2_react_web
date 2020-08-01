@@ -251,10 +251,10 @@ function App() {
                         {userInfo ? "" : <Link to="/register">Register</Link>}
                       </li>
                       <li className="menu-item">
-                        {userInfo && userInfo.isAdmin ? <Link to="/products">Products Manager</Link> : ""}
+                        {userInfo && userInfo.isAdmin ? <Link to="/products"><span style={{ color: "red", fontWeight: "bold" }}>Admin:</span> Products Manager</Link> : ""}
                       </li>
                       <li className="menu-item">
-                        {userInfo && userInfo.isAdmin ? <Link to="/orders">Order Manager</Link> : ""}
+                        {userInfo && userInfo.isAdmin ? <Link to="/orders"><span style={{ color: "red", fontWeight: "bold" }}>Admin:</span> Order Manager</Link> : ""}
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
@@ -279,9 +279,7 @@ function App() {
                 </form>
                 <div className="ps-cart">
                   <a className="ps-cart__toggle" href="/cart">
-                    <span>
-                      <i>20</i>
-                    </span>
+                    {cartItems.length === 0 ? "" : <span><i>!</i></span>}
                     <i className="ps-icon-shopping-cart" />
                   </a>
                   <div className="ps-cart__listing">
