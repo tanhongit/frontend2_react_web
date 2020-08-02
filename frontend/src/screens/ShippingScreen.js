@@ -17,8 +17,8 @@ function ShippingScreen(props) {
   const { cartItems } = cart;
 
   //validation user 
-  const userSignin = useSelector(state => state.userSignin);
-  const { userInfo } = userSignin;
+  const userSignIn = useSelector(state => state.userSignIn);
+  const { userInfo } = userSignIn;
 
   useEffect(() => {
     if (!userInfo) {

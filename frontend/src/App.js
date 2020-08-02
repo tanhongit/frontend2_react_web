@@ -20,8 +20,8 @@ import { removeFromCart } from './actions/cartAction';
 import FavoriteScreen from './screens/FavoriteScreen';
 
 function App() {
-  const userSignin = useSelector(state => state.userSignin);
-  const { userInfo } = userSignin;
+  const userSignIn = useSelector(state => state.userSignIn);
+  const { userInfo } = userSignIn;
 
   const dispatch = useDispatch();
   const handleLogout = () => {

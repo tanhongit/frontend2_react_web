@@ -18,8 +18,8 @@ function ProductsScreen(props) {
   const [description, setDescription] = useState('');
   const productList = useSelector((state) => state.productList);
   const { products } = productList;
-  const userSignin = useSelector(state => state.userSignin);
-  const { userInfo } = userSignin;
+  const userSignIn = useSelector(state => state.userSignIn);
+  const { userInfo } = userSignIn;
 
   const productSave = useSelector((state) => state.productSave);
   const {

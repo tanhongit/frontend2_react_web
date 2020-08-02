@@ -13,8 +13,8 @@ function OrdersScreen(props) {
   const dispatch = useDispatch();
 
   //validation user 
-  const userSignin = useSelector(state => state.userSignin);
-  const { userInfo } = userSignin;
+  const userSignIn = useSelector(state => state.userSignIn);
+  const { userInfo } = userSignIn;
 
   useEffect(() => {
     (userInfo && userInfo.isAdmin) ? dispatch(listOrders()) : props.history.push("/"); //validation user 
