@@ -226,18 +226,18 @@ function App() {
                     <a href="#">Category <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item menu-item-has-children dropdown">
-                        <Link to="/category/Tra%20Sua">Tra Sua</Link>
+                        <Link to="/category/TraSua">Tra Sua</Link>
                         <ul className="sub-menu">
                           <li className="menu-item">
-                            <Link to="/category/Nuoc%20Uong">Nuoc Uong</Link>
+                            <Link to="/category/NuocUong">Nuoc Uong</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item">
-                        <Link to="/category/Banh%20Xeo">Bánh Xèo</Link>
+                        <Link to="/category/BanhXeo">Bánh Xèo</Link>
                       </li>
                       <li className="menu-item">
-                        <Link to="/category/An%20Vat">Ăn Vặt</Link>
+                        <Link to="/category/AnVat">Ăn Vặt</Link>
                       </li>
                     </ul>
                   </li>
