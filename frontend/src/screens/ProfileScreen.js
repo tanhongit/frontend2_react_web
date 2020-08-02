@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { logout, update } from '../actions/userActions';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { listMyOrders } from '../actions/orderActions';
 
 function ProfileScreen(props) {
   const [name, setName] = useState('');
@@ -25,8 +27,9 @@ function ProfileScreen(props) {
   const userUpdate = useSelector(state => state.userUpdate);
   const { loading, success, error } = userUpdate;
 
-  // const myOrderList = useSelector(state => state.myOrderList);
-  // const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
+  const myOrderList = useSelector(state => state.myOrderList);
+  const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
+
   useEffect(() => {
     if (userInfo) {
       console.log(userInfo.name)
@@ -37,7 +40,7 @@ function ProfileScreen(props) {
     else {
       props.history.push("/");
     }
-    // dispatch(listMyOrders());
+    dispatch(listMyOrders());
     return () => {
 
     };
@@ -50,8 +53,7 @@ function ProfileScreen(props) {
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
             <div className="ps-section__header pt-50">
               <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
-                - User Profile Manager
-      </h2>
+                - User Profile Manager</h2>
               <form className="ps-contact__form" onSubmit={submitHandler} method="post">
                 {loading && <div>Loading...</div>}
                 {error && <div>{error}</div>}
@@ -82,42 +84,43 @@ function ProfileScreen(props) {
                   <span style={{ paddingRight: 30, paddingLeft: 30 }}>or</span> <button type="button" onClick={handleLogout} className="btn btn-danger">Logout</button>
                 </div>
               </form>
-
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div className="ps-container">
+      <h2 style={{ textAlign: "center", padding: 30, fontWeight: "bold" }}>My Orders List</h2>
+      <div className="ps-cart-listing">
+        {
+          loadingOrders ? <div>Loading...</div> :
+            errorOrders ? <div>{errorOrders} </div> :
+              <table className="table ps-cart__table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>DATE</th>
+                    <th>TOTAL</th>
+                    <th>PAID</th>
+                    <th>ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {orders.map(order => <tr key={order._id}>
+                    <td>{order._id}</td>
+                    <td>{order.createdAt}</td>
+                    <td>{order.totalPrice} VND</td>
+                    <td>{order.isPaid}</td>
+                    <td>
+                      <Link className="btn btn-info" to={"/order/" + order._id}>DETAILS</Link>
+                    </td>
+                  </tr>)}
+                </tbody>
+              </table>
+        }
+      </div>
+    </div>
   </main>
-  {/* <div className="profile-orders content-margined">
-      {
-        loadingOrders ? <div>Loading...</div> :
-          errorOrders ? <div>{errorOrders} </div> :
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>DATE</th>
-                  <th>TOTAL</th>
-                  <th>PAID</th>
-                  <th>ACTIONS</th>
-                </tr>
-              </thead>
-              <tbody>
-                {orders.map(order => <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>{order.isPaid}</td>
-                  <td>
-                    <Link to={"/order/" + order._id}>DETAILS</Link>
-                  </td>
-                </tr>)}
-              </tbody>
-            </table>
-      }
-    </div> */}
-
 }
 
 export default ProfileScreen;
