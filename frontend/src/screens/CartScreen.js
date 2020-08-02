@@ -73,12 +73,12 @@ function CartScreen(props) {
                     <td>
 
                       <div className="form-group--number">
+                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty <= item.countInStock && item.qty > 0 ? item.qty : '1'} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} />
                         <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
                           {[...Array(item.countInStock).keys()].map(x =>
                             <option key={x + 1} value={x + 1}>{x + 1}</option>
                           )}
                         </select>
-                        <input title="Nhập Để Đổi Số Lượng" type='number' className="form-control" type="text" value={item.qty <= item.countInStock && item.qty > 0 ? item.qty : '1'} onChange={(e) => dispatch(addToCart(item.product, e.target.value))} min="1" step="1" max={item.countInStock} />
                       </div>
 
                     </td>

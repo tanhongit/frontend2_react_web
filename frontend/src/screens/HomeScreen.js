@@ -35,10 +35,11 @@ function HomeScreen(props) {
         <div className="ps-products-wrap pt-80 pb-80">
           <div className="ps-products" data-mh="product-listing">
             <div className="ps-product-action">
-              {category && <h2>{category}</h2>}
+
               <div className="container">
                 <div className="row">
-                  <div className="col-md-7">
+                  <div className="col-md-6">{category && <h2 style={{ fontWeight: "bold", padding: 15, color:"blue" }}><span>Category: </span>{category}</h2>}</div>
+                  <div className="col-md-6">
                     <div style={{ fontWeight: "bold", padding: 15 }}>SEACRH PRODUCT: </div>
                     <form onSubmit={submitHandler}>
                       <div className="row">

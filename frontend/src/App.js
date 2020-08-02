@@ -226,24 +226,27 @@ function App() {
                     <a href="#">Category <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
                       <li className="menu-item menu-item-has-children dropdown">
-                        <Link to="/category/TraSua">Tra Sua</Link>
+                        <Link to="/category/Tra%20Sua">Tra Sua</Link>
                         <ul className="sub-menu">
                           <li className="menu-item">
-                            <Link to="/category/NuocUong">Nuoc Uong</Link>
+                            <Link to="/category/Nuoc%20Uong">Nuoc Uong</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item">
-                        <Link to="/category/BanhXeo">Bánh Xèo</Link>
+                        <Link to="/category/Banh%20Xeo">Bánh Xèo</Link>
                       </li>
                       <li className="menu-item">
-                        <Link to="/category/AnVat">Ăn Vặt</Link>
+                        <Link to="/category/An%20Vat">Ăn Vặt</Link>
                       </li>
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children dropdown">
                     <a href="/profile">{userInfo ? userInfo.isAdmin ? "Admin: " + userInfo.name : "User: " + userInfo.name : 'Login & Regiser'} <i className="fa fa-angle-down" /></a>
                     <ul className="sub-menu">
+                      <li className="menu-item">
+                        <Link to="/favorite/products">Favorite</Link>
+                      </li>
                       <li className="menu-item">
                         {userInfo ? <Link to="/profile">Profile</Link> : <Link to="/signin">Login</Link>}
                       </li>
@@ -258,9 +261,6 @@ function App() {
                       </li>
                       <li className="menu-item">
                         {userInfo ? <Link onClick={handleLogout} className="button secondary full-width">Logout</Link> : ''}
-                      </li>
-                      <li className="menu-item">
-                        <Link to="/favorite/products">Favorite</Link>
                       </li>
                     </ul>
                   </li>
