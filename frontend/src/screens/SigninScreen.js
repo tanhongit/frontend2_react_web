@@ -37,14 +37,14 @@ function SigninScreen(props) {
                   - Sign In USER
             </h2>
                 <form className="ps-contact__form" onSubmit={submitHandler} method="post">
+                  {loading && <div>Loading...</div>}
+                  {error && <div>{error}</div>}
                   <div className="form-group">
                     <label>
                       Email <sub>*</sub>
                     </label>
                     <input required name="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} type="email" placeholder />
                   </div>
-                  {loading && <div>Loading...</div>}
-                  {error && <div>{error}</div>}
                   <div className="form-group mb-25">
                     <label>
                       Password <sub>*</sub>
