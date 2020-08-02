@@ -25,15 +25,9 @@ function HomeScreen(props) {
     };
   }, [category])
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
+  const submitHandler = submitHandlerFunction();
 
-  const sortHandler = (e) => {
-    setSortOrder(e.target.value);
-    dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
+  const sortHandler = sortHandlerFunction();
 
   return (
     <>
@@ -59,7 +53,7 @@ function HomeScreen(props) {
                   </div>
                 </div>
               </div>
-              <div style={{ fontWeight: "bold" }} className="ps-product__filter">
+              <div className="ps-product__filter">
                 <div style={{ fontWeight: "bold", padding: 15 }}>SORT PRODUCT BY: </div>
                 <select className="form-control" name="sortOrder" onChange={sortHandler}>
                   <option value="">Newest</option>
@@ -277,6 +271,20 @@ function HomeScreen(props) {
       </main >
     </>
   );
+
+  function sortHandlerFunction() {
+    return (e) => {
+      setSortOrder(e.target.value);
+      dispatch(listProducts(category, searchKeyword, sortOrder));
+    };
+  }
+
+  function submitHandlerFunction() {
+    return (e) => {
+      e.preventDefault();
+      dispatch(listProducts(category, searchKeyword, sortOrder));
+    };
+  }
 }
 
 export default HomeScreen;

@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
   const searchKeyword = req.query.searchKeyword
     ? {
-        name: {
-          $regex: req.query.searchKeyword,
-          $options: 'i',
-        },
-      }
+      name: {
+        $regex: req.query.searchKeyword,
+        $options: 'i',
+      },
+    }
     : {};
   const sortOrder = req.query.sortOrder
     ? req.query.sortOrder === 'lowest'
