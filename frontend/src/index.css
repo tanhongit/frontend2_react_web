@@ -6620,3 +6620,44 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+
+.popupSuccess-homepage{
+  background:#5cb85b;
+  right: 0;
+  top: 130px;
+  position: fixed;
+  width:300px;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  font-weight:bold;
+  z-index: 100000;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  animation-name: hinhtron;
+  animation-duration: 2s;
+}
+@keyframes hinhtron
+{   
+  0%{
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  100%{
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}

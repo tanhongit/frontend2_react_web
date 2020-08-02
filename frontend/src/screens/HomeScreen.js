@@ -12,6 +12,9 @@ function HomeScreen(props) {
   const category = props.match.params.id ? props.match.params.id : '';
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
+
+  const [modalVisible, setModalVisible] = useState(false);
+
   const dispatch = useDispatch();
   useEffect(() => {
     // const fetchData = async () => {
@@ -29,16 +32,19 @@ function HomeScreen(props) {
 
   const sortHandler = sortHandlerFunction();
 
+  const openModal = openModalFunction(setModalVisible)
+
   return (
     <>
+      {modalVisible &&
+        <div className="popupSuccess-homepage">You have successfully added the product to the cart <button type="button" onClick={() => setModalVisible(false)} className="btn btn-danger">X</button></div>}
       <main className="ps-main">
         <div className="ps-products-wrap pt-80 pb-80">
           <div className="ps-products" data-mh="product-listing">
             <div className="ps-product-action">
-
               <div className="container">
                 <div className="row">
-                  <div className="col-md-6">{category && <h2 style={{ fontWeight: "bold", padding: 15, color:"blue" }}><span>Category: </span>{category}</h2>}</div>
+                  <div className="col-md-6">{category && <h2 style={{ fontWeight: "bold", padding: 15, color: "blue" }}><span>Category: </span>{category}</h2>}</div>
                   <div className="col-md-6">
                     <div style={{ fontWeight: "bold", padding: 15 }}>SEACRH PRODUCT: </div>
                     <form onSubmit={submitHandler}>
@@ -166,6 +172,8 @@ function HomeScreen(props) {
             <aside className="ps-widget--sidebar ps-widget--category">
               <div className="ps-widget__header">
                 <h3>Category</h3>
+                <button className="btn btn-success" onClick={() => openModal({})}>
+          Create Product</button>
               </div>
               <div className="ps-widget__content">
                 <ul className="ps-list--checked">
@@ -289,3 +297,9 @@ function HomeScreen(props) {
 }
 
 export default HomeScreen;
+
+function openModalFunction(setModalVisible) {
+  return () => {
+    setModalVisible(true);
+  };
+}
