@@ -51,7 +51,7 @@ function ProductsScreen(props) {
   }, [successSave, successDelete, userInfo]);
 
   const openModal = openModalFunction(setModalVisible, setId, setName, setPrice, setDescription, setImage, setBrand, setCategory, setCountInStock);
-  
+
   const submitHandler = (e) => {
     (e).preventDefault();
     dispatch(saveProduct({ _id: id, name, price, image, brand, category, countInStock, description }));
@@ -76,8 +76,11 @@ function ProductsScreen(props) {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                 <div className="ps-section__header pt-50">
-                  <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
-                    - Create Product</h2>
+                  {id ?
+                    <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
+                      - Update Product</h2> :
+                    <h2 className="ps-section__title" data-mask="CHIKOIQUAN">
+                      - Create Product</h2>}
                   <form className="ps-contact__form" onSubmit={submitHandler} method="post">
                     {loadingSave && <div>Loading...</div>}
                     {errorSave && <div>{errorSave}</div>}
