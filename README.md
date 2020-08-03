@@ -11,11 +11,6 @@ Support this project :stuck_out_tongue_winking_eye: :pray:
     <a href="https://www.paypal.me/tanhongit" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg" data-origin="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="PayPal buymeacoffee TanHongIT"></a>
 </p>
 
-# 1. Configuration requirements
-
-    - Version PHP 7.2 and above
-    - OpenSSL PHP Extension
-
 # 2. Technology
 - React & Node & MongoDB
 - Framework Express 
