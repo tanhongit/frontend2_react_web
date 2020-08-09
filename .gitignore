@@ -23,3 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
+package-lock.json
+yarn-lock.json
+frontend/package-lock.json
+frontend/yarn-lock.json
