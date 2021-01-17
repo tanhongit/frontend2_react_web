@@ -48,7 +48,7 @@ We are going to build the web application using:
 - MongoDB
 - NodeJS
 
-# 5. Runing
+# 5. Running
 
 ## 5.1. Install NodeJS
 
