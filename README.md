@@ -45,8 +45,8 @@ Support this project :stuck_out_tongue_winking_eye: :pray:
 
 # 4. Configuration requirements
 We are going to build the web application using:
-- MongoDB
-- NodeJS
+- [MongoDB](https://www.mongodb.com/)
+- [NodeJS](https://nodejs.org/en/)
 
 # 5. Running
 
