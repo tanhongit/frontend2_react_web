@@ -100,19 +100,19 @@ Admin:
 
 Open new terminal.
 
-```
-$ npm install
-$ npm start
+```shell
+npm install
+npm start
 ```
 
 ## 5.6. Run Frontend
 
 Open new terminal
 
-```
-$ cd frontend
-$ npm install
-$ npm start
+```shell
+cd frontend
+npm install
+npm start
 ```
 
 ## 5.7. Go to Homepage
