@@ -56,7 +56,7 @@ For Windows : https://nodejs.org/en/
 
 Test version: 
 
-```
+```bash
 node -v && npm -v
 ```
 
@@ -66,9 +66,9 @@ View tutorial, download and Install it from here: https://docs.mongodb.com/manua
 
 ## 5.3. Clone repo
 
-```
-$ git clone https://github.com/TanHongIT/frontend2_react_web
-$ cd frontend2_react_web
+```bash
+git clone https://github.com/TanHongIT/frontend2_react_web
+cd frontend2_react_web
 ```
 
 ## 5.4. Import Database .json file to MongoDB
@@ -77,10 +77,10 @@ Open new terminal. Go to databases directory path.
 
 Then Run & Connect to MongoDB.
 
-```
-$ cd databases
-$ mongoimport --db=tanhong --collection=products --file=products_is_tanhong_db_update.json
-$ mongoimport --db=tanhong --collection=users --file=users_is_tanhong_db.json
+```bash
+cd databases
+mongoimport --db=tanhong --collection=products --file=products_is_tanhong_db_update.json
+mongoimport --db=tanhong --collection=users --file=users_is_tanhong_db.json
 ```
 
 > **_Account login on Backend_**
@@ -100,7 +100,7 @@ Admin:
 
 Open new terminal.
 
-```shell
+```bash
 npm install
 npm start
 ```
@@ -109,7 +109,7 @@ npm start
 
 Open new terminal
 
-```shell
+```bash
 cd frontend
 npm install
 npm start
